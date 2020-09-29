@@ -13,11 +13,13 @@ jobs:
         name: Checkout
         uses: actions/checkout@v2
       -
-        name: Build theme
+        name: Install node
         uses: actions/setup-node@v1
         with:
           node-version: '10.x'
-      - run: |
+      - 
+        name: Build theme
+        run: |
           cd themes
           cd tranquilpeak
           npm install -g grunt-cli
