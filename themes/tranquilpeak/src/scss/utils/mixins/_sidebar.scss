@@ -1,16 +1,25 @@
 /// Mixin helper to display the sidebar in medium size
 @mixin sidebar-md {
     width: map-get($sidebar, md-screen-width);
+    // Begin TSOC modification
+    overflow-x: hidden; // TSOC Fix
+    // End TSOC modification
 
     // Author information
     .sidebar-profile {
-        .sidebar-profile-picture {
-            width:          30px;
-            height:         30px;
-            line-height:    30px;
-            vertical-align: middle;
-            border-radius:  30px;
+        // Begin TSOC Modification
+        & > a {
+            display: flex;
+            justify-content: center;
         }
+        .sidebar-profile-picture {
+            display: none;
+        }
+        .sidebar-profile-picture-small {
+            display: block;
+            max-width: 50%;
+        }
+        // End TSOC modification
         .sidebar-profile-name {
             display: none;
         }
@@ -57,12 +66,12 @@
         padding-top:    40px;
         padding-bottom: 7.5px;
 
+        // Begin TSOC modification
         .sidebar-profile-picture {
-            width:         90px;
-            height:        90px;
-            border-radius: 90px;
             margin-bottom: 5px;
         }
+        // End TSOC modification
+
         .sidebar-profile-name {
             font-size: 1.6rem;
         }
@@ -130,12 +139,12 @@
         padding-top:    0;
         padding-bottom: 7.5px;
 
+        // Begin TSOC modification
         .sidebar-profile-picture {
-            width:         90px;
-            height:        90px;
-            border-radius: 90px;
             margin-bottom: 5px;
         }
+        // End TSOC modification
+
         .sidebar-profile-bio,
         .sidebar-profile-job,
         .sidebar-profile-location {

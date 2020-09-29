@@ -28,6 +28,11 @@
             display: block;
             margin:  0 auto;
         }
+        // Begin TSOC modification
+        .sidebar-profile-picture-small {
+            display: none;
+        }
+        // End TSOC modification
         .sidebar-profile-name {
             font-size: 1.1em;
             color:     map-get($sidebar, color);
