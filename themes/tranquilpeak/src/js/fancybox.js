@@ -34,6 +34,7 @@
         closeEffect: 'elastic',
         prevEffect: 'none',
         nextEffect: 'none',
+        type : "image", // TSOC Fix for some urls
         padding: '0',
         helpers: {
           thumbs: thumbs,
