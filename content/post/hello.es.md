@@ -1,5 +1,5 @@
 ---
-title: "Hello"
+title: "Hola"
 date: 2020-09-21
 categories:
 - hello
@@ -8,6 +8,7 @@ tags:
 - welcome
 keywords:
 - tech
+thumbnailImage: https://images.unsplash.com/photo-1502134249126-9f3755a50d78?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80
 coverImage: https://images.unsplash.com/photo-1502134249126-9f3755a50d78?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80
 coverSize: partial
 thumbnailImagePosition: left
@@ -17,11 +18,11 @@ gallery:
     - https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80 "Astronaut"
 ---
 
-This is a test
+Esto es una prueba
 <!--more-->
 
 
-Hello!
+Hola!
 
 ```cpp
 int main()
