@@ -14,13 +14,19 @@
 
 baseURL = "https://thescienceofcode.github.io/"
 languageCode = "en-us"
-defaultContentLanguage = "en-us"
-title = "Hugo tranquilpeak theme"
+defaultContentLanguage = "en"
 theme = "tranquilpeak"
 disqusShortname = "hugo-tranquilpeak-theme"
 # googleAnalytics = "UA-123-45"
 paginate = 7
 canonifyurls = true
+
+[languages]
+  [languages.en]
+    title = "My blog"
+    translations = "Traducciones"
+  [languages.es]
+    title = "mi blog"
 
 [permalinks]
   post = "post/:slug/"
