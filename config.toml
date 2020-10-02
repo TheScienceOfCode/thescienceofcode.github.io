@@ -21,12 +21,14 @@ disqusShortname = "hugo-tranquilpeak-theme"
 paginate = 7
 canonifyurls = true
 
+#Begin TSOC modification
 [languages]
   [languages.en]
-    title = "My blog"
+    title = "The Science of Code"
     translations = "Traducciones"
   [languages.es]
-    title = "mi blog"
+    title = "The Science of Code"
+#End TSOC modification  
 
 [permalinks]
   post = "post/:slug/"
