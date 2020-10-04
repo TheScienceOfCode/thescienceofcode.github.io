@@ -1,0 +1,10 @@
+{{ if .IsTranslated }}
+<div class="translation-block">
+<small>{{ i18n "translations.available" }}</small> <br />
+{{ range .Translations }}     
+    <a class="btn btn--default" href="{{ .Permalink }}">
+        {{ .Lang }} - {{.Language.LanguageName }}
+    </a>                
+{{ end }}
+</div>
+{{ end }}
