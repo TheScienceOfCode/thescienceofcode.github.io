@@ -155,3 +155,8 @@
 
 - id: "date.month.december"
   translation: "December"
+
+## Begin TSOC modification
+- id: "translations.available"
+  translation: "Available languages"
+## End TSOC modification
