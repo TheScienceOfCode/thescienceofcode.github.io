@@ -25,9 +25,10 @@ canonifyurls = true
 [languages]
   [languages.en]
     title = "The Science of Code"
-    translations = "Traducciones"
+    languageName = "English"
   [languages.es]
     title = "The Science of Code"
+    languageName = "Español"
 #End TSOC modification  
 
 [permalinks]
