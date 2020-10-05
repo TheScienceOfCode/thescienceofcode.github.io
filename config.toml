@@ -14,13 +14,22 @@
 
 baseURL = "https://thescienceofcode.github.io/"
 languageCode = "en-us"
-defaultContentLanguage = "en-us"
-title = "Hugo tranquilpeak theme"
+defaultContentLanguage = "en"
 theme = "tranquilpeak"
 disqusShortname = "hugo-tranquilpeak-theme"
 # googleAnalytics = "UA-123-45"
 paginate = 7
 canonifyurls = true
+
+#Begin TSOC modification
+[languages]
+  [languages.en]
+    title = "The Science of Code"
+    languageName = "English"
+  [languages.es]
+    title = "The Science of Code"
+    languageName = "Español"
+#End TSOC modification  
 
 [permalinks]
   post = "post/:slug/"
@@ -114,7 +123,7 @@ canonifyurls = true
 
   # Syntax highlighter, possible choice between: "highlight.js" (recommanded) and "prism.js" (experimental)
   # You can comment it to disable syntax highlighting
-  syntaxHighlighter = "highlight.js"
+  #syntaxHighlighter = "highlight.js"
 
   # Hide sidebar on all article page to let article take full width to improve reading, and enjoy wide images and cover images. (true: enable, false: disable)
   clearReading = false
