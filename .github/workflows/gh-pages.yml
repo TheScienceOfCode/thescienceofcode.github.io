@@ -3,7 +3,7 @@ name: hugo
 on:
   push:
     branches:
-      - release
+      - master
 
 jobs:
   hugo:
