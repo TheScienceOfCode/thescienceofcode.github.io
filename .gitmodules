@@ -1,0 +1,4 @@
+[submodule "themes/tranquilpeak"]
+	path = themes/tranquilpeak
+	url = https://github.com/TheScienceOfCode/hugo-tranquilpeak-theme
+	branch = tsoc
