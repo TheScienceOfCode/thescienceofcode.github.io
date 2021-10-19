@@ -12,6 +12,8 @@ jobs:
       -
         name: Checkout
         uses: actions/checkout@v2
+        with:
+          submodules: recursive
       -
         name: Install node
         uses: actions/setup-node@v1
