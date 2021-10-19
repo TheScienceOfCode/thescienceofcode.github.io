@@ -39,6 +39,7 @@ jobs:
         if: success() && github.event_name != 'pull_request'
         uses: crazy-max/ghaction-github-pages@v2
         with:
+          domain: thescienceofcode.com
           target_branch: gh-pages
           build_dir: public
         env:
