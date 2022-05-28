@@ -184,7 +184,7 @@ canonifyurls = true
 
   [params.header.rightLink]
     class = ""
-    iconUrl = "/images/the-science-of-code-small.png"
+    iconUrl = "/images/the-science-of-code.png"
     url = "/"
 
   # Customize link of author avatar in sidebar
