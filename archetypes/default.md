@@ -1,5 +1,6 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
+author: Author
 license: ccby4.0
 date:  {{ .Date }}
 categories:
