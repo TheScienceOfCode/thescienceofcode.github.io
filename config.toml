@@ -19,7 +19,7 @@ canonifyurls = true
   [languages.en]
     title = "The Science of Code"
     languageName = "English"
-    statsText = "Counters may differ. We use free services to count visits but we do not store neither share you personal information."
+    statsText = "Counters may differ. We use free services to count visits but we do not store neither share your personal information."
   [languages.es]
     title = "The Science of Code"
     languageName = "Español"
