@@ -6,7 +6,7 @@ defaultFooter = false
 
 [params.comment.utterances]
   enable = true
-  repo = "dacanizares/test-utterances"
+  repo = "TheScienceOfCode/discussions"
   issueTerm = "pathname"
   label = "discussion"
   theme = "github-light"
@@ -19,9 +19,11 @@ canonifyurls = true
   [languages.en]
     title = "The Science of Code"
     languageName = "English"
+    statsText = "Counters may differ. We use free services to count visits but we do not store neither share you personal information."
   [languages.es]
     title = "The Science of Code"
     languageName = "Español"
+    statsText = "Los contadores pueden diferir. Usamos servicios libres para contar las visitas pero no almacenamos ni compartimos información personal."
 
 [permalinks]
   post = "post/:slug/"
