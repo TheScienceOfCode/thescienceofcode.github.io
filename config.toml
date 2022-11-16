@@ -4,7 +4,6 @@ defaultContentLanguage = "en"
 theme = "tranquilpeak"
 defaultFooter = false
 canonifyurls = true
-defaultThumbnail = "https://thescienceofcode.com/images/tsoc-thumbnail.jpg"
 
 [params.comment.utterances]
   enable = true
@@ -78,6 +77,8 @@ defaultThumbnail = "https://thescienceofcode.com/images/tsoc-thumbnail.jpg"
   url = "/#about"
 
 [params]
+  defaultThumbnail = "https://thescienceofcode.com/images/tsoc-thumbnail.jpg"
+
   # Customize date format use to render blog post date, categories and other
   # You must use date format used by Go Time package https://golang.org/pkg/time/
   # Months (not work with short month like "jan", "feb", etc) are translated if translation exists on i18n folders
