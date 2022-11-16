@@ -65,8 +65,8 @@ Tener instalado GIT en nuestra máquina y conocer su funcionamiento básico.
    # Seguir instrucciones.
    ```
 
-> Para el nombre del archivo, es recomendable usar algo descriptivo como: id_rsa_PROVEEDOR_CUENTA, donde los proveedores pueden ser github, gitlab, azurerepos, etc. Y la cuenta deberías usarlo sólo en caso de tener más de una por proveedor. Por ejemplo: id_rsa_github, id_rsa_gitlab, id_rsa_github_work, id_rsa_gitlab_work, etc.
-
+   > Para el nombre del archivo, es recomendable usar algo descriptivo como: **id_rsa_PROVEEDOR_CUENTA**, donde los proveedores pueden ser github, gitlab, azurerepos, etc. Y la cuenta podría usarse en caso de tener más de una por proveedor, por ejemplo: id_rsa_github, id_rsa_gitlab, id_rsa_github_work, id_rsa_gitlab_work, etc.
+   
 3. Se crearán dos archivos, uno de ellos con extensión .pub (de public), abre el archivo y copia todo su contenido para agregar la clave al proveedor respectivo (en general los pasos son: ser buscar en la configuración del proveedor, pegar la llave y guardar).
 
     * [Añadir una clave SSH en Github](https://help.github.com/es/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account)
