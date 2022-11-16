@@ -1,5 +1,6 @@
 ---
-title: "Múltiples cuentas en GIT"
+title: "Múltiples cuentas en git"
+url: "multiples-cuentas-git"
 titleHtml: "<small>Cómo configurar</small><br><b>múltiples cuentas en git</b>"
 license: ccby4.0
 author: Daniel Cañizares
@@ -26,22 +27,23 @@ coverStyle: background:#f9f9f9;
 thumbnailImagePosition: left
 ---
 
-Aprende a tener tus cuentas de **Github**, **Gitlab**, **Azure Repos** y **Bitbucket** configuradas en simultáneo. 
+Configura tu computador para el uso simultáneo de tus cuentas **GitHub**, **Gitlab**, **Azure Repos** y **Bitbucket** con **git**. 
 <!--more-->
 
-Esta guía explica cómo configurar nuestra máquina para poder acceder a varios repositorios Git, usando diferentes credenciales entre ellos, **sin necesidad de estar cambiando constantemente entre cuentas**. Aplica tanto para **Linux** y **Windows** (aunque puede ser replicada en *Mac*). No tiene límites en la cantidad de cuentas por proveedor. Si usas Github Desktop, puedes ver [estas guías](https://github.com/desktop/desktop/tree/development/docs/integrations) que son más sencillas.
+Esta guía explica cómo configurar tu máquina para poder acceder a repositorios **git**, usando diferentes credenciales entre ellos, **sin necesidad de estar cambiando constantemente entre cuentas**. Aplica tanto para **Linux** y **Windows** (aunque puede ser replicada en *Mac* siguiendo las instrucciones de Linux). No tiene límites en la cantidad de cuentas por proveedor. 
 
-> Puedes tener una cuenta configurada normalmente y usar este método para añadir las demás. Por ejemplo, si usas Github y ya lo tienes configurado, sólo debes seguir este procedimiento para las cuentas adicionales que vayas a incluír.
+Si usas Github Desktop, puedes ver [estas guías](https://github.com/desktop/desktop/tree/development/docs/integrations) que son más sencillas.
 
+> Puedes tener una cuenta configurada normalmente y usar este método para añadir las demás. Por ejemplo, si usas GitHub y ya lo tienes configurado, sólo debes seguir este procedimiento para las cuentas adicionales que vayas a incluír.
 
 
 ## Pre-requisitos
-Tener instalado GIT en nuestra máquina y conocer su funcionamiento básico.
+Tener instalado GIT en tu máquina y conocer su funcionamiento básico.
 
 
 ## Instrucciones
 
-1. Ir a la siguiente ubicación. En caso de que la carpeta .ssh no exista, crearla.
+1. Ir a la siguiente ubicación (*en caso de que la carpeta **.ssh** no exista, crearla*):
 
    ```bash
    # Linux
@@ -51,11 +53,11 @@ Tener instalado GIT en nuestra máquina y conocer su funcionamiento básico.
    C:\users\NOMBRE_DE_USUARIO\.ssh
    ```
 
-2. Crear una nueva key ssh. *Importante:* Cuando el comando ejecutado pida un passphrase, si estás en un computador de confianza, puedes dar ENTER y dejar la llave sin passphrase, de esta forma te ahorrarás tener que estarla ingresando constantemente (o en su defecto tener que configurar el ssh-agent).
+2. Crear una nueva key ssh. *Importante:* Cuando se pida un passphrase, si estás en un computador de confianza, puedes dar ENTER y dejar la llave sin passphrase, de esta forma te ahorrarás tener que estarla ingresandolo constantemente (o en su defecto tener que configurar el ssh-agent).
 
    ```bash
    # Linux
-   ~/.ssh-keygen -t rsa -b 4096
+   ssh-keygen -t rsa -b 4096
 
    # Windows 
    ssh-keygen.exe
@@ -65,9 +67,14 @@ Tener instalado GIT en nuestra máquina y conocer su funcionamiento básico.
    # Seguir instrucciones.
    ```
 
-> Para el nombre del archivo, es recomendable usar algo descriptivo como: id_rsa_PROVEEDOR_CUENTA, donde los proveedores pueden ser github, gitlab, azurerepos, etc. Y la cuenta deberías usarlo sólo en caso de tener más de una por proveedor. Por ejemplo: id_rsa_github, id_rsa_gitlab, id_rsa_github_work, id_rsa_gitlab_work, etc.
-
-3. Se crearán dos archivos, uno de ellos con extensión .pub (de public), abre el archivo y copia todo su contenido para agregar la clave al proveedor respectivo (en general los pasos son: ser buscar en la configuración del proveedor, pegar la llave y guardar).
+   Para el nombre del archivo, es recomendable usar algo descriptivo como: **id_rsa_[PROVEEDOR]_[CUENTA]**. Donde:
+   * **PROVEEDOR** puede ser *github*, *gitlab*, *azurerepos*, etc. 
+   * **CUENTA** (opcional) podría usarse en caso de tener más de una cuenta por **PROVEEDOR**. 
+   * Por ejemplo: 
+     * **id_rsa_github**
+     * **id_rsa_github_work**
+   
+3. Al terminar el paso anterior, se crearán dos archivos, uno de ellos con extensión **.pub** (de public). Abre el archivo y copia todo su contenido para agregar la clave al proveedor respectivo:
 
     * [Añadir una clave SSH en Github](https://help.github.com/es/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account)
 
@@ -77,7 +84,7 @@ Tener instalado GIT en nuestra máquina y conocer su funcionamiento básico.
 
     * [Añadir una clave SSH en Bitbucket](https://confluence.atlassian.com/bitbucketserver/ssh-user-keys-for-personal-use-776639793.html) - Sigue las instrucciones a partir del paso 2.
 
-4. A continuación vamos a crear un archivo llamado config en la carpeta .ssh donde creamos las llaves anteriormente. El contenido del archivo podría ser un fragmento del siguiente (copia y personaliza sólo la parte que necesites, puedes tener tantas como quieras):
+4. A continuación se debe a crear un archivo llamado **config** en la carpeta **.ssh** (donde se crearon las llaves anteriormente). El contenido del archivo debes construirlo **personalizando** la siguiente muestra:
 
     ```bash
     # Github
@@ -116,7 +123,7 @@ Tener instalado GIT en nuestra máquina y conocer su funcionamiento básico.
     IdentityFile ~/.ssh/id_rsa_github_work
     ```
 
-5. Clona el proyecto abriendo la URL del repo y escogiendo la opción SSH. Ten en cuenta lo siguiente:
+5. Ya puedes clonar el proyecto que quieras visitando la URL del repositorio y escogiendo la opción SSH. Ten en cuenta lo siguiente:
 
    * Si sólo tienes una cuenta de ese proveedor:
 
@@ -133,8 +140,8 @@ Tener instalado GIT en nuestra máquina y conocer su funcionamiento básico.
       # Modifica el host!
       git clone URL_SSH_MODIFICADA
 
-      # Ejemplo
+      # Ejemplo para acceder al github work
       git clone git@github.com-work:equilaterus/wikilaterus.git
       ```
 
-Luego de esto, podrás manipular tus repositorios normalmente, sin importar a qué cuenta pertenezcan. La ventaja es que la configuración sólo debes hacerla una vez y de acuerdo al host que utlices durante el comando git clone, **GIT sabrá que llaves utilizar** para obtener acceso al repositorio.
+Luego de esto, podrás manipular tus repositorios normalmente, sin importar a qué cuenta pertenezcan. La ventaja es que la configuración sólo debes hacerla una vez y de acuerdo al host que utlices durante el comando git clone, **git sabrá que llaves utilizar** para obtener acceso al repositorio con las credenciales correctas.
