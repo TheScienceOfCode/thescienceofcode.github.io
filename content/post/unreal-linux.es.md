@@ -21,7 +21,7 @@ keywords:
 autoThumbnail: true
 autoThumbnailText: <i class="fab fa-linux"></i>
 autoThumbnailStyle: background:linear-gradient(35deg,#646b94,#5597a6);color:black;
-coverImage: https://dacanizares.github.io/legacyblog/images/github-gitlab-ssh.png
+coverImage: /images/posts/unreal-linux.png
 coverSize: min
 coverStyle: background:#2c2f4c;color:#fff
 thumbnailImagePosition: left
