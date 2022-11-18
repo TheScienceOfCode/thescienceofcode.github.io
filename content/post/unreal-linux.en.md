@@ -27,7 +27,7 @@ coverStyle: background:#2c2f4c;color:#fff
 thumbnailImagePosition: left
 ---
 
-Complete guide to start using **Unreal Engine** on your **Linux** machine. Compatible with **UE5** and the latest **UE5.1**.
+Complete guide to start using **Unreal Engine** on your **Linux** machine. Compatible with **UE5** and its latest version **UE5.1**.
 <!--more-->
 
 Unreal Engine is an amazing tool to create videogames and compile them for almost any (capable) device out there. Despite the fact that Unreal is an awesome **multiplatform** engine, trying to run its **editor** on Linux can be obscure and troublesome. This is a compact but comprehensive guide that includes instructions to install, execute and troubleshoot **UE 5 for Linux**.
