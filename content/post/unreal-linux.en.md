@@ -6,18 +6,15 @@ license: ccby4.0
 author: Daniel Cañizares
 date: 2022-11-18
 categories:
-- git
+- unreal
 tags:
-- git
-- github
-- gitlab
-- accounts
+- unreal
+- ue5
+- linux
 keywords:
-- git
-- github
-- gitlab
-- multiple
-- accounts
+- unreal
+- ue5
+- linux
 autoThumbnail: true
 autoThumbnailText: <i class="fab fa-linux"></i>
 autoThumbnailStyle: background:linear-gradient(35deg,#646b94,#5597a6);color:black;
