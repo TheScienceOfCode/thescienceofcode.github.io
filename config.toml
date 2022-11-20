@@ -1,4 +1,4 @@
-baseURL = "https://thescienceofcode.github.io/"
+baseURL = "https://thescienceofcode.com/"
 languageCode = "en-us"
 defaultContentLanguage = "en"
 theme = "tranquilpeak"
