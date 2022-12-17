@@ -4,30 +4,37 @@ A Free and Open Source community.
 
 Published at: https://thescienceofcode.com/
 
-
 ## Quick start
 
-1. Download the repo and add something:
+1. Pre-requisites:
+   * [Install Hugo](https://gohugo.io/installation/)
+   * [Install NodeJS](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+   * Recommended **Github Desktop**: 
+     * [Linux](https://github.com/shiftkey/desktop)
+     * [Win and mac](https://desktop.github.com/) 
 
-   ```
-   hugo new post/my-post.en.md
-   hugo new post/my-post.es.md
-   ```
+2. Clone the repo. **Note**: the theme is contained on a Git Submodule. If you're using Github desktop just clone this repo and it will download the submodule automatically. 
 
-2. Run the theme:
+    If you're going to modify the theme, you can add the submodule as a repo to Github Desktop (*Add existing repository* > location ./theme/tranquilpeak) and commit changes directly into the theme repository.
+
+2. Download the repo and install dependencies for the theme:
 
    ```
    cd themes/tranquilpeak
-   
-   # Install (if necessary)
    npm install -g grunt-cli
    npm install
+   ```
 
-   # Run!
+   
+
+3. Run the theme:
+
+   ```
+   cd themes/tranquilpeak
    npm start
    ``` 
 
-3. Run the site (using another terminal):
+4. Run the site (using another terminal):
 
    ```
    hugo server -D
