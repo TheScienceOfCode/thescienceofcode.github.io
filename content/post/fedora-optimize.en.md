@@ -20,7 +20,7 @@ keywords:
 autoThumbnail: true
 autoThumbnailText: <i class="fab fa-fedora"></i>
 autoThumbnailStyle: background:#fff;color:#294172;
-coverImage: /images/tsoc-thumbnail.jpg
+coverImage: /images/posts/fedora-kde.png
 coverSize: min
 coverStyle: background:linear-gradient(35deg,#ed4d4d,#ed9140);color:#fff
 coverMetaClass: post-meta-white
@@ -30,7 +30,7 @@ thumbnailImagePosition: right
 A practical guide to improve your experience with Fedora Linux optimizing your startup times and gaming performance.
 <!--more-->
 
-This guide applies for both **KDE** and **Gnome** flavors of Fedora Linux. Specially built for desktop users including those who play on Linux through Steam Proton, Native Games or via launchers like Lutris.
+This guide applies for both **KDE** and **Gnome** flavors of Fedora Linux including versions **Fedora 36** and **Fedora 37**. Specially built for desktop users including those who play on Linux through Steam Proton, Native Games or via launchers like Lutris.
 
 ![fedora 36 37](/images/posts/fedora-kde.png)
 

@@ -20,7 +20,7 @@ keywords:
 autoThumbnail: true
 autoThumbnailText: <i class="fab fa-fedora"></i>
 autoThumbnailStyle: background:#fff;color:#294172;
-coverImage: /images/tsoc-thumbnail.jpg
+coverImage: /images/posts/fedora-kde.png
 coverSize: min
 coverStyle: background:linear-gradient(35deg,#ed4d4d,#ed9140);color:#fff
 coverMetaClass: post-meta-white
@@ -30,7 +30,7 @@ thumbnailImagePosition: right
 Una guía práctica para mejorar la experiencia con Fedora Linux, optimizando tiempos de arraque y el rendimiento al jugar.
 <!--more-->
 
-Esta guía aplica para ambos sabores de Fedora Linux, **KDE** y **Gnome**. Construída especialmente para usuarios de escritorio incluyendo aquellos que juegan en Linux a través de Steam Proton, Juegos Nativos o lanzadores como Lutris.
+Esta guía aplica para ambos sabores de Fedora Linux, **KDE** y **Gnome** en sus versiones **Fedora 36** y **Fedora 37**. Construída especialmente para usuarios de escritorio incluyendo aquellos que juegan en Linux a través de Steam Proton, Juegos Nativos o lanzadores como Lutris.
 
 ![fedora 36 37](/images/posts/fedora-kde.png)
 
