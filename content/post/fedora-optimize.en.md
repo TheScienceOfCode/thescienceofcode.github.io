@@ -20,7 +20,7 @@ keywords:
 autoThumbnail: true
 autoThumbnailText: <i class="fab fa-fedora"></i>
 autoThumbnailStyle: background:#fff;color:#294172;
-coverImage: /images/tsoc-thumbnail.jpg
+coverImage: /images/posts/fedora-kde.png
 coverSize: min
 coverStyle: background:linear-gradient(35deg,#ed4d4d,#ed9140);color:#fff
 coverMetaClass: post-meta-white
