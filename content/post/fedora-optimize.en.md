@@ -3,7 +3,7 @@ title: "Optimizing Fedora Linux: Startup and Games"
 url: "fedora-linux-optimize"
 titleHtml: "<small>How to optimize</small><br><b>Fedora Linux Startup and Games</b>"
 license: ccby4.0
-author: Daniel Cañizares
+author: The Science of Code
 date: 2023-01-04
 categories:
 - linux

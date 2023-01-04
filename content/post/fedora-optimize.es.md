@@ -3,7 +3,7 @@ title: "Optimizando Fedora Linux: Arraque y Juegos"
 url: "fedora-linux-optimize"
 titleHtml: "<small>Cómo optimizar</small><br><b>Fedora Linux Arraque y Juegos</b>"
 license: ccby4.0
-author: Daniel Cañizares
+author: The Science of Code
 date: 2023-01-04
 categories:
 - linux
