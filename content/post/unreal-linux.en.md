@@ -53,7 +53,7 @@ Unreal Engine is an amazing tool to create videogames and compile them for almos
 
 Optionally, you can configure the build process to use the maximum power of your CPU. Follow these steps:
 
-1. Configure **max build parallel actions** modifying or creating the following file:
+1. Configure **max build parallel actions** and **unity build** modifying or creating the following file:
 
    ```
    $HOME/.config/Unreal Engine/UnrealBuildTool/BuildConfiguration.xml
@@ -76,6 +76,11 @@ Optionally, you can configure the build process to use the maximum power of your
       <MemoryPerActionBytes>0</MemoryPerActionBytes>
     </ParallelExecutor>
 
+    <BuildConfiguration>
+      <bUseUnityBuild>true</bUseUnityBuild>
+      <bForceUnityBuild>true</bForceUnityBuild>
+    </BuildConfiguration>
+
     </Configuration>
     ```
 
@@ -86,6 +91,10 @@ If your settings have been configured properly, you will get the following UE bu
 ```
 Building XXX actions with 30 processes...
 ```
+
+The second part is related with these two properties to reduce compilation times:
+* **bUseUnityBuild**: Whether to unify C++ code into larger files for faster compilation. 
+* **bForceUnityBuild**: Whether to force C++ source files to be combined into larger files for faster compilation.
 
 More info:
  * [Source](https://gpuopen.com/learn/threadripper-for-gamedev-ue4/)
@@ -100,6 +109,15 @@ More info:
 * **Could not locate the assembly "Ionic.Zip.Reduced":** go to your **Engine/Binaries/DotNet/UnrealBuildTool** and locate the file **Ionic.Zip.Reduced**, duplicate that file into the parent folder **Engine/Binaries/DotNet/**.
 
 * **Unreal Startup is extremely slow with a C++ project:** run (NOT debug) the project. Use debug mode only when you require to actually *debug the code*. It is a little bit unconfortable but your project will load pretty fast.
+
+* **C++ debug does not show variable contents:** you can enable pretty printers by downloading [these files from Unreal Repo](https://github.com/EpicGames/UnrealEngine/tree/release/Engine/Extras/LLDBDataFormatters) and modifying (or creating) **$HOME/.lldbinit** with the following content:
+
+  ```
+  settings set target.inline-breakpoint-strategy always
+  command script import "/home/your_user/path_to/UEDataFormatters.py"
+  ```
+
+  It's weird that they are not included with UE5 binaries for Linux. **But** even with those files are still some [issues](https://youtrack.jetbrains.com/issue/RIDER-87427).
 
 
 # Building Unreal Engine

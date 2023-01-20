@@ -145,4 +145,4 @@ Git is installed and you understand its basic functioning.
       git clone git@github.com-work:equilaterus/wikilaterus.git
       ```
 
-After this, you can work normally on your git repos, no matter the user account. The advantaje is that this configuration is done only once and according to the host that you use during a *git clone*, **GIT will know which set of keys it needs to use** to obtain access to the repo with a correct user account.
+We have finished! Now you can work normally on your git repos, no matter the user account. The advantaje is that this configuration is done only once and according to the host that you use during a *git clone*, **GIT will know which set of keys it needs to use** to obtain access to the repo with a correct user account.
