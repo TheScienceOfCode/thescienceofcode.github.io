@@ -53,7 +53,7 @@ Unreal Engine es una herramienta fantástica para crear videojuegos y compilarlo
 
 Opcionalmente, puedes configurar el proceso de compilación para que use todo el potencial de tu CPU. Sigue estos pasos:
 
-1. Configura **la cantidad máxima de acciones paralelas** modificando o creando el siguiente archivo:
+1. Configura **la cantidad máxima de acciones paralelas** y **unity build** modificando o creando el siguiente archivo:
 
    ```
    $HOME/.config/Unreal Engine/UnrealBuildTool/BuildConfiguration.xml
@@ -76,6 +76,11 @@ Opcionalmente, puedes configurar el proceso de compilación para que use todo el
       <MemoryPerActionBytes>0</MemoryPerActionBytes>
     </ParallelExecutor>
 
+    <BuildConfiguration>
+      <bUseUnityBuild>true</bUseUnityBuild>
+      <bForceUnityBuild>true</bForceUnityBuild>
+    </BuildConfiguration>
+
     </Configuration>
     ```
 
@@ -87,6 +92,10 @@ Si aplicaste bien la configuración, en la próxima compilación de UE deberías
 # Compilando XXXX accciones con 30 procesos...
 Building XXX actions with 30 processes...
 ```
+
+La segunda parte está relacionado con estas dos propiedades que reducen los tiempos de compilación:
+* **bUseUnityBuild**: Especifica que se unifique el códigom C++ en archivos más grandes para compilar más rápido.
+* **bForceUnityBuild**: Especifica que se debe forzar la combinación de archivos de C++ para compilar más rápido.
 
 Más información:
  * [Fuente](https://gpuopen.com/learn/threadripper-for-gamedev-ue4/)
@@ -102,6 +111,14 @@ Más información:
 
 * **Unreal Startup es muy lento con un proyecto  C++:** ejecuta/run (y NO depures/debug) el proyecto. Usa el modo de depuración sólo cuando realmente requieras *depurar el código*. Puede ser un poco molesto, pero tu proyecto cargará muchísimo más rápido.
 
+* **C++ la depuración no muestra el contenido de algunas variables:** puedes activar los pretty printers [descargando estos archivos del Repo de Unreal](https://github.com/EpicGames/UnrealEngine/tree/release/Engine/Extras/LLDBDataFormatters) y modificando (o creando) **$HOME/.lldbinit** con el siguiente contenido:
+
+  ```
+  settings set target.inline-breakpoint-strategy always
+  command script import "/home/tu_usuario/ruta_hasta/UEDataFormatters.py"
+  ```
+
+  Es raro que no se incluyan esos archivos con los binarios de UE5 para Linux. **Sin embargo**, incluso con ellos aún existen algunos [problemas](https://youtrack.jetbrains.com/issue/RIDER-87427).
 
 # Compilando Unreal Engine
 
