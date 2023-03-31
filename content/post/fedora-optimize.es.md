@@ -44,7 +44,7 @@ Comenzaremos por desactivar algunas cosas que no son requeridas para usuarios de
    sudo systemctl mask systemd-udev-settle
    ```
 
-   Por qué desactivar esto? [Más info](https://www.freedesktop.org/software/systemd/man/systemd-udev-settle.service.html)
+   ¿Por qué desactivar esto? [Más info](https://www.freedesktop.org/software/systemd/man/systemd-udev-settle.service.html)
 
 2. Optimizar el arranque desactivando NetworkManager-wait-online.service:
 
@@ -52,7 +52,7 @@ Comenzaremos por desactivar algunas cosas que no son requeridas para usuarios de
     sudo systemctl disable NetworkManager-wait-online.service
     ```
 
-    Por qué desactivar esto? [Más info](https://askubuntu.com/questions/1018576/what-does-networkmanager-wait-online-service-do)
+    ¿Por qué desactivar esto? [Más info](https://askubuntu.com/questions/1018576/what-does-networkmanager-wait-online-service-do)
 
 3. **Para KDE**: desactivar el chequeo automático de actualizaciones al iniciar el sistema.
 
@@ -107,5 +107,26 @@ Comenzaremos por desactivar algunas cosas que no son requeridas para usuarios de
   sudo dnf install ffmpegthumbs
   ```
 
+* **En KDE**: Desactivar los recordatorios de calendario:
+
+  ![Desactivar kde calendar reminder](https://redhat.discourse-cdn.com/fedoraproject/original/3X/c/c/cc24d98be4fcbb2b4c9a21a72de392c123bd71a3.png)
+
+  ```
+  cp /etc/xdg/autostart/org.kde.kalendarac.desktop ~/.config/autostart
+  ```
+
+  Abrir el archivo *~/.config/autostart* y modificarlo, reemplazando esta línea:
+
+  ```python
+  X-KDE-autostart-condition=kalendaracrc:General:Autostart:true
+  ```
+
+  Por la siguiente línea:
+
+  ```python
+  X-KDE-autostart-condition=kalendaracrc:General:Autostart:false
+  ```
+
+  [Más información](https://discussion.fedoraproject.org/t/how-can-i-disable-calendar-reminders/75984).
 
 Gracias por leernos. Comparte esta publicación con tus amigos.

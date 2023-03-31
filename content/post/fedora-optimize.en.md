@@ -107,5 +107,27 @@ We will start disabling some stuff that is not required for a desktop use case:
   sudo dnf install ffmpegthumbs
   ```
 
+* **On KDE**: Disable calendar reminder:
+
+  ![Disable calendar reminder](https://redhat.discourse-cdn.com/fedoraproject/original/3X/c/c/cc24d98be4fcbb2b4c9a21a72de392c123bd71a3.png)
+
+  ```
+  cp /etc/xdg/autostart/org.kde.kalendarac.desktop ~/.config/autostart
+  ```
+
+  Open the file *~/.config/autostart* and modify it, replacing this line:
+
+  ```python
+  X-KDE-autostart-condition=kalendaracrc:General:Autostart:true
+  ```
+
+  With the following line:
+
+  ```python
+  X-KDE-autostart-condition=kalendaracrc:General:Autostart:false
+  ```
+
+  [More info](https://discussion.fedoraproject.org/t/how-can-i-disable-calendar-reminders/75984).
+
 
 Thanks for reading. Share this publication with your friends.
