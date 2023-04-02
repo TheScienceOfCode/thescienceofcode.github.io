@@ -40,4 +40,4 @@ Published at: https://thescienceofcode.com/
    hugo server -D
    ```
 
-The Science of Code is a Free and Open Source initiative by [Equilaterus](https://equilaterussoftworks.com).
+The Science of Code is a Free and Open Source initiative by [Equilaterus](https://equilaterus.com).
