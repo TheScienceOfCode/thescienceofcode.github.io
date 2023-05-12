@@ -133,7 +133,7 @@ As you can see, it is a simple and compact code, especially compare it against o
 
 Project is configured to run with Visual Studio 2022, in case that you want to use another version, edit **imgui-test.vcxproj** (searching for *vc2022* and replacing it with any of the available versions, as seen in the previous image).
 
-3. Open the project with Visual Studio and run.
+3. Open the project with Visual Studio and run it.
 
 # More information
 
