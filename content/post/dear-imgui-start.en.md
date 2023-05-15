@@ -86,7 +86,7 @@ if (show_another_window)
 }
 ```  
 
-As you can see, it is a simple and compact code, especially compare it against other APIs or libraries to create user interfaces.
+As you can see, it is a simple and compact code, especially compare it against other APIs or libraries to create user interfaces. For more information, at the end of the tutorial we leave the link to the official **Dear ImGui** repository, which contains more documentation about the library.
 
 
 ## Quick start
