@@ -4,7 +4,7 @@ url: "unreal-5-linux"
 titleHtml: "<small>Cómo usar</small><br><b>Unreal Engine en Linux</b>"
 license: ccby4.0
 author: Daniel Cañizares
-date: 2022-11-18
+date: 2023-08-01
 categories:
 - unreal
 tags:
@@ -24,7 +24,7 @@ coverStyle: background:#2c2f4c;color:#fff
 thumbnailImagePosition: left
 ---
 
-Guía completa para empezar a usar **Unreal Engine** en tu máquina **Linux**. Compatible con **UE5** y el más reciente **UE5.1**.
+Guía completa para empezar a usar **Unreal Engine** en tu máquina **Linux**. Compatible con **UE5**, **UE5.1**, **UE5.2** y el más reciente **UE5.3**.
 <!--more-->
 
 Unreal Engine es una herramienta fantástica para crear videojuegos y compilarlos para casi cualquier dispositivo (lo suficientemente poderoso). A pesar del hecho que Unreal es un motor **multiplatforma** increíble, intentar correr su **editor** en Linux puede ser un proceso oscuro y molesto. Esta es una guía compacta pero integral, que incluye instrucciones para instalar, ejectuar y corregir los errores más comunes de **UE 5 para Linux**.
@@ -43,6 +43,9 @@ Unreal Engine es una herramienta fantástica para crear videojuegos y compilarlo
 
     # Ejemplo
     $HOME/Unreal/5.1.0/
+    $HOME/Unreal/5.2.0/
+    $HOME/Unreal/5.2.1/
+    $HOME/Unreal/5.3.0/
     ```
 
 3. Ir dentro del folder extraído a **Engine/Binaries/Linux** y ejecutar el archivo: **UnrealEditor**. Deberías ver el Editor de Unreal corriendo.
@@ -161,6 +164,17 @@ Para compilar y generar tus propios binarios de **Unreal Engine**, sigue estos p
   * **No puede encontrarse el ensamblado "Ionic.Zip.Reduced":** ve a tu carpeta **Engine/Binaries/DotNet/UnrealBuildTool** y ubica el archivo **Ionic.Zip.Reduced**, duplícalo en la carpeta "padre" **Engine/Binaries/DotNet/**.
   * [Post en Blog birost](https://blog.birost.com/a?ID=01650-81b216da-49aa-49a2-81f4-9b699aed1057)
   * [Hilo del foro de Unreal](https://forums.unrealengine.com/t/linux-build-missing-references/296487)
+
+* Problemas gráficos:
+  * Virtual Shadow Maps con artefactos: ![shadow artifacts ue5 lumen vsm](https://docs.unrealengine.com/5.1/Images/building-virtual-worlds/lighting-and-shadows/shadows/virtual-shadow-maps/vsm-max-pages-exceeded-artifact.webp)
+  
+    Con Virtual Shadow Maps, todos los datos de sombras en la escena para todas las luces se almacenan en un único pool de texturas grande. El tamaño del pool predeterminado se ve afectado por la configuración de Escalabilidad de sombras, pero es posible que deba ajustarse en escenas con muchas luces que usan sombras de alta resolución.
+
+    Por otro lado, quizá deba ajustarse para ahorrar memoria en hardware de menor rendimiento.
+
+    El tamaño del pool puede ajustarse con **r.Shadow.Virtual.MaxPhysicalPages** (por defecto 4096, probar con múltiples valores, pero aumentarlo mucho puede bloquear el editor). Activar las estadísticas de las Virtual Shadow Map con **r.ShaderPrintEnable 1** y **r.Shadow.Virtual.ShowStats 2**, sucesivamente, mostrará información del pool actual en uso.
+
+    Más información: [UE Docs](https://docs.unrealengine.com/5.2/en-US/virtual-shadow-maps-in-unreal-engine/#onepassprojection)
 
 ## Otras opciones
 
