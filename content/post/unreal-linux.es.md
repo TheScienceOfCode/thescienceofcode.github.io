@@ -165,6 +165,26 @@ Para compilar y generar tus propios binarios de **Unreal Engine**, sigue estos p
   * [Post en Blog birost](https://blog.birost.com/a?ID=01650-81b216da-49aa-49a2-81f4-9b699aed1057)
   * [Hilo del foro de Unreal](https://forums.unrealengine.com/t/linux-build-missing-references/296487)
 
+* Mi proyecto no abre / Unreal no detectado .uproject: Si hay problemas al abrir el uproject hay que verificar que:
+  * **.config/Epic/UnrealEngine/Install.ini** tiene un contenido como el siguiente:
+    
+    ```ini
+    [Installations]
+    5.1=/home/YOUR_USER/Unreal/5.1.0
+    5.3=/home/YOUR_USER/Unreal/5.3.2
+    ```
+
+    Reemplazamos cualquier GUIDs como *B4BA80E5-061F-406C-B07C-A6C2AC42AE61* o también nombres similares a *UE_5.3* con un nombre simple al estilo 5.x y validamos la ruta de instalación.
+
+  * Configuramos la versión correspondiente para el  **.uproject**:
+
+    ```
+    {
+      "FileVersion": 3,
+      "EngineAssociation": "5.3", <- VERIFICAR ESTO
+      ...
+    ```
+
 * Problemas gráficos:
   * Virtual Shadow Maps (VSM) con artefactos: ![shadow artifacts ue5 lumen vsm](https://docs.unrealengine.com/5.1/Images/building-virtual-worlds/lighting-and-shadows/shadows/virtual-shadow-maps/vsm-max-pages-exceeded-artifact.webp)
   
