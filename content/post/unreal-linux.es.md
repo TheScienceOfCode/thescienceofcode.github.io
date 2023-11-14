@@ -4,7 +4,7 @@ url: "unreal-5-linux"
 titleHtml: "<small>Cómo usar</small><br><b>Unreal Engine en Linux</b>"
 license: ccby4.0
 author: Daniel Cañizares
-date: 2023-08-01
+date: 2023-11-14
 categories:
 - unreal
 tags:
@@ -165,14 +165,38 @@ Para compilar y generar tus propios binarios de **Unreal Engine**, sigue estos p
   * [Post en Blog birost](https://blog.birost.com/a?ID=01650-81b216da-49aa-49a2-81f4-9b699aed1057)
   * [Hilo del foro de Unreal](https://forums.unrealengine.com/t/linux-build-missing-references/296487)
 
+* Mi proyecto no abre / Unreal no detectado .uproject: Si hay problemas al abrir el uproject hay que verificar que:
+  * **.config/Epic/UnrealEngine/Install.ini** tiene un contenido como el siguiente:
+    
+    ```ini
+    [Installations]
+    5.1=/home/YOUR_USER/Unreal/5.1.0
+    5.3=/home/YOUR_USER/Unreal/5.3.2
+    ```
+
+    Reemplazamos cualquier GUIDs como *B4BA80E5-061F-406C-B07C-A6C2AC42AE61* o también nombres similares a *UE_5.3* con un nombre simple al estilo 5.x y validamos la ruta de instalación.
+
+  * Configuramos la versión correspondiente para el  **.uproject**:
+
+    ```
+    {
+      "FileVersion": 3,
+      "EngineAssociation": "5.3", <- VERIFICAR ESTO
+      ...
+    ```
+
 * Problemas gráficos:
-  * Virtual Shadow Maps con artefactos: ![shadow artifacts ue5 lumen vsm](https://docs.unrealengine.com/5.1/Images/building-virtual-worlds/lighting-and-shadows/shadows/virtual-shadow-maps/vsm-max-pages-exceeded-artifact.webp)
+  * Virtual Shadow Maps (VSM) con artefactos: ![shadow artifacts ue5 lumen vsm](https://docs.unrealengine.com/5.1/Images/building-virtual-worlds/lighting-and-shadows/shadows/virtual-shadow-maps/vsm-max-pages-exceeded-artifact.webp)
   
     Con Virtual Shadow Maps, todos los datos de sombras en la escena para todas las luces se almacenan en un único pool de texturas grande. El tamaño del pool predeterminado se ve afectado por la configuración de Escalabilidad de sombras, pero es posible que deba ajustarse en escenas con muchas luces que usan sombras de alta resolución.
 
     Por otro lado, quizá deba ajustarse para ahorrar memoria en hardware de menor rendimiento.
 
     El tamaño del pool puede ajustarse con **r.Shadow.Virtual.MaxPhysicalPages** (por defecto 4096, probar con múltiples valores, pero aumentarlo mucho puede bloquear el editor). Activar las estadísticas de las Virtual Shadow Map con **r.ShaderPrintEnable 1** y **r.Shadow.Virtual.ShowStats 2**, sucesivamente, mostrará información del pool actual en uso.
+
+    Alternativamente, se pueden desactivar las VSM usando este comando: **r.Shadow.Virtual.Cache 0**.
+
+    **NOTA**: Para activar VSM en Linux en UE5.3 o superior, se debe ir a **Project Settings / Platforms / Linux** y bajo **Targeted RHIs** activar la opción **Vulkan Desktop (SM6)** PERO desactivando *Vulkan Desktop (SM5)*.
 
     Más información: [UE Docs](https://docs.unrealengine.com/5.2/en-US/virtual-shadow-maps-in-unreal-engine/#onepassprojection)
 
