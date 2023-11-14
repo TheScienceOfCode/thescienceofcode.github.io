@@ -4,7 +4,7 @@ url: "unreal-5-linux"
 titleHtml: "<small>How to use</small><br><b>Unreal Engine on Linux</b>"
 license: ccby4.0
 author: Daniel Cañizares
-date: 2023-08-01
+date: 2023-11-14
 categories:
 - unreal
 tags:
@@ -166,13 +166,17 @@ To compile and generate your own binaries of **Unreal Engine**, follow these ste
   * [Unreal forum thread](https://forums.unrealengine.com/t/linux-build-missing-references/296487)
 
 * Graphical issues:
-  * Virtual Shadow Maps Artifacts: ![shadow artifacts ue5 lumen vsm](https://docs.unrealengine.com/5.1/Images/building-virtual-worlds/lighting-and-shadows/shadows/virtual-shadow-maps/vsm-max-pages-exceeded-artifact.webp)
+  * Virtual Shadow Maps (VSM) Artifacts: ![shadow artifacts ue5 lumen vsm](https://docs.unrealengine.com/5.1/Images/building-virtual-worlds/lighting-and-shadows/shadows/virtual-shadow-maps/vsm-max-pages-exceeded-artifact.webp)
   
     With Virtual Shadow Maps, all of the shadow data in the scene for all lights is stored in a single large texture pool. The default pool size is affected by the Shadow Scalability setting, but it may need to be adjusted in scenes with many lights using high resolution shadows.
 
     Alternatively it may need to be adjusted on lower-end hardware to save video memory.
 
-    The page pool size can be adjusted using **r.Shadow.Virtual.MaxPhysicalPages** (default 4096, test with multiple values, but going up too fast can crash the editor). Enabling Virtual Shadow Map stats with **r.ShaderPrintEnable 1** and **r.Shadow.Virtual.ShowStats 2**, in succession, will display statistics about the current page pool use.
+    The page pool size can be adjusted using **r.Shadow.Virtual.MaxPhysicalPages** (default 4096, test with multiple values, but going up too much can crash the editor). Enabling Virtual Shadow Map stats with **r.ShaderPrintEnable 1** and **r.Shadow.Virtual.ShowStats 2**, in succession, will display statistics about the current page pool use.
+
+    Alternatively, you can disable VSM cache by using this command: **r.Shadow.Virtual.Cache 0**.
+
+    **NOTE**: To enable VSM on Linux on UE5.3 or later, you need to go to **Project Settings / Platforms / Linux** and under **Targeted RHIs** enable the option **Vulkan Desktop (SM6)** BUT disabling *Vulkan Desktop (SM5)*.
 
     More info: [UE Docs](https://docs.unrealengine.com/5.2/en-US/virtual-shadow-maps-in-unreal-engine/#onepassprojection)
 
