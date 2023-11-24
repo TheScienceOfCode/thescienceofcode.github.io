@@ -122,49 +122,6 @@ More info:
 
   It's weird that they are not included with UE5 binaries for Linux. **But** even with those files are still some [issues](https://youtrack.jetbrains.com/issue/RIDER-87427).
 
-
-# Building Unreal Engine
-
-To compile and generate your own binaries of **Unreal Engine**, follow these steps:
-
-1. Prepare your GitHub account to see the repo: [See this guide](https://www.unrealengine.com/en-US/ue-on-github)
-
-2. Clone or download from: [GitHub Repo](https://github.com/EpicGames/UnrealEngine).
-
-3. After downloading, execute **Setup.sh**:
-
-   ```sh
-   ./Setup.sh
-   ```
-
-3. Generate files (but do not *make*, to avoid recompiling twice).
-
-   ```sh
-   ./GenerateProjectFiles.sh
-
-   # Do not execute this command 
-   # make
-   ```
-
-4. Go to **Engine/Build/BatchFiles/**, and execute the following command:
-
-   ```sh
-   /RunUAT.sh BuildGraph -target="Make Installed Build Linux" -script=Engine/Build/InstalledEngineBuild.xml -clean -set:HostPlatformOnly=true -set:WithDDC=false -set:GameConfigurations="Development;Shipping"
-   ```
-
-   *If there are errors with dependencies*: Copy **Engine/Binaries/DotNET** (from source folders) the output path  **LocalBuilds/Engine/Linux/Engine/Binaries/DotNET**. Re-run previous command.
-
-6. Copy the results from **LocalBuilds/Engine/Linux** folder to any other location.
-
-7. Open the editor executable, located at: **{any other location}/Engine/Binaries/Linux/UnrealEditor**.
-
-## Common errors
-
-* Dependencies errors:
-  * **Could not locate the assembly "Ionic.Zip.Reduced":** go to your **Engine/Binaries/DotNet/UnrealBuildTool** and locate the file **Ionic.Zip.Reduced**, duplicate that file into the parent folder **Engine/Binaries/DotNet/**.
-  * [Blog birost post](https://blog.birost.com/a?ID=01650-81b216da-49aa-49a2-81f4-9b699aed1057)
-  * [Unreal forum thread](https://forums.unrealengine.com/t/linux-build-missing-references/296487)
-
 * My project does not open / Unreal not detected .uproject: If you have problems opening your uproject check that:
   * **.config/Epic/UnrealEngine/Install.ini** has a content like this one:
     
@@ -199,6 +156,50 @@ To compile and generate your own binaries of **Unreal Engine**, follow these ste
     **NOTE**: To enable VSM on Linux on UE5.3 or later, you need to go to **Project Settings / Platforms / Linux** and under **Targeted RHIs** enable the option **Vulkan Desktop (SM6)** BUT disabling *Vulkan Desktop (SM5)*.
 
     More info: [UE Docs](https://docs.unrealengine.com/5.2/en-US/virtual-shadow-maps-in-unreal-engine/#onepassprojection)
+
+
+# Building Unreal Engine
+
+Alternatively you can compile and generate your own binaries of **Unreal Engine**, just follow these steps:
+
+1. Prepare your GitHub account to see the repo: [See this guide](https://www.unrealengine.com/en-US/ue-on-github)
+
+2. Clone or download from: [GitHub Repo](https://github.com/EpicGames/UnrealEngine).
+
+3. After downloading, execute **Setup.sh**:
+
+   ```sh
+   ./Setup.sh
+   ```
+
+3. Generate files (but do not *make*, to avoid recompiling twice).
+
+   ```sh
+   ./GenerateProjectFiles.sh
+
+   # Do not execute this command 
+   # make
+   ```
+
+4. Go to **Engine/Build/BatchFiles/**, and execute the following command:
+
+   ```sh
+   /RunUAT.sh BuildGraph -target="Make Installed Build Linux" -script=Engine/Build/InstalledEngineBuild.xml -clean -set:HostPlatformOnly=true -set:WithDDC=false -set:GameConfigurations="Development;Shipping"
+   ```
+
+   *If there are errors with dependencies*: Copy **Engine/Binaries/DotNET** (from source folders) the output path  **LocalBuilds/Engine/Linux/Engine/Binaries/DotNET**. Re-run previous command.
+
+6. Copy the results from **LocalBuilds/Engine/Linux** folder to any other location.
+
+7. Open the editor executable, located at: **{any other location}/Engine/Binaries/Linux/UnrealEditor**.
+
+## Common build errors
+
+* Dependencies errors:
+  * **Could not locate the assembly "Ionic.Zip.Reduced":** go to your **Engine/Binaries/DotNet/UnrealBuildTool** and locate the file **Ionic.Zip.Reduced**, duplicate that file into the parent folder **Engine/Binaries/DotNet/**.
+  * [Blog birost post](https://blog.birost.com/a?ID=01650-81b216da-49aa-49a2-81f4-9b699aed1057)
+  * [Unreal forum thread](https://forums.unrealengine.com/t/linux-build-missing-references/296487)
+
 
 ## Other options
 

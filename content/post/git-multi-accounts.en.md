@@ -32,7 +32,7 @@ Configure your machine to use **GitHub**, **Gitlab**, **Azure Repos** and **Bitb
 
 This guide explains how to configure your machine to access multiple **git** repositories, using different credentials between them, **without requiring to login and logout from those accounts constantly**. Applies for both **Linux** and **Windows** (though you can replicate the Linux steps on *Mac*). It has no limits regarding the number of accounts per provider.
 
-If you use Github Desktop, you can [check this easier guides](https://github.com/desktop/desktop/tree/development/docs/integrations) .
+If you use Github Desktop, please [check these quick guides](https://github.com/desktop/desktop/tree/development/docs/integrations).
 
 > You can have a single account configured as usual but use this method to integrate additional accounts. For example, if you are already using GitHub, you only need to follow this procedure for the extra accounts that you are going to work with.
 

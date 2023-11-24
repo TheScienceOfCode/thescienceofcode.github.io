@@ -32,7 +32,7 @@ Configura tu computador para el uso simultáneo de tus cuentas **GitHub**, **Git
 
 Esta guía explica cómo configurar tu máquina para poder acceder a repositorios **git**, usando diferentes credenciales entre ellos, **sin necesidad de estar cambiando constantemente entre cuentas**. Aplica tanto para **Linux** y **Windows** (aunque puede ser replicada en *Mac* siguiendo las instrucciones de Linux). No tiene límites en la cantidad de cuentas por proveedor. 
 
-Si usas Github Desktop, puedes ver [estas guías](https://github.com/desktop/desktop/tree/development/docs/integrations) que son más sencillas.
+Si usas Github Desktop, puedes ver [estas guías rápidas](https://github.com/desktop/desktop/tree/development/docs/integrations) que son más sencillas.
 
 > Puedes tener una cuenta configurada normalmente y usar este método para añadir las demás. Por ejemplo, si usas GitHub y ya lo tienes configurado, sólo debes seguir este procedimiento para las cuentas adicionales que vayas a incluír.
 
