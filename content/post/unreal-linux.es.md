@@ -123,47 +123,6 @@ Más información:
 
   Es raro que no se incluyan esos archivos con los binarios de UE5 para Linux. **Sin embargo**, incluso con ellos aún existen algunos [problemas](https://youtrack.jetbrains.com/issue/RIDER-87427).
 
-# Compilando Unreal Engine
-
-Para compilar y generar tus propios binarios de **Unreal Engine**, sigue estos pasos:
-
-1. Prepara tu cuenta GitHub para ver el repositorio: [Ver esta guía](https://www.unrealengine.com/en-US/ue-on-github)
-
-2. Clona o descarga: [repositorio GitHub](https://github.com/EpicGames/UnrealEngine).
-
-3. Luego de completar la descargar, ejecuta el archivo **Setup.sh**:
-
-   ```sh
-   ./Setup.sh
-   ```
-
-3. Genera los archivos (pero no hagas un *make*, para evitar recompilar dos veces).
-
-   ```sh
-   ./GenerateProjectFiles.sh
-
-   # No ejecutes este comando 
-   # make
-   ```
-
-4. Ve a **Engine/Build/BatchFiles/**, y ejecuta este comando:
-
-   ```sh
-   /RunUAT.sh BuildGraph -target="Make Installed Build Linux" -script=Engine/Build/InstalledEngineBuild.xml -clean -set:HostPlatformOnly=true -set:WithDDC=false -set:GameConfigurations="Development;Shipping"
-   ```
-
-   *Si hay errores con las dependencias*: Copia **Engine/Binaries/DotNET** (de la carpeta original) a la ruta donde se compila: **LocalBuilds/Engine/Linux/Engine/Binaries/DotNET**. Vuelve a correr el comando anterior.
-
-6. Copia el resultado de la carpeta **LocalBuilds/Engine/Linux** a cualquier otra ubicación.
-
-7. Abre el ejecutable del editor que se ubica en: **{cualquier otra ubicación}/Engine/Binaries/Linux/UnrealEditor**.
-
-## Errores comunes
-
-* Erores de dependencias:
-  * **No puede encontrarse el ensamblado "Ionic.Zip.Reduced":** ve a tu carpeta **Engine/Binaries/DotNet/UnrealBuildTool** y ubica el archivo **Ionic.Zip.Reduced**, duplícalo en la carpeta "padre" **Engine/Binaries/DotNet/**.
-  * [Post en Blog birost](https://blog.birost.com/a?ID=01650-81b216da-49aa-49a2-81f4-9b699aed1057)
-  * [Hilo del foro de Unreal](https://forums.unrealengine.com/t/linux-build-missing-references/296487)
 
 * Mi proyecto no abre / Unreal no detectado .uproject: Si hay problemas al abrir el uproject hay que verificar que:
   * **.config/Epic/UnrealEngine/Install.ini** tiene un contenido como el siguiente:
@@ -199,6 +158,49 @@ Para compilar y generar tus propios binarios de **Unreal Engine**, sigue estos p
     **NOTA**: Para activar VSM en Linux en UE5.3 o superior, se debe ir a **Project Settings / Platforms / Linux** y bajo **Targeted RHIs** activar la opción **Vulkan Desktop (SM6)** PERO desactivando *Vulkan Desktop (SM5)*.
 
     Más información: [UE Docs](https://docs.unrealengine.com/5.2/en-US/virtual-shadow-maps-in-unreal-engine/#onepassprojection)
+
+# Compilando Unreal Engine
+
+Como alternativa, es posible compilar y generar tus propios binarios de **Unreal Engine**, sólo sigue estos pasos:
+
+1. Prepara tu cuenta GitHub para ver el repositorio: [Ver esta guía](https://www.unrealengine.com/en-US/ue-on-github)
+
+2. Clona o descarga: [repositorio GitHub](https://github.com/EpicGames/UnrealEngine).
+
+3. Luego de completar la descargar, ejecuta el archivo **Setup.sh**:
+
+   ```sh
+   ./Setup.sh
+   ```
+
+3. Genera los archivos (pero no hagas un *make*, para evitar recompilar dos veces).
+
+   ```sh
+   ./GenerateProjectFiles.sh
+
+   # No ejecutes este comando 
+   # make
+   ```
+
+4. Ve a **Engine/Build/BatchFiles/**, y ejecuta este comando:
+
+   ```sh
+   /RunUAT.sh BuildGraph -target="Make Installed Build Linux" -script=Engine/Build/InstalledEngineBuild.xml -clean -set:HostPlatformOnly=true -set:WithDDC=false -set:GameConfigurations="Development;Shipping"
+   ```
+
+   *Si hay errores con las dependencias*: Copia **Engine/Binaries/DotNET** (de la carpeta original) a la ruta donde se compila: **LocalBuilds/Engine/Linux/Engine/Binaries/DotNET**. Vuelve a correr el comando anterior.
+
+6. Copia el resultado de la carpeta **LocalBuilds/Engine/Linux** a cualquier otra ubicación.
+
+7. Abre el ejecutable del editor que se ubica en: **{cualquier otra ubicación}/Engine/Binaries/Linux/UnrealEditor**.
+
+## Errores durante compilación
+
+* Erores de dependencias:
+  * **No puede encontrarse el ensamblado "Ionic.Zip.Reduced":** ve a tu carpeta **Engine/Binaries/DotNet/UnrealBuildTool** y ubica el archivo **Ionic.Zip.Reduced**, duplícalo en la carpeta "padre" **Engine/Binaries/DotNet/**.
+  * [Post en Blog birost](https://blog.birost.com/a?ID=01650-81b216da-49aa-49a2-81f4-9b699aed1057)
+  * [Hilo del foro de Unreal](https://forums.unrealengine.com/t/linux-build-missing-references/296487)
+
 
 ## Otras opciones
 
