@@ -43,7 +43,7 @@ Welcome to this quick guide for those interested in getting started with **Dear 
 
 ## Quick overview
 
-Before starting, it could result  Antes de iniciar, it may be illustrative to take a look at the main code of the example, as well as the final result it produces:
+Before starting, it may be illustrative to take a look at the main code of the example, as well as the final result it produces:
 
 ![dear imgui linux windows](/images/posts/dear-imgui-quickstart-demo.png)
 

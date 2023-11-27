@@ -1,1 +1,0 @@
-choco install hugo-extended -confirm
