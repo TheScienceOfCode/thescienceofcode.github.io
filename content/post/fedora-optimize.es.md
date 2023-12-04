@@ -30,9 +30,9 @@ thumbnailImagePosition: right
 Una guía práctica para mejorar la experiencia con Fedora Linux, optimizando tiempos de arraque y el rendimiento al jugar.
 <!--more-->
 
-Esta guía aplica para ambos sabores de Fedora Linux, **KDE** y **Gnome** en sus versiones **Fedora 36** y **Fedora 37**. Construída especialmente para usuarios de escritorio incluyendo aquellos que juegan en Linux a través de Steam Proton, Juegos Nativos o lanzadores como Lutris.
+Esta guía aplica para ambos sabores de Fedora Linux, **KDE** y **Gnome** en sus versiones **Fedora 36**, **Fedora 37**, **Fedora 38** y **Fedora 39**. Construída especialmente para usuarios de escritorio incluyendo aquellos que juegan en Linux a través de Steam Proton, Juegos Nativos o lanzadores como Lutris.
 
-![fedora 36 37](/images/posts/fedora-kde.png)
+![fedora 36 37 38 39](/images/posts/fedora-kde.png)
 
 ## Optimización del arranque
 
