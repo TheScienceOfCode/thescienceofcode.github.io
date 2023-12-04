@@ -30,9 +30,9 @@ thumbnailImagePosition: right
 A practical guide to improve your experience with Fedora Linux optimizing your startup times and gaming performance.
 <!--more-->
 
-This guide applies for both **KDE** and **Gnome** flavors of Fedora Linux including versions **Fedora 36** and **Fedora 37**. Specially built for desktop users including those who play on Linux through Steam Proton, Native Games or via launchers like Lutris.
+This guide applies for both **KDE** and **Gnome** flavors of Fedora Linux including versions **Fedora 36**, **Fedora 37**, **Fedora 38** and **Fedora 39**. Specially built for desktop users including those who play on Linux through Steam Proton, Native Games or via launchers like Lutris.
 
-![fedora 36 37](/images/posts/fedora-kde.png)
+![fedora 36 37 38 39](/images/posts/fedora-kde.png)
 
 ## Startup optimization
 
