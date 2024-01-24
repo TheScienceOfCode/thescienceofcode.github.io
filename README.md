@@ -27,11 +27,18 @@ Published at: https://thescienceofcode.com/
 
    
 
-3. Run the theme:
+3. Run theme (if you plan to actively edit it):
 
    ```
    cd themes/tranquilpeak
    npm start
+   ``` 
+
+   Otherwise, just build it!
+
+   ```
+   cd themes/tranquilpeak
+   npm run build
    ``` 
 
 4. Run the site (using another terminal):
