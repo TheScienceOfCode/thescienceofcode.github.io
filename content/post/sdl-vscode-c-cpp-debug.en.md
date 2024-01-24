@@ -46,13 +46,11 @@ Este tutorial explica cómo preparar una máquina para programar videojuegos con
 
 ---
 
-
-## Pre-requisitos
-
-* [VSCode](https://code.visualstudio.com/) o [VSCodium](https://vscodium.com/) instalado.
-* [git](https://git-scm.com/downloads) instalado.
-
 ## Descargar el proyecto base
+
+> **Pre-requisitos**:
+> * [VSCode](https://code.visualstudio.com/) o [VSCodium](https://vscodium.com/) instalado.
+> * [git](https://git-scm.com/downloads) instalado.
 
 Para mayor agilidad, en **The Science of Code** hemos preparado un proyecto base de **SDL** con **C/C++** en **VSCode**; el proyecto viene pre-configurado para **Linux**, **Mac** y **Windows**.
 
@@ -89,89 +87,98 @@ Realizado esto se puede ver el contenido del proyecto, pero antes de poder ejecu
   sudo apt install build-essential
   sudo apt install libsdl2-dev
   ```
+
+> For any other **distro**, please check on the official documentation how to install **gcc** and **sdl 2 development** packages.  
+
 ---
 
 ### Mac
 
-Install [brew](https://brew.sh/) then run these commands:
+1. Install [brew](https://brew.sh/).
 
-```
-xcode-select --install
-brew install SDL2
-```
+2. Run these commands:
 
-By default, we enabled LLDB as debugger otherwise you will need to [certify the **GDB** binary](https://stackoverflow.com/questions/66470788/how-to-set-gdb-as-debugger-for-the-c-c-extension-pf-vscode-on-macos).
+   ```
+   xcode-select --install
+   brew install SDL2
+   ```
+> By default, we enabled LLDB as debugger otherwise you will need to [certify the **GDB** binary](https://stackoverflow.com/questions/66470788/how-to-set-gdb-as-debugger-for-the-c-c-extension-pf-vscode-on-macos).
 
 ---
 
 ### Windows
 
-#### Install MinGW-w64 
+1. **Install MinGW-w64:** Install [MSYS2](https://www.msys2.org/) under the default folder **c:\\msys64\\**, otherwise you will need to modify the tasks under *.vscode* folder.
 
-Install [MSYS2](https://www.msys2.org/) under the default folder **c:\\msys64\\**, otherwise you will need to modify the tasks under *.vscode* folder.
+   When complete, ensure the Run MSYS2 now box is checked and select Finish. This will open a MSYS2 terminal window for you. Run this command and install all suggested packages:
 
- When complete, ensure the Run MSYS2 now box is checked and select Finish. This will open a MSYS2 terminal window for you. Run this command and install all suggested packages:
+   ```
+   pacman -S --needed base-devel mingw-w64-ucrt-x86_64-toolchain
+   ```
 
- ```
- pacman -S --needed base-devel mingw-w64-ucrt-x86_64-toolchain
- ```
+2. **Download SDL**: Go to [SDL2 Releases](https://github.com/libsdl-org/SDL/releases/tag/release-2.28.5) and download **SDL2-devel-2.28.5-mingw.zip**.
 
-#### SDL2
+   Open the zip file and inside it go to **SDL2-2.28.5\\x86_64-w64-mingw32\\**, extract the contents (four folders) into:
+   
+   
+   ```
+   c:\sdl2\
+   ```
 
-Go to [SDL2 Releases](https://github.com/libsdl-org/SDL/releases/tag/release-2.28.5) and download **SDL2-devel-2.28.5-mingw.zip**.
 
-Open the zip file and inside it go to **SDL2-2.28.5\\x86_64-w64-mingw32\\**, extract the contents (four folders) into **c:\sdl2\\**
+3. **Configure environment variables**:
 
+   * Search for **variables** under your Windows menu and select **Edit environment variables for your system**.
+   * Click on **Environment variables** button, and then select **Path** and click **Edit**. Add two **new** lines:
 
-#### Environment variables
+     ```
+     C:\msys64\ucrt64\bin
+     C:\sdl2\bin
+     ```
+   
+     Select OK to save and re-open any program or console to use the updated PATH.
+   
+     Test these commands on a terminal to check if everything went OK:
+   
+     ```
+     gcc --version
+     g++ --version
+     gdb --version
+     ```
+   
+     If something fails, double check your PATH values against real folder locations.
 
-* Search for **variables** under your Windows menu and select **Edit environment variables for your system**.
-* Click on **Environment variables** button, and then select **Path** and click **Edit**. Add two **new** lines:
+4. **Final steps**: 
 
-```
-C:\msys64\ucrt64\bin
-C:\sdl2\bin
-```
+   > These steps are not required, but may improve your development experience.
 
-Select OK to save and re-open any program or console to use the updated PATH.
+   **Fix windows intellisense error for SDL.h include**
 
-Test these commands on a terminal to check if everything went OK:
-
-```
-gcc --version
-g++ --version
-gdb --version
-```
-
-If something fails, double check your PATH values against real folder locations.
-
-#### Fix intellisense error for SDL.h include
-
-On Windows VSCode intellisense won't find SDL include but you can step over and follow the IDE suggestion to add a path to the C/C++ extension (add *C:/sdl2/include/SDL2*). In the end, the file **.vscode/c_cpp_properties.json** should look like this:
-
-```json
-{
-    "configurations": [
-        {
-            "name": "Win32",
-            "includePath": [
-                "${workspaceFolder}/**",
-                "C:/sdl2/include/SDL2"
-            ],
-            "defines": [
-                "_DEBUG",
-                "UNICODE",
-                "_UNICODE"
-            ],
-            "compilerPath": "C:\\msys64\\ucrt64\\bin\\gcc.exe",
-            "cStandard": "c17",
-            "cppStandard": "gnu++17",
-            "intelliSenseMode": "windows-gcc-x64"
-        }
-    ],
-    "version": 4
-}
-```
+     On Windows VSCode intellisense won't find SDL include but you can step over and follow the IDE suggestion to add a path to the C/C++ extension (add *C:/sdl2/include/SDL2*). In the end, the file **.vscode/c_cpp_properties.json** should look like this:
+     
+     ```json
+     {
+         "configurations": [
+             {
+                 "name": "Win32",
+                 "includePath": [
+                     "${workspaceFolder}/**",
+                     "C:/sdl2/include/SDL2"
+                 ],
+                 "defines": [
+                     "_DEBUG",
+                     "UNICODE",
+                     "_UNICODE"
+                 ],
+                 "compilerPath": "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+                 "cStandard": "c17",
+                 "cppStandard": "gnu++17",
+                 "intelliSenseMode": "windows-gcc-x64"
+             }
+         ],
+         "version": 4
+     }
+     ```
 
 ---
 
