@@ -40,11 +40,43 @@ thumbnailImagePosition: left
 Una guía práctica para configurar un entorno de desarrollo para **SDL** con **C/C++** con herramientas de código libre.
 <!--more-->
 
-En unos pocos pasos en **Linux**, y unos cuántos más en **Windows**, este tutorial explica cómo preparar una máquina para programar videojuegos con **SDL** y **C/C++**, usando **VSCode** como editor, incluyendo la configuración de herramientas de depuración y compilación, así como ayudas autocompletado y resaltado de sintaxis para una mejor experiencia de desarrollo.
+Este tutorial explica cómo preparar una máquina para programar videojuegos con **SDL** y **C/C++**, usando **VSCode** como editor. Hemos preparado un entorno listo para usarse, incluyendo la configuración de herramientas de depuración y compilación, así como ayudas autocompletado y resaltado de sintaxis para una mejor experiencia de desarrollo. Con soporte para **Linux**, **Windows** y **Mac**.
 
-![sdl vscode c cpp debug](/images/posts/sdl_logo.png)
+{{< toc center >}}
 
-## Linux
+---
+
+
+## Pre-requisitos
+
+* [VSCode](https://code.visualstudio.com/) o [VSCodium](https://vscodium.com/) instalado.
+* [git](https://git-scm.com/downloads) instalado.
+
+## Descargar el proyecto base
+
+Para mayor agilidad, en **The Science of Code** hemos preparado un proyecto base de **SDL** con **C/C++** en **VSCode**; el proyecto viene pre-configurado para **Linux**, **Mac** y **Windows**.
+
+Dicho esto, vamos a la ubicación donde queramos descargarlo y ejecutamos el siguiente comando:
+
+```
+git clone https://github.com/TheScienceOfCodeEDU/sdl-vscode-c-cpp.git
+```
+
+Realizado esto se puede ver el contenido del proyecto, pero antes de poder ejecutarlo y revisarlo, debe configurarse el sistema.
+
+## Configuración del IDE
+
+* For **VSCodium** install these extensions:
+    * [Native Debug](https://open-vsx.org/extension/webfreak/debug)
+    * [C/C++ extension pack](https://open-vsx.org/extension/franneck94/vscode-c-cpp-dev-extension-pack)
+
+* For **VSCode** install these extensions:
+    * [Native Debug](https://marketplace.visualstudio.com/items?itemName=webfreak.debug)
+    * [C/C++ extension pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack)
+
+## Configuración del sistema operativo
+
+### Linux
 
 * Fedora:
   ```
@@ -57,19 +89,24 @@ En unos pocos pasos en **Linux**, y unos cuántos más en **Windows**, este tuto
   sudo apt install build-essential
   sudo apt install libsdl2-dev
   ```
+---
 
-### VSCodium
-* Install VSCodium.
-* Install these extensions:
-    * [Native Debug](https://open-vsx.org/extension/webfreak/debug)
-    * [C/C++ extension pack](https://open-vsx.org/extension/franneck94/vscode-c-cpp-dev-extension-pack)
+### Mac
 
-Open the project and press **ctrl + shift + b** to build. Then press **F5** to Debug. You should see an empty window and you may add debug breakpoints as required.
+Install [brew](https://brew.sh/) then run these commands:
 
+```
+xcode-select --install
+brew install SDL2
+```
 
-## Windows
+By default, we enabled LLDB as debugger otherwise you will need to [certify the **GDB** binary](https://stackoverflow.com/questions/66470788/how-to-set-gdb-as-debugger-for-the-c-c-extension-pf-vscode-on-macos).
 
-### Install MinGW-w64 
+---
+
+### Windows
+
+#### Install MinGW-w64 
 
 Install [MSYS2](https://www.msys2.org/) under the default folder **c:\\msys64\\**, otherwise you will need to modify the tasks under *.vscode* folder.
 
@@ -79,14 +116,14 @@ Install [MSYS2](https://www.msys2.org/) under the default folder **c:\\msys64\\*
  pacman -S --needed base-devel mingw-w64-ucrt-x86_64-toolchain
  ```
 
-### SDL2
+#### SDL2
 
 Go to [SDL2 Releases](https://github.com/libsdl-org/SDL/releases/tag/release-2.28.5) and download **SDL2-devel-2.28.5-mingw.zip**.
 
 Open the zip file and inside it go to **SDL2-2.28.5\\x86_64-w64-mingw32\\**, extract the contents (four folders) into **c:\sdl2\\**
 
 
-### Environment variables
+#### Environment variables
 
 * Search for **variables** under your Windows menu and select **Edit environment variables for your system**.
 * Click on **Environment variables** button, and then select **Path** and click **Edit**. Add two **new** lines:
@@ -108,13 +145,44 @@ gdb --version
 
 If something fails, double check your PATH values against real folder locations.
 
-### VSCode
-* Install VSCode.
-* Install these extensions:
-    * [Native Debug](https://marketplace.visualstudio.com/items?itemName=webfreak.debug)
-    * [C/C++ extension pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack)
+#### Fix intellisense error for SDL.h include
 
+On Windows VSCode intellisense won't find SDL include but you can step over and follow the IDE suggestion to add a path to the C/C++ extension (add *C:/sdl2/include/SDL2*). In the end, the file **.vscode/c_cpp_properties.json** should look like this:
 
-Open the project and press **ctrl + shift + b** to build. Then press **F5** to Debug. You should see an empty window and you may add debug breakpoints as required.
+```json
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:/sdl2/include/SDL2"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+            "cStandard": "c17",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "windows-gcc-x64"
+        }
+    ],
+    "version": 4
+}
+```
 
-Gracias por leernos. Comparte esta publicación para llegar a más personas.
+---
+
+{{< rawhtml >}}
+<p align="center">
+ <img src="/images/posts/sdl_logo.png" alt="sdl vscode c cpp debug"/>
+</p>
+{{< /rawhtml >}}
+
+## Corriendo el proyecto
+
+Open the project and press **ctrl + shift + b** to build. Then press **F5** to Debug. You should see an empty window with a moving blue rectangle. You may add debug breakpoints as required.
+
+Congratulations! You have everything ready to start making videogames.
