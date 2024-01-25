@@ -6,7 +6,7 @@ license: ccby4.0
 author: The Science of Code
 date: 2024-01-15
 categories:
-- linux
+- sdl
 tags:
 - sdl
 - vscode
@@ -52,7 +52,7 @@ Este tutorial explica cómo preparar una máquina para programar videojuegos con
 > * [VSCode](https://code.visualstudio.com/) o [VSCodium](https://vscodium.com/) instalado.
 > * [git](https://git-scm.com/downloads) instalado.
 
-Para mayor agilidad, en **The Science of Code** hemos preparado un proyecto base de **SDL** con **C/C++** en **VSCode**; el proyecto viene pre-configurado para **Linux**, **Mac** y **Windows**.
+En **The Science of Code** hemos preparado un [proyecto base en este repositorio](https://github.com/TheScienceOfCodeEDU/sdl-vscode-c-cpp) de **SDL** con **C/C++** en **VSCode** que viene preparado para correr en **Linux**, **Mac** y **Windows**.
 
 Dicho esto, vamos a la ubicación donde queramos descargarlo y ejecutamos el siguiente comando:
 
@@ -190,6 +190,18 @@ Realizado esto se puede ver el contenido del proyecto, pero antes de poder ejecu
 
 ## Corriendo el proyecto
 
-Open the project and press **ctrl + shift + b** to build. Then press **F5** to Debug. You should see an empty window with a moving blue rectangle. You may add debug breakpoints as required.
+Beforehand, let's have an overview of the base project's main files and folders:
+
+* **.vscode/**: This folder contains the IDE configuration including tasks to build and debug C/C++.
+* **main.cpp**: source code for the sample SDL application.
+* **build files for each OS**. These files are called by VSCode (or VSCodium) when executing a build task.
+  * build-linux.sh
+  * build-mac.sh
+  * build-win.bat    
+
+  > If you are planning to use other libraries feel free to modify build files.
+
+Now, just open the project and press **ctrl + shift + b** to build. Then press **F5** to Debug. You should see an empty window with a moving blue rectangle. You may add debug breakpoints as required.
 
 Congratulations! You have everything ready to start making videogames.
+
