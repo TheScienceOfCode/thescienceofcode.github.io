@@ -203,5 +203,7 @@ Beforehand, let's have an overview of the base project's main files and folders:
 
 Now, just open the project and press **ctrl + shift + b** to build. Then press **F5** to Debug. You should see an empty window with a moving blue rectangle. You may add debug breakpoints as required.
 
+![sdl tutorial vscode linux windows mac debug](/images/posts/sdl_tutorial.png)
+
 Congratulations! You have everything ready to start making videogames.
 
