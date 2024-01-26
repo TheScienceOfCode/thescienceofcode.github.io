@@ -155,7 +155,7 @@ canonifyurls = true
   # If you set this value to `true`, these positions swap.
   swapPaginator = true
   # Added param to fix pagination
-  paginate = 7
+  paginate = 4
 
   # Custom CSS. Put here your custom CSS files. They are loaded after the theme CSS;
   # they have to be referred from static root. Example
