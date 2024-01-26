@@ -1,10 +1,10 @@
 ---
-title: "SDL en VSCode con C/C++"
+title: "SDL on VSCode with C/C++"
 url: "sdl-vscode-c-cpp-debug"
-titleHtml: "<small>Programación y depuración de</small><br><b>SDL en VSCode con C/C++</b>"
+titleHtml: "<small>Programming and debugging</small><br><b>SDL on VSCode with C/C++</b>"
 license: ccby4.0
 author: The Science of Code
-date: 2024-01-15
+date: 2024-01-26
 categories:
 - sdl
 tags:
@@ -37,32 +37,33 @@ coverMetaClass: post-meta-white
 thumbnailImagePosition: left
 ---
 
-Una guía práctica para configurar un entorno de desarrollo para **SDL** con **C/C++** con herramientas de código libre.
+A practical guide that shows how to configure **VSCode** to support videogame programming with **SDL** and **C/C++**.
 <!--more-->
 
-Este tutorial explica cómo preparar una máquina para programar videojuegos con **SDL** y **C/C++**, usando **VSCode** como editor. Hemos preparado un entorno listo para usarse, incluyendo la configuración de herramientas de depuración y compilación, así como ayudas autocompletado y resaltado de sintaxis para una mejor experiencia de desarrollo. Con soporte para **Linux**, **Windows** y **Mac**.
+Whether from **Linux**, **Windows** or **Mac**, at the end of this practical guide we will have prepared an environment to develop from  **VSCode** (or **VSCodium**) videogames with **SDL**, including the configuration of debugging and compilation tools, as well as autocompletion and syntax highlighting aids for a better development experience in **C/C++**. 
 
 {{< toc center >}}
 
 ---
 
-## Descargar el proyecto base
+## Downloading the base project
 
-> **Pre-requisitos**:
-> * [VSCode](https://code.visualstudio.com/) o [VSCodium](https://vscodium.com/) instalado.
-> * [git](https://git-scm.com/downloads) instalado.
+> **Requirements**:
+> * [VSCode](https://code.visualstudio.com/) or [VSCodium](https://vscodium.com/) installed.
+> * [git](https://git-scm.com/downloads) installed.
 
-En **The Science of Code** hemos preparado un [proyecto base en este repositorio](https://github.com/TheScienceOfCodeEDU/sdl-vscode-c-cpp) de **SDL** con **C/C++** en **VSCode** que viene preparado para correr en **Linux**, **Mac** y **Windows**.
+At **The Science of Code** we have prepared a base project [on this repo](https://github.com/TheScienceOfCodeEDU/sdl-vscode-c-cpp) that allows us to use **SDL** with **C/C++** on **VSCode** (**VSCodium**). The project is ready to run on **Linux**, **Mac** and **Windows**.
 
-Dicho esto, vamos a la ubicación donde queramos descargarlo y ejecutamos el siguiente comando:
+That said, go to the location where you want to download it and execute the following command:
 
 ```
 git clone https://github.com/TheScienceOfCodeEDU/sdl-vscode-c-cpp.git
 ```
 
-Realizado esto se puede ver el contenido del proyecto, pero antes de poder ejecutarlo y revisarlo, debe configurarse el sistema.
+Once this is done, you can see the project contents but before running and reviewing it, we will configure the system.
 
-## Configuración del IDE
+
+## IDE configuration
 
 * For **VSCodium** install these extensions:
     * [Native Debug](https://open-vsx.org/extension/webfreak/debug)
@@ -72,7 +73,7 @@ Realizado esto se puede ver el contenido del proyecto, pero antes de poder ejecu
     * [Native Debug](https://marketplace.visualstudio.com/items?itemName=webfreak.debug)
     * [C/C++ extension pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack)
 
-## Configuración del sistema operativo
+## OS configuration
 
 ### Linux
 
@@ -108,9 +109,9 @@ Realizado esto se puede ver el contenido del proyecto, pero antes de poder ejecu
 
 ### Windows
 
-1. **Install MinGW-w64:** Install [MSYS2](https://www.msys2.org/) under the default folder **c:\\msys64\\**, otherwise you will need to modify the tasks under *.vscode* folder.
+1. **Install MinGW-w64:** Install [MSYS2](https://www.msys2.org/) under the default folder **c:\\msys64\\**, otherwise you will need to modify the tasks under *.vscode* folder (base project).
 
-   When complete, ensure the Run MSYS2 now box is checked and select Finish. This will open a MSYS2 terminal window for you. Run this command and install all suggested packages:
+   When complete, ensure that the box *Run MSYS2 now* is checked. This will open a MSYS2 terminal. Run this command and install all suggested packages:
 
    ```
    pacman -S --needed base-devel mingw-w64-ucrt-x86_64-toolchain
@@ -136,7 +137,7 @@ Realizado esto se puede ver el contenido del proyecto, pero antes de poder ejecu
      C:\sdl2\bin
      ```
    
-     Select OK to save and re-open any program or console to use the updated PATH.
+     Select OK to save. Re-open any program or console to use the updated PATH.
    
      Test these commands on a terminal to check if everything went OK:
    
@@ -154,7 +155,7 @@ Realizado esto se puede ver el contenido del proyecto, pero antes de poder ejecu
 
    **Fix windows intellisense error for SDL.h include**
 
-     On Windows VSCode intellisense won't find SDL include but you can step over and follow the IDE suggestion to add a path to the C/C++ extension (add *C:/sdl2/include/SDL2*). In the end, the file **.vscode/c_cpp_properties.json** should look like this:
+     On Windows VSCode intellisense won't find SDL include but you can step over and follow the IDE suggestion to add a path to the C/C++ extension (actually you should add *C:/sdl2/include/SDL2*). In the end, the file **.vscode/c_cpp_properties.json** should look like this:
      
      ```json
      {
@@ -188,20 +189,20 @@ Realizado esto se puede ver el contenido del proyecto, pero antes de poder ejecu
 </p>
 {{< /rawhtml >}}
 
-## Corriendo el proyecto
+## Running the project
 
 Beforehand, let's have an overview of the base project's main files and folders:
 
-* **.vscode/**: This folder contains the IDE configuration including tasks to build and debug C/C++.
+* **.vscode/**: this folder contains the IDE configuration including tasks to build and debug C/C++.
 * **main.cpp**: source code for the sample SDL application.
-* **build files for each OS**. These files are called by VSCode (or VSCodium) when executing a build task.
+* **build files for each OS**: these files are called by VSCode (or VSCodium) when executing a build task.
   * build-linux.sh
   * build-mac.sh
   * build-win.bat    
 
   > If you are planning to use other libraries feel free to modify build files.
 
-Now, just open the project and press **ctrl + shift + b** to build. Then press **F5** to Debug. You should see an empty window with a moving blue rectangle. You may add debug breakpoints as required.
+Now, just open the project folder using the IDE and press **ctrl + shift + b** to build. Then press **F5** to Debug. You should see an empty window with a moving blue rectangle. You may also add debug breakpoints as required.
 
 ![sdl tutorial vscode linux windows mac debug](/images/posts/sdl_tutorial.png)
 
