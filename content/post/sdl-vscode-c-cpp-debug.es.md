@@ -30,7 +30,7 @@ keywords:
 autoThumbnail: true
 autoThumbnailText: <i class="fas fa-gamepad"></i>
 autoThumbnailStyle: background:linear-gradient(35deg,#ed4d4d,#ed9140);color:#fff;
-coverImage: /images/posts/fedora-kde.png
+coverImage: /images/posts/sdl-tutorial.png
 coverSize: min
 coverStyle: background:linear-gradient(35deg,#ed4d4d,#ed9140);color:#fff
 coverMetaClass: post-meta-white
