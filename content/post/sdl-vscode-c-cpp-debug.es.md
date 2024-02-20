@@ -10,6 +10,8 @@ categories:
 tags:
 - sdl
 - vscode
+- setup
+- install
 - c
 - c++
 - cpp
@@ -20,6 +22,8 @@ tags:
 keywords:
 - sdl
 - vscode
+- setup
+- install
 - c
 - c++
 - cpp
@@ -37,7 +41,7 @@ coverMetaClass: post-meta-white
 thumbnailImagePosition: left
 ---
 
-Una guía práctica que muestra cómo configurar **VSCode** para programar videojuegos usando **SDL** y **C/C++**.
+Esta guía práctica muestra un *setup* configurando **VSCode** para programación de videojuegos usando **SDL** y **C/C++**.
 <!--more-->
 
 Ya sea desde **Linux**, **Windows** o **Mac**, al finalizar está guía práctica tendremos preparado un entorno para desarrollar desde **VSCode** (o **VSCodium**) con videojuegos con **SDL**, incluyendo la configuración de herramientas de depuración y compilación, así como ayudas autocompletado y resaltado de sintaxis para una mejor experiencia de desarrollo en **C/C++**. 
