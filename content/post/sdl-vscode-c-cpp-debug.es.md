@@ -71,6 +71,7 @@ Realizado esto se puede ver el contenido del proyecto, pero antes de poder ejecu
 * For **VSCodium** install these extensions:
     * [Native Debug](https://open-vsx.org/extension/webfreak/debug)
     * [C/C++ extension pack](https://open-vsx.org/extension/franneck94/vscode-c-cpp-dev-extension-pack)
+    * [clangd](https://open-vsx.org/extension/llvm-vs-code-extensions/vscode-clangd)
 
 * For **VSCode** install these extensions:
     * [Native Debug](https://marketplace.visualstudio.com/items?itemName=webfreak.debug)
