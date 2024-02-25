@@ -19,6 +19,9 @@ tags:
 - gdb
 - linux
 - windows
+- sdlimage
+- sdlmixer
+- sdlttf
 keywords:
 - sdl
 - vscode
@@ -31,6 +34,9 @@ keywords:
 - gdb
 - linux
 - windows
+- sdlimage
+- sdlmixer
+- sdlttf
 autoThumbnail: true
 autoThumbnailText: <i class="fas fa-gamepad"></i>
 autoThumbnailStyle: background:linear-gradient(35deg,#ed4d4d,#ed9140);color:#fff;
@@ -41,7 +47,7 @@ coverMetaClass: post-meta-white
 thumbnailImagePosition: left
 ---
 
-This practical guide shows a complete setup to configure **VSCode** for videogame programming with **SDL** and **C/C++**.
+This practical guide shows a complete setup to configure **VSCode** for videogame programming with **SDL2** and **C/C++**. Installation of additional libraries such as **SDL Image**, **SDL Mixer** and **SDL TTF** is also covered by this tutorial.
 <!--more-->
 
 Whether from **Linux**, **Windows** or **Mac**, at the end of this practical guide we will have prepared an environment to develop from  **VSCode** (or **VSCodium**) videogames with **SDL**, including the configuration of debugging and compilation tools, as well as autocompletion and syntax highlighting aids for a better development experience in **C/C++**. 
@@ -85,13 +91,13 @@ Once this is done, you can see the project contents but before running and revie
 * Fedora:
   ```
   sudo dnf install gcc-c++
-  sudo dnf install SDL2 SDL2-devel
+  sudo dnf install SDL2 SDL2-devel SDL2_image-devel SDL2_mixer-devel SDL2_ttf-devel
   ```
 
 * Ubuntu:
   ```
   sudo apt install build-essential
-  sudo apt install libsdl2-dev
+  sudo apt install libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev
   ```
 
 > For any other **distro**, please check on the official documentation how to install **gcc** and **sdl 2 development** packages.  
@@ -107,6 +113,9 @@ Once this is done, you can see the project contents but before running and revie
    ```
    xcode-select --install
    brew install SDL2
+   brew install sdl2_image
+   brew install sdl2_mixer
+   brew install sdl2_ttf
    ```
 > By default, we enabled LLDB as debugger otherwise you will need to [certify the **GDB** binary](https://stackoverflow.com/questions/66470788/how-to-set-gdb-as-debugger-for-the-c-c-extension-pf-vscode-on-macos).
 
@@ -122,14 +131,15 @@ Once this is done, you can see the project contents but before running and revie
    pacman -S --needed base-devel mingw-w64-ucrt-x86_64-toolchain
    ```
 
-2. **Download SDL**: Go to [SDL2 Releases](https://github.com/libsdl-org/SDL/releases/tag/release-2.28.5) and download **SDL2-devel-2.28.5-mingw.zip**.
+2. **Install SDL2**:
 
-   Open the zip file and inside it go to **SDL2-2.28.5\\x86_64-w64-mingw32\\**, extract the contents (four folders) into:
-   
-   
-   ```
-   c:\sdl2\
-   ```
+   * Browse to [SDL2 Releases](https://github.com/libsdl-org/SDL/releases/tag/release-2.28.5) and download **SDL2-devel-2.28.5-mingw.zip**. Open the zip file and inside it go to **SDL2-2.28.5\\x86_64-w64-mingw32\\**, extract the contents (four folders) into **c:\sdl2\\**.
+
+   * Browse to [SDL2 Image Releases](https://github.com/libsdl-org/SDL_image/releases/tag/release-2.8.2) and download **SDL2_image-devel-2.8.2-mingw.zip**. Open the zip file and inside it go to **SDL2_image-2.8.2\x86_64-w64-mingw32**, extract the contents (three folders) into **c:\sdl2\\**.
+
+   * Browse to [SDL2 Mixer Releases](https://github.com/libsdl-org/SDL_mixer/releases/tag/release-2.8.0) and download **SDL2_mixer-devel-2.8.0-mingw.zip**. Open the zip file and inside it go to **SDL2_mixer-2.8.0\x86_64-w64-mingw32**, extract the contents (three folders) into **c:\sdl2\\**.
+
+   * Browse to [SDL2 TTF Releases](https://github.com/libsdl-org/SDL_ttf/releases/tag/release-2.22.0) and download **SDL2_ttf-devel-2.22.0-mingw.zip**. Open the zip file and inside it go to **SDL2_ttf-2.22.0\x86_64-w64-mingw32**, extract the contents (three folders) into **c:\sdl2\\**.
 
 
 3. **Configure environment variables**:
@@ -199,6 +209,8 @@ Once this is done, you can see the project contents but before running and revie
 Beforehand, let's have an overview of the base project's main files and folders:
 
 * **.vscode/**: this folder contains the IDE configuration including tasks to build and debug C/C++.
+* **common.h**: global definitions and constants.
+* **sdl_utils.h**: some utility functions to interact with SDL.
 * **main.cpp**: source code for the sample SDL application.
 * **build files for each OS**: these files are called by VSCode (or VSCodium) when executing a build task.
   * build-linux.sh
@@ -207,7 +219,7 @@ Beforehand, let's have an overview of the base project's main files and folders:
 
   > If you are planning to use other libraries feel free to modify build files.
 
-Now, just open the project folder using the IDE and press **ctrl + shift + b** to build. Then press **F5** to Debug. You should see an empty window with a moving blue rectangle. You may also add debug breakpoints as required.
+Now, just open the project folder using the IDE and press **ctrl + shift + b** to build. Then press **F5** to Debug. You should see a window containing a pixelart character. You may also add debug breakpoints as required.
 
 ![sdl tutorial vscode linux windows mac debug](/images/posts/sdl_tutorial.png)
 

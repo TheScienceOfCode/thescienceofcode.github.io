@@ -41,7 +41,7 @@ coverMetaClass: post-meta-white
 thumbnailImagePosition: left
 ---
 
-Esta guía práctica muestra un *setup* configurando **VSCode** para programación de videojuegos usando **SDL** y **C/C++**.
+Esta guía práctica muestra un *setup* configurando **VSCode** para programación de videojuegos usando **SDL** y **C/C++**. La instalación de librerías adicionales como **SDL Image**, **SDL Mixer** y **SDL TTF**, también está cubierta por este tutorial.
 <!--more-->
 
 Ya sea desde **Linux**, **Windows** o **Mac**, al finalizar está guía práctica tendremos preparado un entorno para desarrollar desde **VSCode** (o **VSCodium**) con videojuegos con **SDL**, incluyendo la configuración de herramientas de depuración y compilación, así como ayudas autocompletado y resaltado de sintaxis para una mejor experiencia de desarrollo en **C/C++**. 
@@ -84,13 +84,13 @@ Realizado esto se puede ver el contenido del proyecto, pero antes de poder ejecu
 * Fedora:
   ```
   sudo dnf install gcc-c++
-  sudo dnf install SDL2 SDL2-devel
+  sudo dnf install SDL2 SDL2-devel SDL2_image-devel SDL2_mixer-devel SDL2_ttf-devel
   ```
 
 * Ubuntu:
   ```
   sudo apt install build-essential
-  sudo apt install libsdl2-dev
+  sudo apt install libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev
   ```
 
 > Para cualquier otra **distro**, por favor revisar en la documentación oficial cómo instalar los paquetes de **gcc** y **sdl 2 development**.  
@@ -106,6 +106,9 @@ Realizado esto se puede ver el contenido del proyecto, pero antes de poder ejecu
    ```
    xcode-select --install
    brew install SDL2
+   brew install sdl2_image
+   brew install sdl2_mixer
+   brew install sdl2_ttf
    ```
 > Por defecto, hemos activado LLDB como depurador (debugger), en otro caso es necesario [certificar los binarios de **GDB**](https://stackoverflow.com/questions/66470788/how-to-set-gdb-as-debugger-for-the-c-c-extension-pf-vscode-on-macos).
 
@@ -121,14 +124,15 @@ Realizado esto se puede ver el contenido del proyecto, pero antes de poder ejecu
    pacman -S --needed base-devel mingw-w64-ucrt-x86_64-toolchain
    ```
 
-2. **Descargar SDL**: Ir a [paquetes de SDL2](https://github.com/libsdl-org/SDL/releases/tag/release-2.28.5) y descargar **SDL2-devel-2.28.5-mingw.zip**.
+2. **Instalar SDL2**:
 
-   Abrir el zip y dentro de él dirigirse a **SDL2-2.28.5\\x86_64-w64-mingw32\\**, extraer el contenido (cuatro carpetas) en la siguiente ubicación:
-   
-   
-   ```
-   c:\sdl2\
-   ```
+   * Browse to [SDL2 Releases](https://github.com/libsdl-org/SDL/releases/tag/release-2.28.5) and download **SDL2-devel-2.28.5-mingw.zip**. Open the zip file and inside it go to **SDL2-2.28.5\\x86_64-w64-mingw32\\**, extract the contents (four folders) into **c:\sdl2\\**.
+
+   * Browse to [SDL2 Image Releases](https://github.com/libsdl-org/SDL_image/releases/tag/release-2.8.2) and download **SDL2_image-devel-2.8.2-mingw.zip**. Open the zip file and inside it go to **SDL2_image-2.8.2\x86_64-w64-mingw32**, extract the contents (three folders) into **c:\sdl2\\**.
+
+   * Browse to [SDL2 Mixer Releases](https://github.com/libsdl-org/SDL_mixer/releases/tag/release-2.8.0) and download **SDL2_mixer-devel-2.8.0-mingw.zip**. Open the zip file and inside it go to **SDL2_mixer-2.8.0\x86_64-w64-mingw32**, extract the contents (three folders) into **c:\sdl2\\**.
+
+   * Browse to [SDL2 TTF Releases](https://github.com/libsdl-org/SDL_ttf/releases/tag/release-2.22.0) and download **SDL2_ttf-devel-2.22.0-mingw.zip**. Open the zip file and inside it go to **SDL2_ttf-2.22.0\x86_64-w64-mingw32**, extract the contents (three folders) into **c:\sdl2\\**.
 
 
 3. **Configurar variables de entorno**:
@@ -198,6 +202,8 @@ Realizado esto se puede ver el contenido del proyecto, pero antes de poder ejecu
 De antemano, revisemos los principales archivos y carpetas del proyecto base:
 
 * **.vscode/**: Esta carpeta contiene la configuración del IDE, incluyendo tareas para compilar y depurar C/C++.
+* **common.h**: definiciones y constantes globales.
+* **sdl_utils.h**: algunas funciones de utilidad para interactuar con SDL.
 * **main.cpp**: código fuente para la aplicación de ejemplo de SDL.
 * **build files (archivos de compilación) para cada sistema operativo**: estos archivos son llamados por VSCode (o VSCodium) cuando se ejecutando las tareas de compilación.
   * build-linux.sh
@@ -206,7 +212,7 @@ De antemano, revisemos los principales archivos y carpetas del proyecto base:
 
   > Si se planea usar otras librerías, estos archivos pueden modificarse libremente para ajustarse a cada caso en particular.
 
-Ahora, sólo abriendo la carpeta del proyecto en el IDE y presionando **ctrl + shift + b** vamos a poder compilar. Luego, presionando **F5** podremos iniciar la depuración (debugging). Deberíamos ver una ventana vacía con un rectángulo azul en movimiento. También podríamos agregar puntos de parada en el depurador, si así lo quisiéramos.
+Ahora, sólo abriendo la carpeta del proyecto en el IDE y presionando **ctrl + shift + b** vamos a poder compilar. Luego, presionando **F5** podremos iniciar la depuración (debugging). Debería verse una ventana que contiene un personaje pixelart. También podríamos agregar puntos de parada en el depurador, si así lo quisiéramos.
 
 ![sdl tutorial vscode linux windows mac debug](/images/posts/sdl_tutorial.png)
 
