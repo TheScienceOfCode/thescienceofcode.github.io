@@ -83,6 +83,7 @@ Once this is done, you can see the project contents but before running and revie
 * For **VSCode** install these extensions:
     * [Native Debug](https://marketplace.visualstudio.com/items?itemName=webfreak.debug)
     * [C/C++ extension pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack)
+    * [clangd](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd)
 
 ## OS configuration
 
@@ -168,32 +169,15 @@ Once this is done, you can see the project contents but before running and revie
 
    > These steps are not required, but may improve your development experience.
 
-   **Fix windows intellisense error for SDL.h include**
+   **Fix Windows syntax error for SDL.h include**
 
-     On Windows VSCode intellisense won't find SDL include but you can step over and follow the IDE suggestion to add a path to the C/C++ extension (actually you should add *C:/sdl2/include/SDL2*). In the end, the file **.vscode/c_cpp_properties.json** should look like this:
-     
+     On Windows VSCode syntax highlighter won't find SDL includes by default, to fix this just **hit f1**, type **User Settings (JSON)** and press **Enter**. Finally, add the following lines to the opened JSON file:
+
      ```json
-     {
-         "configurations": [
-             {
-                 "name": "Win32",
-                 "includePath": [
-                     "${workspaceFolder}/**",
-                     "C:/sdl2/include/SDL2"
-                 ],
-                 "defines": [
-                     "_DEBUG",
-                     "UNICODE",
-                     "_UNICODE"
-                 ],
-                 "compilerPath": "C:\\msys64\\ucrt64\\bin\\gcc.exe",
-                 "cStandard": "c17",
-                 "cppStandard": "gnu++17",
-                 "intelliSenseMode": "windows-gcc-x64"
-             }
-         ],
-         "version": 4
-     }
+     "C_Cpp.intelliSenseEngine": "disabled",
+     "clangd.fallbackFlags": [
+        "-IC:/sdl2/include/SDL2"
+     ]
      ```
 
 ---
