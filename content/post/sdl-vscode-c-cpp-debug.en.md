@@ -219,7 +219,7 @@ Beforehand, let's have an overview of the base project's main files and folders:
 
   > If you are planning to use other libraries feel free to modify build files.
 
-Now, just open the project folder using the IDE and press **ctrl + shift + b** to build. Then press **F5** to Debug. You should see a window containing a pixelart character. You may also add debug breakpoints as required.
+Now, just open the project folder using the IDE and press **ctrl + shift + b** to build for **Linux**, **Windows** or **Mac**. Then press **ctrl + shift + d** to Debug, just double check that you are choosing the right OS. You should see a window containing a pixelart character. You may also add debug breakpoints as required.
 
 ![sdl tutorial vscode linux windows mac debug](/images/posts/sdl_tutorial.png)
 
