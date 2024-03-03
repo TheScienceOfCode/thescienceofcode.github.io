@@ -76,6 +76,7 @@ Realizado esto se puede ver el contenido del proyecto, pero antes de poder ejecu
 * For **VSCode** install these extensions:
     * [Native Debug](https://marketplace.visualstudio.com/items?itemName=webfreak.debug)
     * [C/C++ extension pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack)
+    * [clangd](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd)
 
 ## Configuración del sistema operativo
 
@@ -161,32 +162,15 @@ Realizado esto se puede ver el contenido del proyecto, pero antes de poder ejecu
 
    > Estos pasos no son requeridos pero pueden mejorar la experiencia de desarrollo.
 
-   **Arreglar error de intellisense en windows para el include SDL.h**
+   **Arreglar error de sintaxis en Windows para el include SDL.h**
 
-     En Windows el intelisense de VSCode no encontrará el include de SDL, sin embargo, podemos intervenir y seguir las sugerencias del IDE que insistirá en agregar una ruta a la extensión de C/C++ (específicamente agregar *C:/sdl2/include/SDL2*). Al final, el archivo **.vscode/c_cpp_properties.json** debería verse así:
-     
+     En Windows en resaltador de sintaxis de VSCode no encontrará los includes de SDL por defecto, para arreglar esto **presionamos f1**, escribimos **User Settings (JSON)** y presionamos **Enter**. Finalmente, agregamos las siguientes líneas al archivo JSON que se abre:
+
      ```json
-     {
-         "configurations": [
-             {
-                 "name": "Win32",
-                 "includePath": [
-                     "${workspaceFolder}/**",
-                     "C:/sdl2/include/SDL2"
-                 ],
-                 "defines": [
-                     "_DEBUG",
-                     "UNICODE",
-                     "_UNICODE"
-                 ],
-                 "compilerPath": "C:\\msys64\\ucrt64\\bin\\gcc.exe",
-                 "cStandard": "c17",
-                 "cppStandard": "gnu++17",
-                 "intelliSenseMode": "windows-gcc-x64"
-             }
-         ],
-         "version": 4
-     }
+     "C_Cpp.intelliSenseEngine": "disabled",
+     "clangd.fallbackFlags": [
+        "-IC:/sdl2/include/SDL2"
+     ]
      ```
 
 ---
