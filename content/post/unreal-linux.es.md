@@ -24,7 +24,7 @@ coverStyle: background:#2c2f4c;color:#fff
 thumbnailImagePosition: left
 ---
 
-Guía completa para empezar a usar **Unreal Engine** en tu máquina **Linux**. Compatible con **UE5**, **UE5.1**, **UE5.2** y el más reciente **UE5.3**.
+Guía completa para empezar a usar **Unreal Engine** en tu máquina **Linux**. Compatible con **UE5**, **UE5.1**, **UE5.2**, **UE5.3** y el más reciente **UE5.4**.
 <!--more-->
 
 Unreal Engine es una herramienta fantástica para crear videojuegos y compilarlos para casi cualquier dispositivo (lo suficientemente poderoso). A pesar del hecho que Unreal es un motor **multiplatforma** increíble, intentar correr su **editor** en Linux puede ser un proceso oscuro y molesto. Esta es una guía compacta pero integral, que incluye instrucciones para instalar, ejectuar y corregir los errores más comunes de **UE 5 para Linux**.
@@ -46,6 +46,7 @@ Unreal Engine es una herramienta fantástica para crear videojuegos y compilarlo
     $HOME/Unreal/5.2.0/
     $HOME/Unreal/5.2.1/
     $HOME/Unreal/5.3.0/
+    $HOME/Unreal/5.4.0/
     ```
 
 3. Ir dentro del folder extraído a **Engine/Binaries/Linux** y ejecutar el archivo: **UnrealEditor**. Deberías ver el Editor de Unreal corriendo.
@@ -131,6 +132,7 @@ Más información:
     [Installations]
     5.1=/home/YOUR_USER/Unreal/5.1.0
     5.3=/home/YOUR_USER/Unreal/5.3.2
+    5.4=/home/YOUR_USER/Unreal/5.4.0
     ```
 
     Reemplazamos cualquier GUIDs como *B4BA80E5-061F-406C-B07C-A6C2AC42AE61* o también nombres similares a *UE_5.3* con un nombre simple al estilo 5.x y validamos la ruta de instalación.
@@ -145,7 +147,7 @@ Más información:
     ```
 
 * Problemas gráficos:
-  * Virtual Shadow Maps (VSM) con artefactos: ![shadow artifacts ue5 lumen vsm](https://docs.unrealengine.com/5.1/Images/building-virtual-worlds/lighting-and-shadows/shadows/virtual-shadow-maps/vsm-max-pages-exceeded-artifact.webp)
+  * Virtual Shadow Maps (VSM) con artefactos: ![shadow artifacts ue5 lumen vsm](/images/posts/ue-vsm-max-pages-exceeded-artifact.png)
   
     Con Virtual Shadow Maps, todos los datos de sombras en la escena para todas las luces se almacenan en un único pool de texturas grande. El tamaño del pool predeterminado se ve afectado por la configuración de Escalabilidad de sombras, pero es posible que deba ajustarse en escenas con muchas luces que usan sombras de alta resolución.
 

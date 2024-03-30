@@ -24,7 +24,7 @@ coverStyle: background:#2c2f4c;color:#fff
 thumbnailImagePosition: left
 ---
 
-Complete guide to start using **Unreal Engine** on your **Linux** machine. Compatible with **UE5**, **UE5.1**, **UE5.2** and its latest version **UE5.3**.
+Complete guide to start using **Unreal Engine** on your **Linux** machine. Compatible with **UE5**, **UE5.1**, **UE5.2**, **UE5.3** and its latest version **UE5.4**.
 <!--more-->
 
 Unreal Engine is an amazing tool to create videogames and compile them for almost any (capable) device out there. Despite the fact that Unreal is an awesome **multiplatform** engine, trying to run its **editor** on Linux can be obscure and troublesome. This is a compact but comprehensive guide that includes instructions to install, execute and troubleshoot **UE 5 for Linux**.
@@ -46,6 +46,7 @@ Unreal Engine is an amazing tool to create videogames and compile them for almos
     $HOME/Unreal/5.2.0/
     $HOME/Unreal/5.2.1/
     $HOME/Unreal/5.3.0/
+    $HOME/Unreal/5.4.0/
     ```
 
 3. Go inside the extracted folder **Engine/Binaries/Linux** and execute the file: **UnrealEditor**. You should see the Unreal Engine Editor just working.
@@ -129,6 +130,7 @@ More info:
     [Installations]
     5.1=/home/YOUR_USER/Unreal/5.1.0
     5.3=/home/YOUR_USER/Unreal/5.3.2
+    5.4=/home/YOUR_USER/Unreal/5.4.0
     ```
 
     Replace GUIDs like *B4BA80E5-061F-406C-B07C-A6C2AC42AE61* and names like *UE_5.3* with a simpler 5.x and double check the installation path.
@@ -143,7 +145,7 @@ More info:
     ```
 
 * Graphical issues:
-  * Virtual Shadow Maps (VSM) Artifacts: ![shadow artifacts ue5 lumen vsm](https://docs.unrealengine.com/5.1/Images/building-virtual-worlds/lighting-and-shadows/shadows/virtual-shadow-maps/vsm-max-pages-exceeded-artifact.webp)
+  * Virtual Shadow Maps (VSM) Artifacts: ![shadow artifacts ue5 lumen vsm](/images/posts/ue-vsm-max-pages-exceeded-artifact.png)
   
     With Virtual Shadow Maps, all of the shadow data in the scene for all lights is stored in a single large texture pool. The default pool size is affected by the Shadow Scalability setting, but it may need to be adjusted in scenes with many lights using high resolution shadows.
 
