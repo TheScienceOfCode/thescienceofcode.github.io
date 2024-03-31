@@ -3,7 +3,7 @@ title: "Dear ImGui quickstart"
 url: "imgui-quickstart"
 titleHtml: "<small>How to start</small><br><b>Using Dear ImGui on Linux/Windows</b>"
 license: ccby4.0
-author: Daniel Cañizares
+author: The Science of Code
 date: 2023-05-12
 categories:
 - imgui
