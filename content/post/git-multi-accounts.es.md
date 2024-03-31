@@ -3,7 +3,7 @@ title: "Múltiples cuentas en git"
 url: "multiples-cuentas-git"
 titleHtml: "<small>Cómo configurar</small><br><b>múltiples cuentas en git</b>"
 license: ccby4.0
-author: Daniel Cañizares
+author: The Science of Code
 date: 2022-11-15
 categories:
 - git

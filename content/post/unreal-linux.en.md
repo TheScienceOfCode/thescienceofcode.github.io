@@ -3,7 +3,7 @@ title: "Unreal Engine 5 Linux"
 url: "unreal-5-linux"
 titleHtml: "<small>How to use</small><br><b>Unreal Engine on Linux</b>"
 license: ccby4.0
-author: Daniel Cañizares
+author: The Science of Code
 date: 2023-11-14
 categories:
 - unreal
