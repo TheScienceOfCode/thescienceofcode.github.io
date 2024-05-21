@@ -4,7 +4,7 @@ url: "fedora-linux-optimize"
 titleHtml: "<small>Cómo optimizar</small><br><b>Fedora Linux Arraque y Juegos</b>"
 license: ccby4.0
 author: The Science of Code
-date: 2023-01-04
+date: 2024-05-20
 categories:
 - linux
 tags:
@@ -30,7 +30,7 @@ thumbnailImagePosition: right
 Una guía práctica para mejorar la experiencia con Fedora Linux, optimizando tiempos de arraque y el rendimiento al jugar.
 <!--more-->
 
-Esta guía aplica para ambos sabores de Fedora Linux, **KDE** y **Gnome** en sus versiones **Fedora 36**, **Fedora 37**, **Fedora 38** y **Fedora 39**. Construída especialmente para usuarios de escritorio incluyendo aquellos que juegan en Linux a través de Steam Proton, Juegos Nativos o lanzadores como Lutris.
+Esta guía aplica para ambos sabores de Fedora Linux, **KDE** y **Gnome** en sus versiones **Fedora 36**, **Fedora 37**, **Fedora 38**,  **Fedora 39** y **Fedora 40**. Construída especialmente para usuarios de escritorio incluyendo aquellos que juegan en Linux a través de Steam Proton, Juegos Nativos o lanzadores como Lutris.
 
 ![fedora 36 37 38 39](/images/posts/fedora-kde.png)
 
@@ -105,6 +105,12 @@ Comenzaremos por desactivar algunas cosas que no son requeridas para usuarios de
 
   ```
   sudo dnf install ffmpegthumbs
+  ```
+
+  Para ver correctamente todas las miniaturas de los videos, es recomendable instalar también estos paquetes:
+
+  ```
+  sudo dnf install vlc vlc-plugin-gstreamer vlc-plugin-ffmpeg
   ```
 
 * **En KDE**: Desactivar los recordatorios de calendario:

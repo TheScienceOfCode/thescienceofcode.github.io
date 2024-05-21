@@ -4,7 +4,7 @@ url: "fedora-linux-optimize"
 titleHtml: "<small>How to optimize</small><br><b>Fedora Linux Startup and Games</b>"
 license: ccby4.0
 author: The Science of Code
-date: 2023-01-04
+date: 2024-05-20
 categories:
 - linux
 tags:
@@ -30,7 +30,7 @@ thumbnailImagePosition: right
 A practical guide to improve your experience with Fedora Linux optimizing your startup times and gaming performance.
 <!--more-->
 
-This guide applies for both **KDE** and **Gnome** flavors of Fedora Linux including versions **Fedora 36**, **Fedora 37**, **Fedora 38** and **Fedora 39**. Specially built for desktop users including those who play on Linux through Steam Proton, Native Games or via launchers like Lutris.
+This guide applies for both **KDE** and **Gnome** flavors of Fedora Linux including versions **Fedora 36**, **Fedora 37**, **Fedora 38**, **Fedora 39** and **Fedora 40**. Specially built for desktop users including those who play on Linux through Steam Proton, Native Games or via launchers like Lutris.
 
 ![fedora 36 37 38 39](/images/posts/fedora-kde.png)
 
@@ -105,6 +105,12 @@ We will start disabling some stuff that is not required for a desktop use case:
 
   ```
   sudo dnf install ffmpegthumbs
+  ```
+
+  To see correctly all video previews, it is also suggested to install these packages:
+
+  ```
+  sudo dnf install vlc vlc-plugin-gstreamer vlc-plugin-ffmpeg
   ```
 
 * **On KDE**: Disable calendar reminder:
