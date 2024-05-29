@@ -16,9 +16,9 @@ jobs:
           submodules: recursive
       -
         name: Install node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
-          node-version: '10.x'
+          node-version: '20.14.x'
       - 
         name: Build theme
         run: |
