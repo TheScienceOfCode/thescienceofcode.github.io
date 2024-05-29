@@ -165,20 +165,28 @@ Once this is done, you can see the project contents but before running and revie
    
      If something fails, double check your PATH values against real folder locations.
 
-4. **Final steps**: 
+## Final steps 
 
-   > These steps are not required, but may improve your development experience.
+> These steps are not required, but may improve your development experience.
 
-   **Fix Windows syntax error for SDL.h include**
+### Fix disable automatic header insertion (any OS)
 
-     On Windows VSCode syntax highlighter won't find SDL includes by default, to fix this just **hit f1**, type **User Settings (JSON)** and press **Enter**. Finally, add the following lines to the opened JSON file:
+It is recommended to disable automatic header insertion by **hitting f1**, then typing **User Settings (JSON)** and pressing **Enter**. Finally, add the following line to the opened JSON file:
 
-     ```json
-     "C_Cpp.intelliSenseEngine": "disabled",
-     "clangd.fallbackFlags": [
-        "-IC:/sdl2/include/SDL2"
-     ]
-     ```
+```json
+"clangd.arguments": [ "--header-insertion=never" ],
+```
+
+### Fix syntax error for SDL.h include (Windows)
+
+On Windows VSCode syntax highlighter won't find SDL includes by default, to fix this just **hit f1**, type **User Settings (JSON)** and press **Enter**. Finally, add the following lines to the opened JSON file:
+
+```json
+"C_Cpp.intelliSenseEngine": "disabled",
+"clangd.fallbackFlags": [
+  "-IC:/sdl2/include/SDL2"
+]
+```
 
 ---
 

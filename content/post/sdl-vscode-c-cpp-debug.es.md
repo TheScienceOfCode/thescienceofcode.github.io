@@ -158,20 +158,28 @@ Realizado esto se puede ver el contenido del proyecto, pero antes de poder ejecu
    
      Si algo falla, volver a validar los valores del PATH comparando contra las ubicaciones reales.
 
-4. **Pasos finales**: 
+## Pasos finales
 
-   > Estos pasos no son requeridos pero pueden mejorar la experiencia de desarrollo.
+> Estos pasos no son requeridos pero pueden mejorar la experiencia de desarrollo.
 
-   **Arreglar error de sintaxis en Windows para el include SDL.h**
+### Desactivar la inserción automática de encabezados (cualquier OS)
 
-     En Windows en resaltador de sintaxis de VSCode no encontrará los includes de SDL por defecto, para arreglar esto **presionamos f1**, escribimos **User Settings (JSON)** y presionamos **Enter**. Finalmente, agregamos las siguientes líneas al archivo JSON que se abre:
+Se recomienda desactivar la inserción automática de encabezados (header) **presionando f1**, luego escribiendo **User Settings (JSON)** y presionando **Enter**. Finalmente, agregamos la siguiente línea al archivo JSON que se abre:
 
-     ```json
-     "C_Cpp.intelliSenseEngine": "disabled",
-     "clangd.fallbackFlags": [
-        "-IC:/sdl2/include/SDL2"
-     ]
-     ```
+```json
+"clangd.arguments": [ "--header-insertion=never" ],
+```
+
+### Arreglar error de sintaxis para el include SDL.h (Windows)
+
+En Windows el resaltador de sintaxis de VSCode no encontrará los includes de SDL por defecto, para arreglar esto **presionamos f1**, escribimos **User Settings (JSON)** y presionamos **Enter**. Finalmente, agregamos las siguientes líneas al archivo JSON que se abre:
+
+```json
+"C_Cpp.intelliSenseEngine": "disabled",
+"clangd.fallbackFlags": [
+  "-IC:/sdl2/include/SDL2"
+]
+```
 
 ---
 
