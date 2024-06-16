@@ -7,7 +7,9 @@ Published at: https://thescienceofcode.com/
 ## Quick start
 
 1. Pre-requisites:
-   * [Install Hugo](https://gohugo.io/installation/)
+   * Extract Hugo Binaries into the project's root folder.
+     * [Recommended 0.120.3](https://github.com/gohugoio/hugo/releases/tag/v0.120.3)
+     * [Fallback version 0.53](https://github.com/gohugoio/hugo/releases/tag/v0.53) 
    * [Install NodeJS](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
    * Recommended **Github Desktop**: 
      * [Linux](https://github.com/shiftkey/desktop)
