@@ -18,4 +18,6 @@ bin-release/
 public/
 .hugo_build.lock
 
-# Backup Files
+# Hugo local binaries
+hugo.exe
+hugo
