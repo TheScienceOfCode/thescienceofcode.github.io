@@ -7,7 +7,9 @@ Published at: https://thescienceofcode.com/
 ## Quick start
 
 1. Pre-requisites:
-   * [Install Hugo](https://gohugo.io/installation/)
+   * Extract Hugo Binaries into the project's root folder.
+     * [Recommended 0.120.3](https://github.com/gohugoio/hugo/releases/tag/v0.120.3)
+     * [Fallback version 0.53](https://github.com/gohugoio/hugo/releases/tag/v0.53) 
    * [Install NodeJS](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
    * Recommended **Github Desktop**: 
      * [Linux](https://github.com/shiftkey/desktop)
@@ -44,7 +46,13 @@ Published at: https://thescienceofcode.com/
 4. Run the site (using another terminal):
 
    ```
-   hugo server -D
+   hugo serve -D
+   ```
+
+   If you are using Powershell:
+
+   ```
+   .\hugo serve -D
    ```
 
 The Science of Code is a Free and Open Source initiative by [Equilaterus](https://equilaterus.com).
