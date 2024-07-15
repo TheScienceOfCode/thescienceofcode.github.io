@@ -127,13 +127,37 @@ Realizado esto se puede ver el contenido del proyecto, pero antes de poder ejecu
 
 2. **Instalar SDL2**:
 
-   * Abrir [SDL2 Releases](https://github.com/libsdl-org/SDL/releases/tag/release-2.28.5) y descargar **SDL2-devel-2.28.5-mingw.zip**. Abrir el archivo zip y una vez adentro, ir a **SDL2-2.28.5\\x86_64-w64-mingw32\\**, extraer el contenido (cuatro carpetas) en **c:\sdl2\\**.
+   * **Alternativa A** (fácil)
 
-   * Abrir [SDL2 Image Releases](https://github.com/libsdl-org/SDL_image/releases/tag/release-2.8.2) y descargar **SDL2_image-devel-2.8.2-mingw.zip**. Abrir el archivo zip y una vez adentro, ir a **SDL2_image-2.8.2\x86_64-w64-mingw32**, extraer el contenido (tres carpetas) en **c:\sdl2\\**.
+     Descargar [este archivo zip](https://mega.nz/file/YFlzyJyb#waq7p7JoCKys6JbZ1gD8rtdeXX5KohbrtRObA4egvr0) y extraer su contenido en la raiz de su computador **C:\\**.
 
-   * Abrir [SDL2 Mixer Releases](https://github.com/libsdl-org/SDL_mixer/releases/tag/release-2.8.0) y descargar **SDL2_mixer-devel-2.8.0-mingw.zip**. Abrir el archivo zip y una vez adentro, ir a **SDL2_mixer-2.8.0\x86_64-w64-mingw32**, extraer el contenido (tres carpetas) en **c:\sdl2\\**.
+   * **Alternativa B** (descarga manual)
 
-   * Abrir [SDL2 TTF Releases](https://github.com/libsdl-org/SDL_ttf/releases/tag/release-2.22.0) y descargar **SDL2_ttf-devel-2.22.0-mingw.zip**. Abrir el archivo zip y una vez adentro, ir a **SDL2_ttf-2.22.0\x86_64-w64-mingw32**, extraer el contenido (tres carpetas) en **c:\sdl2\\**.
+     * Abrir [SDL2 Releases](https://github.com/libsdl-org/SDL/releases/tag/release-2.28.5) y descargar **SDL2-devel-2.28.5-mingw.zip**. 
+     
+       Abrir el archivo zip y una vez adentro, ir a **SDL2-2.28.5\\x86_64-w64-mingw32\\**.
+       
+       Extraer el contenido (cuatro carpetas) en **c:\sdl2\\**.
+
+     * Abrir [SDL2 Image Releases](https://github.com/libsdl-org/SDL_image/releases/tag/release-2.8.2) y descargar **SDL2_image-devel-2.8.2-mingw.zip**. 
+     
+       Abrir el archivo zip y una vez adentro, ir a **SDL2_image-2.8.2\x86_64-w64-mingw32**.
+       
+       Extraer el contenido (tres carpetas) en **c:\sdl2\\**.
+
+     * Abrir [SDL2 Mixer Releases](https://github.com/libsdl-org/SDL_mixer/releases/tag/release-2.8.0) y descargar **SDL2_mixer-devel-2.8.0-mingw.zip**. 
+     
+       Abrir el archivo zip y una vez adentro, ir a **SDL2_mixer-2.8.0\x86_64-w64-mingw32**.
+       
+       Extraer el contenido (tres carpetas) en **c:\sdl2\\**.
+
+     * Abrir [SDL2 TTF Releases](https://github.com/libsdl-org/SDL_ttf/releases/tag/release-2.22.0) y descargar **SDL2_ttf-devel-2.22.0-mingw.zip**.
+     
+      Abrir el archivo zip y una vez adentro, ir a **SDL2_ttf-2.22.0\x86_64-w64-mingw32**.
+      
+      Extraer el contenido (tres carpetas) en **c:\sdl2\\**.
+
+     > **Nota**: Si usted quiere, puede descargar versiones más nuevas de los repositorios. Sin embargo, las versiones listadas fueron probadas por **The Science of Code**.
 
 
 3. **Configurar variables de entorno**:
