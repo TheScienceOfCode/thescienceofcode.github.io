@@ -46,7 +46,13 @@ Published at: https://thescienceofcode.com/
 4. Run the site (using another terminal):
 
    ```
-   hugo server -D
+   hugo serve -D
+   ```
+
+   If you are using Powershell:
+
+   ```
+   .\hugo serve -D
    ```
 
 The Science of Code is a Free and Open Source initiative by [Equilaterus](https://equilaterus.com).
