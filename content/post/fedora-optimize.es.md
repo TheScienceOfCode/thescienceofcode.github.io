@@ -4,7 +4,7 @@ url: "fedora-linux-optimize"
 titleHtml: "<small>Cómo optimizar</small><br><b>Fedora Linux Arraque y Juegos</b>"
 license: ccby4.0
 author: The Science of Code
-date: 2024-05-20
+date: 2024-10-22
 categories:
 - linux
 tags:
@@ -100,6 +100,22 @@ Comenzaremos por desactivar algunas cosas que no son requeridas para usuarios de
   ```
   
   [Más info](https://rpmfusion.org/Howto/Multimedia)
+
+* Instalar **codecs wmv** para reproducir Videos de Windows Media en Fedora: 
+
+  ```
+  sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
+  # Instalar repositorio fedy copr
+  sudo dnf copr enable kwizart/fedy
+
+  # Instalar fedy
+  sudo dnf install fedy -y
+  ```
+
+  Escribir **fedy** en la terminal e ir a *utilities* para luego instalar **Multimedia codecs**.
+
+  [Fedy Repository](https://github.com/rpmfusion-infra/fedy)
 
 * **En KDE**: Activar las miniaturas de los videos en el explorador Dolphin:
 

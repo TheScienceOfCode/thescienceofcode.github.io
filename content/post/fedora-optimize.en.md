@@ -4,7 +4,7 @@ url: "fedora-linux-optimize"
 titleHtml: "<small>How to optimize</small><br><b>Fedora Linux Startup and Games</b>"
 license: ccby4.0
 author: The Science of Code
-date: 2024-05-20
+date: 2024-10-22
 categories:
 - linux
 tags:
@@ -100,6 +100,22 @@ We will start disabling some stuff that is not required for a desktop use case:
   ```
   
   [More info](https://rpmfusion.org/Howto/Multimedia)
+
+* Install **wmv codecs** to play Windows Media Videos on Fedora: 
+
+  ```
+  sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
+  # Install fedy copr repository
+  sudo dnf copr enable kwizart/fedy
+
+  # Install fedy
+  sudo dnf install fedy -y
+  ```
+
+  Type **fedy** on your terminal and go to *utilities* then install **Multimedia codecs**.
+
+  [Fedy Repository](https://github.com/rpmfusion-infra/fedy)
 
 * **On KDE**: Enable Dolphin video previews:
 
