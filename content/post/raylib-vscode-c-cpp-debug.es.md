@@ -61,7 +61,7 @@ En **The Science of Code** hemos preparado un proyecto base [en este repositorio
 Dicho esto, vamos a la ubicación donde queramos descargarlo y ejecutamos el siguiente comando:
 
 ```
-git clone https://github.com/TheScienceOfCodeEDU/raylib-vscode-c-cpp.git
+git clone https://github.com/TheScienceOfCodeEDU/raylib-vscode-c.git
 ```
 
 Realizado esto se puede ver el contenido del proyecto, pero antes de poder ejecutarlo y revisarlo, debe configurarse el sistema.
