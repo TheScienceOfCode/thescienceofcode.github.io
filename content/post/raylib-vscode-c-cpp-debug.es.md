@@ -134,7 +134,15 @@ Para más información, por favor [revisar aquí](https://github.com/raysan5/ray
    pacman -S --needed base-devel mingw-w64-ucrt-x86_64-toolchain
    ```
 
-2. **Instalar raylib**: [Descargar raylib aquí](https://github.com/raysan5/raylib/releases), luego extraer los contenidos del archivo en **C:\raylib**.
+2. **Instalar raylib**:[Download raylib win64_mingw-w64 5.5](https://github.com/raysan5/raylib/releases/download/5.5/raylib-5.5_win64_mingw-w64.zip), luego extraer los contenidos del archivo en **C:\raylib**. Al final de este paso deberíamos tener la siguiente estructura en nuestra máquina:
+
+   ```
+   c:\raylib\include\
+   c:\raylib\lib\
+   c:\raylib\CHANGELOG
+   c:\raylib\LICENSE
+   c:\raylib\README.md
+   ```
 
 
 3. **Configurar variables de entorno**:
@@ -144,6 +152,9 @@ Para más información, por favor [revisar aquí](https://github.com/raysan5/ray
 
      ```
      C:\msys64\ucrt64\bin
+     ```
+
+     ```
      C:\raylib\bin
      ```
    
@@ -170,6 +181,18 @@ Se recomienda desactivar la inserción automática de encabezados (header) **pre
 ```json
 "clangd.arguments": [ "--header-insertion=never" ],
 ```
+
+### Arreglar error de sintaxis para el include raylib.h (Windows)
+
+En Windows el resaltador de sintaxis de VSCode no encontrará los includes de raylib por defecto, para arreglar esto **presionamos f1**, escribimos **User Settings (JSON)** y presionamos **Enter**. Finalmente, agregamos las siguientes líneas al archivo JSON que se abre:
+
+```json
+"C_Cpp.intelliSenseEngine": "disabled",
+"clangd.fallbackFlags": [
+    "-IC:/raylib/include"
+]
+```
+
 
 ---
 

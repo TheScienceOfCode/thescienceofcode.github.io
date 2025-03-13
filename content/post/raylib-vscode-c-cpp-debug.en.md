@@ -135,7 +135,15 @@ For more information, please [check here](https://github.com/raysan5/raylib/wiki
    pacman -S --needed base-devel mingw-w64-ucrt-x86_64-toolchain
    ```
 
-2. **Install raylib**: [Download raylib](https://github.com/raysan5/raylib/releases), then extract archive contents at **C:\raylib**.
+2. **Install raylib**: [Download raylib win64_mingw-w64 5.5](https://github.com/raysan5/raylib/releases/download/5.5/raylib-5.5_win64_mingw-w64.zip), then extract the archive contents at **C:\raylib**. At the end of this step you should have the following structure on your machine:
+
+   ```
+   c:\raylib\include\
+   c:\raylib\lib\
+   c:\raylib\CHANGELOG
+   c:\raylib\LICENSE
+   c:\raylib\README.md
+   ```
 
 3. **Configure environment variables**:
 
@@ -144,7 +152,10 @@ For more information, please [check here](https://github.com/raysan5/raylib/wiki
 
      ```
      C:\msys64\ucrt64\bin
-     C:\raylib\bin
+     ```
+
+     ```
+     C:\raylib\lib
      ```
    
      Select OK to save. Re-open any program or console to use the updated PATH.
@@ -169,6 +180,17 @@ It is recommended to disable automatic header insertion by **hitting f1**, then 
 
 ```json
 "clangd.arguments": [ "--header-insertion=never" ],
+```
+
+### Fix syntax error for raylib.h include (Windows)
+
+On Windows VSCode syntax highlighter won't find raylib includes by default, to fix this just **hit f1**, type **User Settings (JSON)** and press **Enter**. Finally, add the following lines to the opened JSON file:
+
+```json
+"C_Cpp.intelliSenseEngine": "disabled",
+"clangd.fallbackFlags": [
+    "-IC:/raylib/include"
+]
 ```
 
 ---
