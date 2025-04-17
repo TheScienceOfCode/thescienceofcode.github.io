@@ -215,7 +215,7 @@ De antemano, revisemos los principales archivos y carpetas del proyecto base:
 
   > Si se planea usar otras librerías, estos archivos pueden modificarse libremente para ajustarse a cada caso en particular.
 
-Ahora, sólo abriendo la carpeta del proyecto en el IDE y presionando **ctrl + shift + b** vamos a poder compilar para **Linux**, **Windows** o **Mac**. Luego, presionando **ctrl + shift + d** podremos iniciar la depuración (debugging), revisando que hayamos seleccionado el sistema operativo correcto. Debería verse una ventana que contiene un personaje pixelart. También podríamos agregar puntos de parada en el depurador, si así lo quisiéramos.
+Ahora, sólo abriendo la carpeta del proyecto en el IDE y presionando **ctrl + shift + b** vamos a poder compilar para **Linux**, **Windows** o **Mac**. Luego, presionando **ctrl + shift + d** podremos iniciar la depuración (debugging), revisando que hayamos seleccionado el sistema operativo correcto. Debería verse una ventana que contiene un texto. También podríamos agregar puntos de parada en el depurador, si así lo quisiéramos.
 
 ![raylib tutorial vscode linux windows mac debug](/images/posts/raylib_tutorial.png)
 
