@@ -33,7 +33,7 @@ keywords:
 - windows
 autoThumbnail: true
 autoThumbnailText: <i class="fas fa-gamepad"></i>
-autoThumbnailStyle: background:linear-gradient(35deg,#ed4d4d,#ed9140);color:#fff;
+autoThumbnailStyle: background:linear-gradient(35deg,#a63333,#c7385e);color:#fff;
 coverImage: /images/posts/raylib-tutorial.png
 coverSize: min
 coverStyle: background:linear-gradient(35deg,#ed4d4d,#ed9140);color:#fff
@@ -214,7 +214,7 @@ Beforehand, let's have an overview of the base project's main files and folders:
 
   > If you are planning to use other libraries feel free to modify build files.
 
-Now, just open the project folder using the IDE and press **ctrl + shift + b** to build for **Linux**, **Windows** or **Mac**. Then press **ctrl + shift + d** to Debug, just double check that you are choosing the right OS. You should see a window containing a pixelart character. You may also add debug breakpoints as required.
+Now, just open the project folder using the IDE and press **ctrl + shift + b** to build for **Linux**, **Windows** or **Mac**. Then press **ctrl + shift + d** to Debug, just double check that you are choosing the right OS. You should see a window containing a text. You may also add debug breakpoints as required.
 
 ![raylib tutorial vscode linux windows mac debug](/images/posts/raylib_tutorial.png)
 
