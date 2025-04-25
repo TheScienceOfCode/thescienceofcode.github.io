@@ -85,12 +85,12 @@ Once this is done, you can see the project contents but before running and revie
 
 * Fedora:
   ```
-  sudo dnf install gcc-c++ cmake  git
+  sudo dnf install gcc-c++ cmake  git alsa-lib-devel mesa-libGL-devel libX11-devel libXrandr-devel libXi-devel libXcursor-devel libXinerama-devel libatomic
   ```
 
 * Ubuntu:
   ```
-  sudo apt install build-essential cmake git
+  sudo apt install build-essential cmake git libasound2-dev libx11-dev libxrandr-dev libxi-dev libgl1-mesa-dev libglu1-mesa-dev libxcursor-dev libxinerama-dev libwayland-dev libxkbcommon-dev
   ```
 
 > Other distro? [check here](https://github.com/raysan5/raylib/wiki/Working-on-GNU-Linux)
