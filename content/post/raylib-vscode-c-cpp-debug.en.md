@@ -56,7 +56,7 @@ Whether from **Linux**, **Windows** or **Mac**, at the end of this practical gui
 > * [VSCode](https://code.visualstudio.com/) or [VSCodium](https://vscodium.com/) installed.
 > * [git](https://git-scm.com/downloads) installed.
 
-At **The Science of Code** we have prepared a base project [on this repo](https://github.com/TheScienceOfCodeEDU/raylib-vscode-c-cpp) that allows us to use **raylib** with **C/C++** on **VSCode** (**VSCodium**). The project is ready to run on **Linux**, **Mac** and **Windows**.
+At **The Science of Code** we have prepared a base project [on this repo](https://github.com/TheScienceOfCodeEDU/raylib-vscode-c) that allows us to use **raylib** with **C/C++** on **VSCode** (**VSCodium**). The project is ready to run on **Linux**, **Mac** and **Windows**.
 
 That said, go to the location where you want to download it and execute the following command:
 
