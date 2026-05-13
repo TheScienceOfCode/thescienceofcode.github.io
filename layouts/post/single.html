@@ -87,25 +87,6 @@
                     script.setAttribute("label", "{{ .label }}");
                     script.setAttribute("theme", getUtterancesTheme());
                     container.appendChild(script);
-
-                    var syncUtterancesTheme = function () {
-                      var utterancesFrame = document.querySelector(".utterances-frame");
-                      if (!utterancesFrame || !utterancesFrame.contentWindow) return;
-
-                      utterancesFrame.contentWindow.postMessage(
-                        {
-                          type: "set-theme",
-                          theme: getUtterancesTheme(),
-                        },
-                        "https://utteranc.es",
-                      );
-                    };
-
-                    var observer = new MutationObserver(syncUtterancesTheme);
-                    observer.observe(document.documentElement, {
-                      attributes: true,
-                      attributeFilter: ["class"],
-                    });
                   })();
                 </script>
               </div>
