@@ -6,7 +6,7 @@ license: ccby4.0
 author: The Science of Code
 date: 2024-01-26
 categories:
-- sdl
+- Programming
 tags:
 - sdl
 - vscode
@@ -40,9 +40,10 @@ keywords:
 autoThumbnail: true
 autoThumbnailText: <i class="fas fa-gamepad"></i>
 autoThumbnailStyle: background:linear-gradient(35deg,#ed4d4d,#ed9140);color:#fff;
-coverImage: /images/posts/sdl-tutorial.png
+coverImage: /images/posts/sdl_tutorial.png
 coverSize: min
-coverStyle: background:linear-gradient(35deg,#ed4d4d,#ed9140);color:#fff
+coverStyle: background:linear-gradient(35deg,#355c7d,#6c5b7b,#c06c84);color:#fff
+cardUseImage: false
 coverMetaClass: post-meta-white
 thumbnailImagePosition: left
 ---
@@ -240,4 +241,3 @@ Now, just open the project folder using the IDE and press **ctrl + shift + b** t
 ![sdl tutorial vscode linux windows mac debug](/images/posts/sdl_tutorial.png)
 
 Congratulations! You have everything ready to start making videogames.
-

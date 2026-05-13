@@ -1,0 +1,66 @@
+<footer class="bg-light dark:bg-darkmode-light">
+  <div class="container">
+    <div class="tsoc-footer__main py-10">
+      <div class="tsoc-footer__links-wrap">
+        <ul class="tsoc-footer__menu">
+          {{ range site.Menus.footer }}
+            <li class="tsoc-footer__menu-item">
+              <a
+                class="tsoc-footer__menu-link"
+                {{ if findRE `^http` .URL }}
+                  target="_blank" rel="noopener"
+                {{ end }}
+                href="{{ if findRE `^#` .URL }}
+                  {{ if not $.IsHome }}
+                    {{ site.Home.RelPermalink }}
+                  {{ end }}{{ .URL }}
+                {{ else }}
+                  {{ .URL | relLangURL }}
+                {{ end }}"
+                >{{ .Name | upper }}</a
+              >
+            </li>
+          {{ end }}
+        </ul>
+      </div>
+      <div class="tsoc-footer__brand-block">
+        <a
+          class="navbar-brand inline-block tsoc-footer__brand-link"
+          href="{{ site.Home.RelPermalink }}">
+          {{ partial "logo" }}
+        </a>
+        <ul class="social-icons tsoc-footer__socials">
+          {{ range hugo.Data.social.main }}
+            <li>
+              <a
+                target="_blank"
+                aria-label="{{ .name }}"
+                rel="nofollow noopener"
+                href="{{ .link | safeURL }}">
+                <i class="{{ .icon }}"></i>
+              </a>
+            </li>
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="tsoc-footer-bottom border-t py-7">
+    <div class="container text-center">
+      <a
+        class="tsoc-footer__brand inline-block"
+        href="https://equilaterus.com"
+        target="_blank"
+        rel="noopener">
+        <img
+          class="tsoc-footer__logo"
+          src="{{ `images/equilaterus.png` | relURL }}"
+          alt="Equilaterus" />
+      </a>
+      <div class="tsoc-footer__copy">
+        <p>{{ site.Params.copyright | markdownify }}</p>
+        <p><span class="tsoc-cc-badge">CC</span>2013 - 2025.</p>
+      </div>
+    </div>
+  </div>
+</footer>

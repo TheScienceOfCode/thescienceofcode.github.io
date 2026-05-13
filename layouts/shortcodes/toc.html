@@ -1,0 +1,4 @@
+<div class="{{ .Get 0 }}">
+  <h2>{{ if eq site.Language.Lang "es" }}Tabla de contenido{{ else }}Table of contents{{ end }}</h2>
+  {{ .Page.TableOfContents }}
+</div>

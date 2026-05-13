@@ -6,7 +6,7 @@ license: ccby4.0
 author: The Science of Code
 date: 2025-01-26
 categories:
-- raylib
+- Programming
 tags:
 - raylib
 - vscode
@@ -34,9 +34,10 @@ keywords:
 autoThumbnail: true
 autoThumbnailText: <i class="fas fa-gamepad"></i>
 autoThumbnailStyle: background:linear-gradient(35deg,#a63333,#c7385e);color:#fff;
-coverImage: /images/posts/raylib-tutorial.png
+coverImage: /images/posts/raylib_tutorial.png
 coverSize: min
-coverStyle: background:linear-gradient(35deg,#ed4d4d,#ed9140);color:#fff
+coverStyle: background:linear-gradient(35deg,#7f00ff,#e100ff);color:#fff
+cardUseImage: false
 coverMetaClass: post-meta-white
 thumbnailImagePosition: left
 ---
@@ -219,4 +220,3 @@ Now, just open the project folder using the IDE and press **ctrl + shift + b** t
 ![raylib tutorial vscode linux windows mac debug](/images/posts/raylib_tutorial.png)
 
 Congratulations! You have everything ready to start making videogames with **raylib** and VSCode (or VSCodium).
-

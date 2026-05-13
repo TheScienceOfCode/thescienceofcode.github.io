@@ -1,9 +1,299 @@
 baseURL = "https://thescienceofcode.com/"
+title = "The Science of Code"
+theme = "hugoplate"
+timeZone = "America/Bogota"
 languageCode = "en-us"
 defaultContentLanguage = "en"
-theme = "tranquilpeak"
-defaultFooter = false
-canonifyurls = true
+defaultContentLanguageInSubdir = false
+summaryLength = 24
+hasCJKLanguage = false
+canonifyURLs = false
+
+[services]
+  [services.disqus]
+    shortname = ""
+
+[pagination]
+  pagerSize = 6
+  path = "page"
+
+[build]
+  [build.buildStats]
+    enable = true
+  [[build.cachebusters]]
+    source = "assets/notwatching/hugo_stats\\.json"
+    target = "css"
+
+[module]
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    disableWatch = true
+    source = "hugo_stats.json"
+    target = "assets/notwatching/hugo_stats.json"
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/search"
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/pwa"
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/images"
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/videos"
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/icons/font-awesome"
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/gzip-caching"
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/adsense"
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/accordion"
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/table-of-contents"
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/tab"
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/modal"
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/gallery-slider"
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/components/preloader"
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/components/social-share"
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/components/cookie-consent"
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/components/announcement"
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/components/custom-script"
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/components/render-link"
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/shortcodes/button"
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/shortcodes/notice"
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/shortcodes/mermaid"
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/seo-tools/basic-seo"
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/seo-tools/site-verifications"
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/seo-tools/google-tag-manager"
+
+[outputs]
+  home = ["HTML", "RSS", "WebAppManifest", "SearchIndex"]
+  page = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+  term = ["HTML", "RSS"]
+
+[imaging]
+  quality = 80
+  resampleFilter = "Lanczos"
+
+[caches]
+  [caches.images]
+    dir = ":resourceDir/_gen"
+    maxAge = "720h"
+  [caches.assets]
+    dir = ":resourceDir/_gen"
+    maxAge = "720h"
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+  [markup.highlight]
+    style = "monokai"
+    lineNumbersInTable = false
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 5
+    ordered = true
+
+[mediaTypes]
+  [mediaTypes."application/manifest+json"]
+    suffixes = ["webmanifest"]
+
+[outputFormats]
+  [outputFormats.WebAppManifest]
+    mediaType = "application/manifest+json"
+    rel = "manifest"
+  [outputFormats.SearchIndex]
+    mediaType = "application/json"
+    baseName = "searchindex"
+    isPlainText = true
+    notAlternative = true
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[permalinks]
+  post = "/post/:slug/"
+
+[languages]
+  [languages.en]
+    languageName = "English"
+    languageCode = "en-us"
+    weight = 1
+    title = "The Science of Code"
+  [languages.es]
+    languageName = "Español"
+    languageCode = "es-co"
+    weight = 2
+    title = "The Science of Code"
+
+[[menu.main]]
+  name = "Home"
+  url = "/"
+  weight = 1
+[[menu.main]]
+  name = "Posts"
+  url = "/post/"
+  weight = 2
+[[menu.main]]
+  name = "Categories"
+  url = "/categories/"
+  weight = 3
+[[menu.main]]
+  name = "Tags"
+  url = "/tags/"
+  weight = 4
+
+[[menu.footer]]
+  name = "Posts"
+  url = "/post/"
+  weight = 1
+[[menu.footer]]
+  name = "Categories"
+  url = "/categories/"
+  weight = 2
+[[menu.footer]]
+  name = "Tags"
+  url = "/tags/"
+  weight = 3
+
+[author]
+  name = "The Science of Code"
+
+[params]
+  favicon = "/favicon.ico"
+  logo = "images/the-science-of-code.png"
+  logo_darkmode = "images/the-science-of-code.png"
+  logo_width = "140px"
+  logo_height = "auto"
+  logo_webp = false
+  logo_text = "The Science of Code"
+  navbar_fixed = true
+  theme_switcher = true
+  theme_default = "system"
+  mainSections = ["post"]
+  google_tag_manager = ""
+  google_adsense = ""
+  custom_script = ""
+  copyright = "The Science of Code is a Free and Open Source initiative by [Equilaterus](https://equilaterus.com/).<br>Our source code is available at <a href=\"https://github.com/TheScienceOfCode\"><u>GitHub</u></a> under GPL-3.0 License."
+
+  [[params.plugins.css]]
+    link = "plugins/swiper/swiper-bundle.css"
+    lazy = true
+  [[params.plugins.css]]
+    link = "plugins/glightbox/glightbox.css"
+    lazy = true
+  [[params.plugins.css]]
+    link = "plugins/font-awesome/v6/brands.css"
+    lazy = true
+  [[params.plugins.css]]
+    link = "plugins/font-awesome/v6/solid.css"
+    lazy = true
+  [[params.plugins.css]]
+    link = "plugins/font-awesome/v6/icons.css"
+    lazy = true
+
+  [[params.plugins.js]]
+    link = "js/search.js"
+    lazy = false
+  [[params.plugins.js]]
+    link = "plugins/swiper/swiper-bundle.js"
+    lazy = false
+  [[params.plugins.js]]
+    link = "plugins/glightbox/glightbox.js"
+    lazy = true
+  [[params.plugins.js]]
+    link = "js/gallery-slider.js"
+    lazy = true
+  [[params.plugins.js]]
+    link = "plugins/cookie.js"
+    lazy = false
+  [[params.plugins.js]]
+    link = "js/accordion.js"
+    lazy = true
+  [[params.plugins.js]]
+    link = "js/tab.js"
+    lazy = true
+  [[params.plugins.js]]
+    link = "js/modal.js"
+    lazy = true
+  [[params.plugins.js]]
+    link = "plugins/youtube-lite.js"
+    lazy = true
+
+  [params.navigation_button]
+    enable = false
+    label = "GitHub"
+    link = "https://github.com/TheScienceOfCode/thescienceofcode.github.io"
+
+  [params.search]
+    enable = true
+    primary_color = "#121212"
+    include_sections = ["post"]
+    show_image = true
+    show_description = true
+    show_tags = true
+    show_categories = true
+
+  [params.announcement]
+    enable = false
+    expire_days = 7
+    content = ""
+
+  [params.metadata]
+    keywords = ["programming", "gamedev", "linux", "cpp", "unreal", "raylib"]
+    description = "Programming tutorials, Linux setup guides, and game development notes."
+    author = "The Science of Code"
+    twitter = "scienceofcode"
+    image = "/images/tsoc-thumbnail.jpg"
+
+  [params.site_verification]
+    google = ""
+    bing = ""
+    baidu = ""
+    facebook = ""
+    mastodon = ""
+
+  [params.cookies]
+    enable = false
+    expire_days = 60
+    content = "This site uses cookies."
+    button = "I Accept"
+
+  [params.mermaid]
+    js_url = "https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.esm.min.mjs"
+
+  [params.widgets]
+    sidebar = ["categories", "tags"]
+
+  [params.google_map]
+    enable = false
+    map_api_key = ""
+    map_latitude = ""
+    map_longitude = ""
+    map_marker = ""
+
+  [params.subscription]
+    enable = false
+    mailchimp_form_action = ""
+    mailchimp_form_name = ""
 
 [params.comment.utterances]
   enable = true
@@ -12,199 +302,3 @@ canonifyurls = true
   label = "discussion"
   theme = "github-light"
   crossorigin = "anonymous"
-
-[languages]
-  [languages.en]
-    title = "The Science of Code"
-    languageName = "English"
-    statsText = "We use free services to count visits but we do not store neither share your personal information."
-  [languages.es]
-    title = "The Science of Code"
-    languageName = "Español"
-    statsText = "Usamos servicios libres para contar las visitas pero no almacenamos ni compartimos información personal."
-
-[permalinks]
-  post = "post/:slug/"
-
-[taxonomies]
-  tag = "tags"
-  category = "categories"
-  archive = "archives"
-
-[params.tsoc]
-  picture = "/images/the-science-of-code.png"
-  pictureSmall = "/images/the-science-of-code-small.png"
-
-
-[author]
-  name = "The Science of Code"
-  bio = " "
-  job = ""
-  location = ""
-  # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
-  #gravatarEmail = "thibaud.lepretre@gmail.com"
-  # Your profile picture
-  # Overwritten by your gravatar image if `author.gravatarEmail` is filled
-  picture = "images/the-science-of-code.png"
-  
-  # Your Twitter username without the @. E.g : thibaudlepretre
-  # twitter = "thibaudlepretre"
-  # Your google plus profile id. E.g : +ThibaudLepretre or 114625208755123718311
-  # googlePlus = "+ThibaudLepretre"
-  github = "https://github.com/TheScienceOfCode/thescienceofcode.github.io"
-  twitter = "https://twitter.com/scienceofcode"
-  facebook = "https://www.facebook.com/TheScienceOfCode"
-  linkedin = "https://www.linkedin.com/company/thescienceofcode"
-# Menu Configuration
-
-[[menu.main]]
-  weight = 1
-  identifier = "search"
-  name = "Search"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-search\"></i>"
-  url = "/tags"
-[[menu.main]]
-  weight = 2
-  identifier = "categories"
-  name = "Categories"
-  pre = "<i class=\"sidebar-button-icon fas fa-book\"></i>"
-  url = "/categories"
-[[menu.main]]
-  weight = 5
-  identifier = "social"
-  name = "Social"
-  pre = "<i class=\"sidebar-button-icon fa fa-id-badge\"></i>"
-  url = "/#about"
-
-[params]
-  defaultThumbnail = "https://thescienceofcode.com/images/tsoc-thumbnail.jpg"
-
-  # Customize date format use to render blog post date, categories and other
-  # You must use date format used by Go Time package https://golang.org/pkg/time/
-  # Months (not work with short month like "jan", "feb", etc) are translated if translation exists on i18n folders
-  # Default format is: January 2, 2006
-  # dateFormat = "2 January 2006"
-
-  # Global keywords configuration. Following keywords will be add to every pages
-  # keywords = ["development", "next-gen"]
-
-  # Syntax highlighter, possible choice between: "highlight.js" (recommanded) and "prism.js" (experimental)
-  # You can comment it to disable syntax highlighting
-  syntaxHighlighter = "highlight.js"
-  enableHljsCopy = true
-
-  # Hide sidebar on all article page to let article take full width to improve reading, and enjoy wide images and cover images. (true: enable, false: disable)
-  clearReading = false
-
-  # Define categories will create hierarchy between parents: `categories = ["foo", "bar"]` will consider "bar" a sub-category of "foo".
-  # If false it will flat categories.
-  hierarchicalCategories = true
-
-  description = "The Science of Code"
-
-  # Customization
-  # Define the behavior of the sidebar
-  # 1: Display extra large sidebar on extra large screen, large sidebar on large screen,
-  #    medium sidebar on medium screen and header bar on small screen and
-  # extra large sidebar is swiped on extra large screen and large sidebar on all lower screen (default)
-  # 2: Display large sidebar on large screen, medium sidebar on medium screen and
-  #    header bar on small screen and large sidebar is swiped
-  # 3: Display medium sidebar on large and medium screen and header bar on small screen and
-  #    medium sidebar is swiped
-  # 4: Display header bar on all screens, extra large sidebar is swiped on extra large screen and
-  #    large sidebar is swiped on all lower screens
-  # 5: Display header bar on all screens and large sidebar is swiped on large screen
-  # 6: Display header bar on all screens and medium sidebar is swiped
-  sidebarBehavior = 1
-
-  # Your blog cover picture. I STRONGLY recommend you to use a CDN to speed up loading of pages.
-  # There is many free CDN like Cloudinary or you can also use indirectly
-  # by using services like Google Photos.
-  # Current image is on AWS S3 and delivered by AWS CloudFront.
-  # Otherwise put your image, for example `cover.jpg` in folder `static/images/`,
-  # and use relative url : `images/cover.jpg`
-  coverImage = "images/background.jpg"
-  coverBgColor = "#081f40"
-
-  # Display an image gallery at the end of a post which have photos variables (false: disabled, true: enabled)
-  imageGallery = true
-
-  # Display thumbnail image of each post on index pages (false: disabled, true: enabled)
-  thumbnailImage = true
-  # Display thumbnail image at the right of title in index pages (`right`, `left` or `bottom`)
-  # Set this value to `right` if you have old posts to keep the old style on them
-  # and define `thumbnailImagePosition` on a post to overwrite this setting
-  thumbnailImagePosition = "bottom"
-  # Automatically select the cover image or the first photo from the gallery of a post if there is no thumbnail image as the thumbnail image
-  # Set this value to `true` if you have old posts that use the cover image or the first photo as the thumbnail image
-  # and set `autoThumbnailImage` to `false` on a post to overwrite this setting
-  autoThumbnailImage = true
-
-  # Your favicon path, default is "/favicon.png"
-  favicon = "/favicon.ico"
-
-  # Header configuration
-  # The link at the right of the header is customizable
-  # You can add a link (as an icon) at the right of the header instead of the author's gravatar image or author's picture.
-  # By default, author's gravatar or author's picture is displayed.
-  #     url: /#search
-  #     icon: search
-  #     class: st-search-show-outputs
-
-  # Display `Next` on left side of the pagination, and `Prev` on right side one.
-  # If you set this value to `true`, these positions swap.
-  swapPaginator = true
-  # Added param to fix pagination
-  paginate = 4
-
-  # Custom CSS. Put here your custom CSS files. They are loaded after the theme CSS;
-  # they have to be referred from static root. Example
-  # [[params.customCSS]]
-  #   href = "css/mystyle.css"
-
-  # Custom JS. Put here your custom JS files. They are loaded after the theme JS;
-  # they have to be referred from static root. Example
-  # [[params.customJS]]
-  #   src = "js/myscript.js"
-
-  # Sharing options
-  # Comment and uncomment to enable or disable sharing options
-  # If you wanna add a sharing option, read user documentation :
-  # Tranquilpeak configuration > Theme configuration > sharing-options
-  [[params.sharingOptions]]
-    name = "Telegram"
-    icon = "fab fa-telegram"
-    url = "https://telegram.me/share/url?url=%s"
-
-  [[params.sharingOptions]]
-    name = "Twitter"
-    icon = "fab fa-twitter"
-    url = "https://twitter.com/intent/tweet?text=%s"
-
-  [[params.sharingOptions]]
-    name = "Linkedin"
-    icon = "fab fa-linkedin-in"
-    url = "https://www.linkedin.com/sharing/share-offsite/?url=%s"
-
-  [params.header.rightLink]
-    class = ""
-    iconUrl = "/images/the-science-of-code.png"
-    url = "/"
-
-  # Customize link of author avatar in sidebar
-  # [params.sidebar.profile]
-  #   url = "/#about"
-
-  [markup]
-  [markup.highlight]
-    anchorLineNos = false
-    codeFences = true
-    guessSyntax = false
-    hl_Lines = ""
-    lineAnchors = ""
-    lineNoStart = 1
-    lineNos = false
-    lineNumbersInTable = true
-    noClasses = true
-    style = "vs"
-    tabWidth = 4

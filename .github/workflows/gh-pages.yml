@@ -1,45 +1,54 @@
-name: hugo
+name: gh-pages
 
 on:
   push:
     branches:
       - master
+  workflow_dispatch:
 
 jobs:
-  hugo:
-    runs-on: ubuntu-22.04
+  deploy:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+
     steps:
-      -
-        name: Checkout
+      - name: Checkout
         uses: actions/checkout@v4
         with:
           submodules: recursive
-      -
-        name: Install node
+          fetch-depth: 0
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "0.158.0"
+          extended: true
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20.14.x'
-      - 
-        name: Build theme
+          node-version: "20"
+
+      - name: Install theme dependencies
+        working-directory: themes/hugoplate
+        run: npm install
+
+      - name: Build site
+        working-directory: themes/hugoplate
         run: |
-          cd themes
-          cd tranquilpeak
-          npm install -g grunt-cli
-          npm install
-          npm run build --if-present
-      -
-        name: Run Hugo
-        uses: crazy-max/ghaction-hugo@v3
+          node scripts/themeGenerator.js
+          cd ../..
+          hugo --gc --minify
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          version: v0.120.3
-          extended: true
-          args: --cleanDestinationDir --minify --verbose
-      -
-        name: Deploy to GitHub Pages
-        if: success() && github.event_name != 'pull_request'
-        uses: crazy-max/ghaction-github-pages@v2
-        with:
-          target_branch: gh-pages
-          build_dir: public
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages

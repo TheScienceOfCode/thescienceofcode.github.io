@@ -6,7 +6,7 @@ license: ccby4.0
 author: The Science of Code
 date: 2023-11-14
 categories:
-- unreal
+- Computer
 tags:
 - unreal
 - ue5
@@ -20,7 +20,7 @@ autoThumbnailText: <i class="fab fa-linux"></i>
 autoThumbnailStyle: background:linear-gradient(35deg,#646b94,#5597a6);color:black;
 coverImage: /images/posts/unreal-linux.png
 coverSize: min
-coverStyle: background:#2c2f4c;color:#fff
+coverStyle: background:linear-gradient(35deg,#243b55,#141e30);color:#fff
 thumbnailImagePosition: left
 ---
 

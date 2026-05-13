@@ -1,0 +1,52 @@
+{{ define "main" }}
+  <section class="section pt-14 mb-16 xl:mb-20 tsoc-home-hero">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-8 mx-auto text-center">
+          <div class="tsoc-home-hero__pretitle mb-1">
+            {{ if eq site.Language.Lang "es" }}PARA PROGRAMADORES{{ else }}FOR PROGRAMMERS{{ end }}
+          </div>
+          <div class="mb-4 tsoc-home-hero__kicker">
+            <p class="tsoc-home-hero__copy">{{ .Content }}</p>
+          </div>
+          <div class="flex flex-wrap justify-center gap-4 tsoc-home-hero__actions">
+            <a class="btn btn-primary" href="{{ `post/` | relLangURL }}">
+              {{ if eq site.Language.Lang "es" }}Ver publicaciones{{ else }}Browse posts{{ end }}
+            </a>
+            <a
+              class="btn btn-outline-primary"
+              href="https://github.com/TheScienceOfCode/thescienceofcode.github.io"
+              target="_blank"
+              rel="noopener">
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section pt-0">
+    <div class="container">
+      <div class="mb-10">
+        <h2 class="h3">
+          {{ if eq site.Language.Lang "es" }}Últimas publicaciones{{ else }}Latest posts{{ end }}
+        </h2>
+      </div>
+
+      <div class="row">
+        {{ range first 6 (where site.RegularPages "Section" "post") }}
+          <div class="md:col-6 lg:col-4 mb-14">
+            {{ partial "components/blog-card" . }}
+          </div>
+        {{ end }}
+      </div>
+
+      <div class="mt-2 flex justify-center">
+        <a class="btn btn-outline-primary btn-sm" href="{{ `post/` | relLangURL }}">
+          {{ if eq site.Language.Lang "es" }}Todas{{ else }}View all{{ end }}
+        </a>
+      </div>
+    </div>
+  </section>
+{{ end }}
