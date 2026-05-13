@@ -19,15 +19,9 @@
 {{ $sf := hugo.Data.theme.fonts.font_family.secondary }}
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<script>
-  (function () {
-    const googleFont = document.createElement("link");
-    googleFont.href = "https://fonts.googleapis.com/css2?family={{ $pf | safeURL }}&family={{ $sf | safeURL }}&family=Prompt:wght@400;500;600;700&display=swap";
-    googleFont.type = "text/css";
-    googleFont.rel = "stylesheet";
-    document.head.appendChild(googleFont);
-  })();
-</script>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family={{ $pf | safeURL }}&family={{ $sf | safeURL }}&family=Prompt:wght@400;500;600;700&display=swap" />
 
 <!-- main styles -->
 {{ $styles := slice }}
