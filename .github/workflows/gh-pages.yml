@@ -39,6 +39,9 @@ jobs:
         working-directory: themes/hugoplate
         run: npm install
 
+      - name: Link root node_modules
+        run: ln -s themes/hugoplate/node_modules node_modules
+
       - name: Build site
         run: |
           export PATH="${{ github.workspace }}/themes/hugoplate/node_modules/.bin:$PATH"
