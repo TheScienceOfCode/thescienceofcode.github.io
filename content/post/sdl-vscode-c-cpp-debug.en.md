@@ -6,7 +6,7 @@ license: ccby4.0
 author: The Science of Code
 date: 2024-01-26
 categories:
-- sdl
+- Programming
 tags:
 - sdl
 - vscode

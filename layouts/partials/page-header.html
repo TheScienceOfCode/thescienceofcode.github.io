@@ -1,0 +1,10 @@
+<section class="tsoc-page-header">
+  <div class="container text-center">
+    <div class="tsoc-page-header__inner">
+      <h1 class="tsoc-page-header__title">
+        {{ T (printf "%s" (lower .Title)) | default .Title | title }}
+      </h1>
+      {{ partial "components/breadcrumb" (dict "Context" . "Class" "mt-4 tsoc-page-header__breadcrumb") }}
+    </div>
+  </div>
+</section>

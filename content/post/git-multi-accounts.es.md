@@ -6,7 +6,8 @@ license: ccby4.0
 author: The Science of Code
 date: 2022-11-15
 categories:
-- git
+- Computer
+- Programming
 tags:
 - git
 - github

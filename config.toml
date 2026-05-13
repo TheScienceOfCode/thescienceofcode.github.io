@@ -173,10 +173,6 @@ canonifyURLs = false
   name = "Tags"
   url = "/tags/"
   weight = 3
-[[menu.footer]]
-  name = "GitHub"
-  url = "https://github.com/TheScienceOfCode/thescienceofcode.github.io"
-  weight = 4
 
 [author]
   name = "The Science of Code"

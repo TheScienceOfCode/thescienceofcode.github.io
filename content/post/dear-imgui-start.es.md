@@ -6,7 +6,7 @@ license: ccby4.0
 author: The Science of Code
 date: 2023-05-12
 categories:
-- imgui
+- Programming
 tags:
 - imgui
 - c

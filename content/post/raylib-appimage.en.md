@@ -6,7 +6,7 @@ license: ccby4.0
 author: The Science of Code
 date: 2025-04-16
 categories:
-- raylib
+- Programming
 tags:
 - raylib
 - linux

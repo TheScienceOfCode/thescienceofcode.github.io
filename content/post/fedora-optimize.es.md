@@ -6,7 +6,7 @@ license: ccby4.0
 author: The Science of Code
 date: 2024-10-22
 categories:
-- linux
+- Computer
 tags:
 - fedora
 - optimize
