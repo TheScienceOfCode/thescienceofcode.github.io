@@ -1,25 +1,38 @@
 {{ $image := .Params.image | default .Params.coverImage }}
-<article class="bg-body dark:bg-darkmode-body h-full rounded-2xl border border-transparent p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
-  {{ if $image }}
-    <a href="{{ .RelPermalink }}" class="mb-5 block overflow-hidden rounded-xl">
+{{ $cardUseImage := not (eq .Params.cardUseImage false) }}
+{{ $cardStyle := .Params.cardStyle | default .Params.coverStyle }}
+{{ $cardText := .Params.cardPreviewText | default .Params.autoThumbnailText }}
+<article class="h-full">
+  <a
+    href="{{ .RelPermalink }}"
+    class="tsoc-post-card block h-full rounded-2xl border border-transparent p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-primary">
+    {{ if and $image $cardUseImage }}
+      <span class="mb-5 block overflow-hidden rounded-xl">
       <img
         src="{{ $image | relURL }}"
         alt="{{ .Title }}"
         class="h-52 w-full object-cover"
         loading="lazy" />
-    </a>
-  {{ end }}
-  <div class="mb-3 flex flex-wrap gap-x-4 gap-y-2 text-sm text-text-light dark:text-darkmode-text-light">
-    <span>{{ time.Format ":date_long" .PublishDate }}</span>
-    {{ with .Params.categories }}
-      <span>{{ delimit . ", " }}</span>
+      </span>
+    {{ else if $cardStyle }}
+      <span class="tsoc-post-card__cover mb-5 flex h-52 overflow-hidden rounded-xl" style="{{ $cardStyle | safeCSS }}">
+        <span class="tsoc-post-card__cover-inner">
+          {{ with $cardText }}
+            <span class="tsoc-post-card__cover-icon">{{ . | safeHTML }}</span>
+          {{ end }}
+        </span>
+      </span>
     {{ end }}
-  </div>
-  <h3 class="mb-3 h5">
-    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-  </h3>
-  <p class="mb-5">{{ .Summary | plainify }}</p>
-  <a class="btn btn-outline-primary btn-sm" href="{{ .RelPermalink }}">
-    {{ T "read_more" | default "Read More" }}
+    <div class="mb-3 flex flex-wrap gap-x-4 gap-y-2 text-sm text-text-light dark:text-darkmode-text-light">
+      <span>{{ time.Format ":date_long" .PublishDate }}</span>
+      {{ with .Params.categories }}
+        <span>{{ delimit . ", " }}</span>
+      {{ end }}
+    </div>
+    <h3 class="mb-3 h5">{{ .Title }}</h3>
+    <p class="mb-5">{{ .Summary | plainify }}</p>
+    <span class="btn btn-outline-primary btn-sm">
+      {{ T "read_more" | default "Read More" }}
+    </span>
   </a>
 </article>

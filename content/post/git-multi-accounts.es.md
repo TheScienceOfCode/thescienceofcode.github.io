@@ -23,7 +23,7 @@ autoThumbnailText: <i class="fab fa-git-alt"></i>
 autoThumbnailStyle: background:linear-gradient(35deg,#b54846,#e48149);color:white;
 coverImage: https://dacanizares.github.io/legacyblog/images/github-gitlab-ssh.png
 coverSize: min
-coverStyle: background:#f9f9f9;
+coverStyle: background:linear-gradient(35deg,#f7f4ef,#e6ddd2);color:#3a3128
 thumbnailImagePosition: left
 ---
 

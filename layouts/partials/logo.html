@@ -1,0 +1,29 @@
+{{ $logoPath := site.Params.logo }}
+{{ $logoDarkPath := site.Params.logo_darkmode | default $logoPath }}
+{{ $logoText := site.Params.logo_text | default site.Title }}
+
+{{ if $logoPath }}
+  {{ if and $logoDarkPath (ne $logoDarkPath $logoPath) }}
+    <img
+      fetchpriority="high"
+      decoding="async"
+      src="{{ $logoPath | absURL }}"
+      alt="{{ $logoText }}"
+      class="img img-light" />
+    <img
+      fetchpriority="high"
+      decoding="async"
+      src="{{ $logoDarkPath | absURL }}"
+      alt="{{ $logoText }}"
+      class="img img-dark" />
+  {{ else }}
+    <img
+      fetchpriority="high"
+      decoding="async"
+      src="{{ $logoPath | absURL }}"
+      alt="{{ $logoText }}"
+      class="img" />
+  {{ end }}
+{{ else }}
+  {{ $logoText }}
+{{ end }}

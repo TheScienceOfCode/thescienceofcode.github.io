@@ -20,9 +20,10 @@ keywords:
 autoThumbnail: true
 autoThumbnailText: <i class="fab fa-linux"></i>
 autoThumbnailStyle: background:linear-gradient(35deg,#7ded4d,#edde55);color:#000;
-coverImage: /images/posts/raylib-tutorial.png
+coverImage: /images/posts/raylib_tutorial.png
 coverSize: min
-coverStyle: background:linear-gradient(35deg,#ed4d4d,#ed9140);color:#fff
+coverStyle: background:linear-gradient(35deg,#0f9b8e,#38ef7d);color:#062b26
+cardUseImage: false
 coverMetaClass: post-meta-white
 thumbnailImagePosition: left
 ---

@@ -20,7 +20,7 @@ autoThumbnailText: <i class="fas fa-user-astronaut"></i>
 autoThumbnailStyle: background:linear-gradient(35deg,#121415,#212628);color:#ffcc00;
 coverImage: /images/posts/dear-imgui-quickstart.png
 coverSize: min
-coverStyle: background:#233548;color:#fff
+coverStyle: background:linear-gradient(35deg,#0f2027,#203a43,#2c5364);color:#fff
 thumbnailImagePosition: left
 ---
 

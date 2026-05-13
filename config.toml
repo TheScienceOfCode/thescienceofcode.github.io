@@ -7,7 +7,7 @@ defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
 summaryLength = 24
 hasCJKLanguage = false
-canonifyURLs = true
+canonifyURLs = false
 
 [services]
   [services.disqus]
@@ -183,10 +183,10 @@ canonifyURLs = true
 
 [params]
   favicon = "/favicon.ico"
-  logo = ""
-  logo_darkmode = ""
-  logo_width = "160px"
-  logo_height = "32px"
+  logo = "images/the-science-of-code.png"
+  logo_darkmode = "images/the-science-of-code.png"
+  logo_width = "140px"
+  logo_height = "auto"
   logo_webp = false
   logo_text = "The Science of Code"
   navbar_fixed = true
@@ -196,7 +196,7 @@ canonifyURLs = true
   google_tag_manager = ""
   google_adsense = ""
   custom_script = ""
-  copyright = "© The Science of Code"
+  copyright = "The Science of Code is a Free and Open Source initiative by [Equilaterus](https://equilaterus.com/).<br>Our source code is available at <a href=\"https://github.com/TheScienceOfCode\"><u>GitHub</u></a> under GPL-3.0 License."
 
   [[params.plugins.css]]
     link = "plugins/swiper/swiper-bundle.css"
@@ -243,7 +243,7 @@ canonifyURLs = true
     lazy = true
 
   [params.navigation_button]
-    enable = true
+    enable = false
     label = "GitHub"
     link = "https://github.com/TheScienceOfCode/thescienceofcode.github.io"
 

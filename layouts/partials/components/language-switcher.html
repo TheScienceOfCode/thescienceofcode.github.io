@@ -1,0 +1,41 @@
+<!-- Language List -->
+{{ if hugo.IsMultilingual }}
+  {{ $class := .Class }}
+  {{ $context := .Context }}
+  {{ $pageLang := $context.Lang }}
+  {{ $pageTranslations := newScratch }}
+  {{ range site.Home.AllTranslations }}
+    {{ $pageTranslations.Set .Language.Lang .Permalink }}
+  {{ end }}
+  {{ range $context.AllTranslations }}
+    {{ $pageTranslations.Set .Language.Lang .Permalink }}
+  {{ end }}
+
+  {{ $currentLanguageName := site.Language.LanguageName }}
+
+  <details class="tsoc-language-switcher nav-dropdown relative {{ $class }}">
+    <summary class="tsoc-language-switcher__trigger">
+      <span>{{ $currentLanguageName }}</span>
+      <span class="tsoc-language-switcher__icon" aria-hidden="true">
+        <svg viewBox="0 0 20 20" fill="currentColor">
+          <path d="M5.5 7.5 10 12l4.5-4.5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </span>
+    </summary>
+
+    <ul class="tsoc-language-switcher__menu nav-dropdown-list">
+      {{ range site.Languages }}
+        {{ $link := $pageTranslations.Get .Lang }}
+        {{ if $link }}
+          <li class="nav-dropdown-item">
+            <a
+              class="tsoc-language-switcher__link nav-dropdown-link {{ if eq .Lang $pageLang }}active{{ end }}"
+              href="{{ $link }}">
+              {{ .LanguageName }}
+            </a>
+          </li>
+        {{ end }}
+      {{ end }}
+    </ul>
+  </details>
+{{ end }}

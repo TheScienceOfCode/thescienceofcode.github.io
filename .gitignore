@@ -21,6 +21,7 @@ public/
 .hugo_build.lock
 .hugo_cache/
 hugo_stats.json
+assets/css/generated-theme.css
 
 # Hugo local binaries
 hugo.exe

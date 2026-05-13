@@ -34,9 +34,10 @@ keywords:
 autoThumbnail: true
 autoThumbnailText: <i class="fas fa-gamepad"></i>
 autoThumbnailStyle: background:linear-gradient(35deg,#ed4d4d,#ed9140);color:#fff;
-coverImage: /images/posts/sdl-tutorial.png
+coverImage: /images/posts/sdl_tutorial.png
 coverSize: min
-coverStyle: background:linear-gradient(35deg,#ed4d4d,#ed9140);color:#fff
+coverStyle: background:linear-gradient(35deg,#355c7d,#6c5b7b,#c06c84);color:#fff
+cardUseImage: false
 coverMetaClass: post-meta-white
 thumbnailImagePosition: left
 ---

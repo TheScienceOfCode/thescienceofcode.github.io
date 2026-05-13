@@ -3,32 +3,40 @@
     <div class="container">
       <div class="row justify-center">
         <article class="lg:col-10">
-          {{ $image := .Params.image | default .Params.coverImage }}
-          {{ if $image }}
-            <div class="mb-10 overflow-hidden rounded-2xl">
-              <img src="{{ $image | relURL }}" alt="{{ .Title }}" class="w-full object-cover" />
-            </div>
-          {{ end }}
-
-          <h1 class="h2 mb-4">{{ .Title }}</h1>
-          <ul class="mb-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-text-light dark:text-darkmode-text-light">
-            {{ with .Params.author }}
-              <li><i class="fa-regular fa-circle-user mr-2"></i>{{ . }}</li>
-            {{ end }}
-            {{ with .Params.categories }}
-              <li>
-                <i class="fa-regular fa-folder mr-2"></i>
-                {{ range $index, $category := . }}
-                  <a href="{{ `categories/` | relLangURL }}{{ $category | urlize | lower }}/">{{ $category | humanize }}</a>{{ if ne $index (sub (len $.Params.categories) 1) }}, {{ end }}
+          {{ $coverStyle := .Params.coverStyle }}
+          <header class="tsoc-post-header{{ if $coverStyle }} tsoc-post-header--custom{{ end }} mb-10"{{ with $coverStyle }} style="{{ . | safeCSS }}"{{ end }}>
+            <div class="tsoc-post-header__inner">
+              <h1 class="tsoc-post-title">
+                {{ with .Params.titleHtml }}
+                  <span class="tsoc-post-title__styled">{{ . | safeHTML }}</span>
+                {{ else }}
+                  <span class="tsoc-post-title__plain">{{ .Title }}</span>
                 {{ end }}
-              </li>
-            {{ end }}
-            <li><i class="fa-regular fa-clock mr-2"></i>{{ time.Format ":date_long" .PublishDate }}</li>
-          </ul>
+              </h1>
+              <ul class="tsoc-post-meta">
+                {{ with .Params.author }}
+                  <li><i class="fa-regular fa-circle-user mr-2"></i>{{ . }}</li>
+                {{ end }}
+                {{ with .Params.categories }}
+                  <li>
+                    <i class="fa-regular fa-folder mr-2"></i>
+                    {{ range $index, $category := . }}
+                      <a href="{{ `categories/` | relLangURL }}{{ $category | urlize | lower }}/">{{ $category | humanize }}</a>{{ if ne $index (sub (len $.Params.categories) 1) }}, {{ end }}
+                    {{ end }}
+                  </li>
+                {{ end }}
+                <li><i class="fa-regular fa-clock mr-2"></i>{{ time.Format ":date_long" .PublishDate }}</li>
+              </ul>
+            </div>
+          </header>
 
-          <div class="content mb-10">
-            {{ partial "toc.html" (dict "Class" "blog" "Collapsed" false "TableOfContents" .TableOfContents) }}
-            {{ .Content }}
+          <div class="tsoc-post-layout mb-10">
+            <aside class="tsoc-post-layout__toc">
+              {{ partial "toc.html" (dict "Class" "blog" "Collapsed" false "TableOfContents" .TableOfContents) }}
+            </aside>
+            <div class="content tsoc-post-layout__content">
+              {{ .Content }}
+            </div>
           </div>
 
           <div class="row items-start justify-between">
@@ -58,14 +66,47 @@
           {{ with site.Params.comment.utterances }}
             {{ if .enable }}
               <div class="mt-16">
-                <script
-                  src="https://utteranc.es/client.js"
-                  repo="{{ .repo }}"
-                  issue-term="{{ .issueTerm }}"
-                  label="{{ .label }}"
-                  theme="{{ .theme }}"
-                  crossorigin="{{ .crossorigin }}"
-                  async>
+                <div id="tsoc-utterances"></div>
+                <script>
+                  (function () {
+                    var container = document.getElementById("tsoc-utterances");
+                    if (!container) return;
+
+                    var getUtterancesTheme = function () {
+                      return document.documentElement.classList.contains("dark")
+                        ? "github-dark"
+                        : "{{ .theme }}";
+                    };
+
+                    var script = document.createElement("script");
+                    script.src = "https://utteranc.es/client.js";
+                    script.async = true;
+                    script.crossOrigin = "{{ .crossorigin }}";
+                    script.setAttribute("repo", "{{ .repo }}");
+                    script.setAttribute("issue-term", "{{ .issueTerm }}");
+                    script.setAttribute("label", "{{ .label }}");
+                    script.setAttribute("theme", getUtterancesTheme());
+                    container.appendChild(script);
+
+                    var syncUtterancesTheme = function () {
+                      var utterancesFrame = document.querySelector(".utterances-frame");
+                      if (!utterancesFrame || !utterancesFrame.contentWindow) return;
+
+                      utterancesFrame.contentWindow.postMessage(
+                        {
+                          type: "set-theme",
+                          theme: getUtterancesTheme(),
+                        },
+                        "https://utteranc.es",
+                      );
+                    };
+
+                    var observer = new MutationObserver(syncUtterancesTheme);
+                    observer.observe(document.documentElement, {
+                      attributes: true,
+                      attributeFilter: ["class"],
+                    });
+                  })();
                 </script>
               </div>
             {{ end }}

@@ -33,12 +33,19 @@ Use the helper script from the repo root:
 ```
 
 That starts Hugo in draft mode (`server -D`) with the required `PATH` and `HUGO_CACHEDIR`.
+If `assets/css/generated-theme.css` is missing, the script generates it automatically before starting.
 
 If you want to pass custom Hugo arguments, they are forwarded directly:
 
 ```bash
 ./run-dev.sh --navigateToChanged
 ./run-dev.sh server --disableFastRender
+```
+
+If you need to force regeneration of the generated theme tokens:
+
+```bash
+./run-dev.sh --force-theme-css
 ```
 
 Open: `http://localhost:1313/`
