@@ -40,8 +40,9 @@ jobs:
         run: npm install
 
       - name: Build site
-        working-directory: themes/hugoplate
         run: |
+          export PATH="${{ github.workspace }}/themes/hugoplate/node_modules/.bin:$PATH"
+          cd themes/hugoplate
           node scripts/themeGenerator.js
           cd ../..
           hugo --gc --minify
