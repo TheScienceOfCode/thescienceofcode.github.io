@@ -7,6 +7,8 @@ bin-release/
 
 # Other files and folders
 .settings/
+.codex
+.codex/
 
 # Executables
 *.swf
@@ -17,7 +19,15 @@ bin-release/
 # Hugo
 public/
 .hugo_build.lock
+.hugo_cache/
+hugo_stats.json
 
 # Hugo local binaries
 hugo.exe
 hugo
+.tools/
+node_modules
+node_modules/
+themes/hugoplate/node_modules/
+themes/hugoplate/hugo_stats.json
+themes/hugoplate/exampleSite/hugo_stats.json

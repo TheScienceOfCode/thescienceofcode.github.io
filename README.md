@@ -4,6 +4,61 @@ A Free and Open Source community.
 
 Published at: https://thescienceofcode.com/
 
+## Current setup
+
+The site now runs on `hugoplate` with local overrides under `layouts/` to keep the current `content/post` structure and existing article front matter.
+
+### Local prerequisites
+
+1. Install `go`.
+2. Install the theme dependencies:
+
+   ```bash
+   cd themes/hugoplate
+   npm install
+   ```
+
+3. Download Hugo `0.158.0` extended into:
+
+   ```text
+   .tools/hugo-0.158.0/hugo
+   ```
+
+### Run locally
+
+Use the helper script from the repo root:
+
+```bash
+./run-dev.sh
+```
+
+That starts Hugo in draft mode (`server -D`) with the required `PATH` and `HUGO_CACHEDIR`.
+
+If you want to pass custom Hugo arguments, they are forwarded directly:
+
+```bash
+./run-dev.sh --navigateToChanged
+./run-dev.sh server --disableFastRender
+```
+
+Open: `http://localhost:1313/`
+
+### Build once
+
+```bash
+PATH="$PWD/themes/hugoplate/node_modules/.bin:$PATH" \
+HUGO_CACHEDIR="$PWD/.hugo_cache" \
+./.tools/hugo-0.158.0/hugo
+```
+
+## Legacy tranquilpeak
+
+# The Science of Code
+
+A Free and Open Source community.
+
+Published at: https://thescienceofcode.com/
+
 ## Quick start
 
 1. Pre-requisites:

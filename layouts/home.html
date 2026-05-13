@@ -1,0 +1,47 @@
+{{ define "main" }}
+  <section class="section pt-14">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-8 text-center">
+          <h1 class="mb-4 text-h2 lg:text-h1">{{ .Title }}</h1>
+          <p class="mb-8 text-lg">{{ .Content }}</p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a class="btn btn-primary" href="{{ `post/` | relLangURL }}">
+              {{ if eq site.Language.Lang "es" }}Ver publicaciones{{ else }}Browse posts{{ end }}
+            </a>
+            <a
+              class="btn btn-outline-primary"
+              href="https://github.com/TheScienceOfCode/thescienceofcode.github.io"
+              target="_blank"
+              rel="noopener">
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section pt-0">
+    <div class="container">
+      <div class="mb-10 flex items-center justify-between gap-4">
+        <div>
+          <h2 class="h3">
+            {{ if eq site.Language.Lang "es" }}Últimas publicaciones{{ else }}Latest posts{{ end }}
+          </h2>
+        </div>
+        <a class="btn btn-outline-primary btn-sm" href="{{ `post/` | relLangURL }}">
+          {{ if eq site.Language.Lang "es" }}Todas{{ else }}View all{{ end }}
+        </a>
+      </div>
+
+      <div class="row">
+        {{ range first 6 (where site.RegularPages "Section" "post") }}
+          <div class="md:col-6 lg:col-4 mb-14">
+            {{ partial "components/blog-card" . }}
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+{{ end }}

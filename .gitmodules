@@ -2,3 +2,6 @@
 	path = themes/tranquilpeak
 	url = https://github.com/TheScienceOfCode/hugo-tranquilpeak-theme
 	branch = tsoc
+[submodule "themes/hugoplate"]
+	path = themes/hugoplate
+	url = https://github.com/zeon-studio/hugoplate
