@@ -114,14 +114,16 @@ h6,
   letter-spacing: 0.08em;
   line-height: 1.05;
   text-transform: uppercase;
-  margin-bottom: 0.05rem;
+  margin-bottom: 0.45rem;
 }
 
 .tsoc-home-hero__kicker {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 0.75rem;
   max-width: 40rem;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
   padding: 0.5rem 0.9rem;
   border: 1px solid rgba(173, 226, 255, 0.26);
   border-radius: 9999px;

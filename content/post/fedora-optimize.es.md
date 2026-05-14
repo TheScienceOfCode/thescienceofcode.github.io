@@ -131,7 +131,7 @@ Comenzaremos por desactivar algunas cosas que no son requeridas para usuarios de
 
 * **En KDE**: Desactivar los recordatorios de calendario:
 
-  ![Desactivar kde calendar reminder](https://redhat.discourse-cdn.com/fedoraproject/original/3X/c/c/cc24d98be4fcbb2b4c9a21a72de392c123bd71a3.png)
+  ![Desactivar kde calendar reminder](/images/posts/fedora-calendar-reminder.png)
 
   ```
   cp /etc/xdg/autostart/org.kde.kalendarac.desktop ~/.config/autostart
