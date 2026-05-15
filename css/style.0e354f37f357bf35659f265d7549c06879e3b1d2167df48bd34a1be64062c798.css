@@ -44,22 +44,22 @@
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
     --color-primary: #121212;
-    --color-body: #fff;
+    --color-body: #ffffff;
     --color-border: #eaeaea;
     --color-light: #f6f6f6;
     --color-dark: #040404;
     --color-text: #444444;
     --color-text-dark: #040404;
     --color-text-light: #717171;
-    --color-darkmode-primary: #fff;
+    --color-darkmode-primary: #ffffff;
     --color-darkmode-body: #1c1c1c;
-    --color-darkmode-border: #3E3E3E;
+    --color-darkmode-border: #3e3e3e;
     --color-darkmode-light: #222222;
-    --color-darkmode-text: #B4AFB6;
-    --color-darkmode-text-dark: #fff;
-    --color-darkmode-text-light: #B4AFB6;
-    --font-primary: Heebo, sans-serif;
-    --font-secondary: Signika, sans-serif;
+    --color-darkmode-text: #b4afb6;
+    --color-darkmode-text-dark: #ffffff;
+    --color-darkmode-text-light: #b4afb6;
+    --font-primary: Space Grotesk, sans-serif;
+    --font-secondary: Share Tech, sans-serif;
     --text-base-sm: 12.8px;
     --text-h6: 1.2rem;
     --text-h5: 1.44rem;
@@ -3672,6 +3672,135 @@ input#nav-toggle:checked ~ #nav-menu {
 .gallery-slider {
   margin-left: calc(var(--spacing) * 0) !important;
 }
+.highlight {
+  margin: 1.5rem 0;
+  border: 3px solid #8f7f67;
+  border-radius: 0.85rem;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 2px #2a232b, inset 0 0 0 4px #bfa98a, 0 0 0 1px rgba(18, 14, 20, 0.55);
+  position: relative;
+}
+.highlight pre, .highlight .chroma {
+  margin: 0;
+  overflow-x: hidden;
+  border-radius: inherit;
+  background-color: #201b22;
+  color: #cdbca8;
+  font-family: "VT323", "JetBrains Mono", "Fira Code", monospace !important;
+  font-size: 1.45rem;
+  line-height: 1.38;
+  letter-spacing: 0.01em;
+}
+.highlight, .highlight pre, .highlight .chroma, .highlight code, .highlight pre code, .highlight .chroma code, .highlight .chroma span {
+  font-family: "VT323", "JetBrains Mono", "Fira Code", monospace !important;
+}
+.content .highlight code, .dark .content .highlight code {
+  color: unset !important;
+}
+.highlight pre {
+  padding: 1rem 1.15rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+.content pre:not([class]) {
+  position: relative;
+}
+.tsoc-code-copy {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.65rem;
+  z-index: 2;
+  min-width: 4.5rem;
+  padding: 0.15rem 0.55rem;
+  border: 1px solid rgba(216, 176, 125, 0.3);
+  border-radius: 9999px;
+  background: rgba(44, 38, 48, 0.92);
+  color: #d8b07d;
+  font-family: var(--font-secondary);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.2s ease-out, border-color 0.2s ease-out, color 0.2s ease-out;
+}
+.tsoc-code-copy:hover {
+  border-color: rgba(216, 176, 125, 0.5);
+  background: rgba(56, 47, 61, 0.96);
+  color: #f0d3ad;
+}
+.bg, .chroma {
+  background-color: #201b22;
+  color: #cdbca8;
+}
+.chroma .err {
+  color: #f6e3d2;
+  background-color: #4a272b;
+}
+.chroma .lnlinks {
+  outline: none;
+  text-decoration: none;
+  color: inherit;
+}
+.chroma .lntd {
+  vertical-align: top;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+.chroma .lntable {
+  border-spacing: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+.chroma .hl {
+  background-color: #2c2630;
+}
+.chroma .lnt, .chroma .ln {
+  white-space: pre;
+  user-select: none;
+  margin-right: 0.4em;
+  padding: 0 0.4em;
+  color: #6b6270;
+}
+.chroma .line {
+  display: flex;
+}
+.chroma .line, .chroma code {
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+.chroma .k, .chroma .kc, .chroma .kd, .chroma .kn, .chroma .kp, .chroma .kr, .chroma .cp, .chroma .cpf {
+  color: #de8250;
+}
+.chroma .kt, .chroma .nc, .chroma .nn, .chroma .no, .chroma .nd, .chroma .ni, .chroma .ne, .chroma .nl, .chroma .nf, .chroma .fm {
+  color: #68a7e0;
+}
+.chroma .na, .chroma .nx, .chroma .nb, .chroma .bp, .chroma .p, .chroma .nt {
+  color: #cdbca8;
+}
+.chroma .nv, .chroma .vc, .chroma .vg, .chroma .vi, .chroma .vm {
+  color: #68a7e0;
+}
+.chroma .s, .chroma .sa, .chroma .sb, .chroma .sc, .chroma .dl, .chroma .sd, .chroma .s2, .chroma .se, .chroma .sh, .chroma .si, .chroma .sx, .chroma .s1, .chroma .ss, .chroma .dl, .chroma .se {
+  color: #d8b07d;
+}
+.chroma .sr {
+  color: #56c1d6;
+}
+.chroma .m, .chroma .mb, .chroma .mf, .chroma .mh, .chroma .mi, .chroma .il, .chroma .mo {
+  color: #d7f0b4;
+}
+.chroma .o, .chroma .ow {
+  color: #b56b54;
+}
+.chroma .c, .chroma .ch, .chroma .cm, .chroma .c1, .chroma .cs {
+  color: #8a7f88;
+  font-style: italic;
+}
 :root {
   --tsoc-navbar-bg: color-mix(in srgb, #1c1c1c 80%, black);
   @supports (color: color-mix(in lab, red, red)) {
@@ -3679,7 +3808,7 @@ input#nav-toggle:checked ~ #nav-menu {
   }
   --tsoc-navbar-height: 54px;
   --tsoc-anchor-offset: 100px;
-  --tsoc-card-bg: color-mix(in srgb, #fff 95%, black);
+  --tsoc-card-bg: color-mix(in srgb, #ffffff 95%, black);
   @supports (color: color-mix(in lab, red, red)) {
     --tsoc-card-bg: color-mix(in srgb, var(--color-body) 95%, black);
   }
@@ -3687,14 +3816,18 @@ input#nav-toggle:checked ~ #nav-menu {
   @supports (color: color-mix(in lab, red, red)) {
     --tsoc-card-bg-dark: color-mix(in srgb, var(--color-darkmode-body) 95%, white);
   }
-  --font-primary: "Roboto", sans-serif;
-  --font-secondary: "Roboto Condensed", sans-serif;
+  --font-primary: "Space Grotesk", sans-serif;
+  --font-secondary: "Share Tech", sans-serif;
 }
 body {
   font-family: var(--font-primary);
 }
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: var(--font-secondary);
+}
+.btn, button, input[type="button"], input[type="submit"], input[type="reset"] {
+  font-family: var(--font-secondary) !important;
+  text-transform: uppercase;
 }
 .tsoc-home-hero {
   position: relative;
@@ -3748,23 +3881,26 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .tsoc-home-hero__pretitle {
   display: block;
   color: rgba(224, 244, 255, 0.96);
-  font-family: "Prompt", sans-serif;
+  font-family: var(--font-secondary);
   font-size: clamp(1.05rem, 1.9vw, 1.7rem);
   font-weight: 800;
   letter-spacing: 0.08em;
   line-height: 1.05;
   text-transform: uppercase;
-  margin-bottom: 0.05rem;
+  margin-bottom: 0.45rem;
 }
 .tsoc-home-hero__kicker {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 0.75rem;
   max-width: 40rem;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
   padding: 0.5rem 0.9rem;
   border: 1px solid rgba(173, 226, 255, 0.26);
   border-radius: 9999px;
   background: rgba(7, 16, 29, 0.28);
+  color: #fff !important;
   backdrop-filter: blur(10px);
 }
 .tsoc-home-hero__kicker::before, .tsoc-home-hero__kicker::after {
@@ -3778,8 +3914,8 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 .tsoc-home-hero__copy {
   margin: 0;
-  color: rgba(224, 244, 255, 0.94);
-  font-family: "Roboto Condensed", sans-serif;
+  color: #fff !important;
+  font-family: var(--font-secondary);
   font-size: 0.9rem;
   font-weight: 700;
   line-height: 1.25;
@@ -3835,7 +3971,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   z-index: 1;
   margin: 0;
   color: #f2f2f2;
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: var(--font-secondary);
   font-size: clamp(1.65rem, 3vw, 2.6rem);
   font-weight: 800;
   letter-spacing: 0.05em;
@@ -3847,7 +3983,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 .tsoc-page-header__breadcrumb, .tsoc-page-header__breadcrumb a, .tsoc-page-header__breadcrumb span {
   color: rgba(232, 232, 232, 0.82) !important;
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: var(--font-primary);
   letter-spacing: 0.04em;
 }
 .tsoc-home-hero .btn-primary {
@@ -3876,10 +4012,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .dark .tsoc-home-hero__kicker {
   border-color: rgba(255, 255, 255, 0.16);
   background: rgba(7, 16, 29, 0.28);
-  color: rgba(224, 244, 255, 0.84);
+  color: #fff !important;
 }
 .dark .tsoc-home-hero__copy {
-  color: rgba(224, 244, 255, 0.92);
+  color: #fff !important;
 }
 .dark .tsoc-home-hero .btn-outline-primary {
   border-color: rgba(125, 227, 255, 0.45);
@@ -3916,6 +4052,9 @@ footer, footer .border-t {
 footer, footer a, footer p, footer .social-icons a {
   color: var(--color-darkmode-text-dark) !important;
 }
+footer {
+  font-family: var(--font-secondary) !important;
+}
 footer .border-t {
   border-color: rgba(255, 255, 255, 0.08) !important;
 }
@@ -3934,6 +4073,7 @@ footer .social-icons li a:hover {
 .tsoc-footer__main {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 2rem;
 }
 @media (min-width: 1024px) {
@@ -3945,12 +4085,12 @@ footer .social-icons li a:hover {
 }
 .tsoc-footer__links-wrap {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
 }
 .tsoc-footer__menu {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 0.9rem;
   margin: 0;
   padding: 0;
@@ -3961,7 +4101,6 @@ footer .social-icons li a:hover {
 }
 .tsoc-footer__menu-link {
   color: var(--color-darkmode-text-dark) !important;
-  font-family: "Prompt", sans-serif !important;
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.12em;
@@ -3973,24 +4112,43 @@ footer .social-icons li a:hover {
 .tsoc-footer__brand-block {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 1rem;
 }
 .tsoc-footer__brand-link {
   display: inline-flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
+}
+@media (max-width: 1023px) {
+  .tsoc-footer__brand-link {
+    display: none;
+  }
 }
 .tsoc-footer__socials {
-  justify-content: flex-start;
+  justify-content: center;
   margin: 0;
+}
+@media (min-width: 1024px) {
+  .tsoc-footer__links-wrap {
+    justify-content: flex-start;
+  }
+  .tsoc-footer__menu {
+    align-items: flex-start;
+  }
+  .tsoc-footer__brand-block {
+    align-items: flex-start;
+  }
+  .tsoc-footer__brand-link {
+    justify-content: flex-start;
+  }
+  .tsoc-footer__socials {
+    justify-content: flex-start;
+  }
 }
 .tsoc-footer-bottom {
   margin-top: 0.5rem;
   text-align: center;
-}
-.tsoc-footer-bottom, .tsoc-footer-bottom a, .tsoc-footer-bottom p, .tsoc-footer-bottom i {
-  font-family: "Roboto Condensed", sans-serif !important;
 }
 .tsoc-footer__brand {
   margin-bottom: 1rem;
@@ -4005,7 +4163,6 @@ footer .social-icons li a:hover {
   margin: 0 auto;
   font-size: 1rem;
   line-height: 1.7;
-  font-family: "Prompt", sans-serif;
 }
 .tsoc-footer__copy p {
   margin: 0;
@@ -4049,7 +4206,7 @@ footer .social-icons li a:hover {
   color: var(--color-darkmode-text-dark) !important;
 }
 .header .navbar-brand, .header .nav-link, .header .nav-dropdown-link, .header .btn, .header button, .header label {
-  font-family: "Prompt", sans-serif !important;
+  font-family: var(--font-secondary) !important;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -4128,7 +4285,7 @@ footer .social-icons li a:hover {
   border-radius: 0.375rem;
   background-color: rgba(255, 255, 255, 0.04);
   color: var(--color-darkmode-text-dark);
-  font-family: "Prompt", sans-serif;
+  font-family: var(--font-secondary);
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -4192,7 +4349,7 @@ footer .social-icons li a:hover {
   justify-content: center;
   width: 100%;
   border-radius: 0;
-  font-family: "Prompt", sans-serif !important;
+  font-family: var(--font-secondary) !important;
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -4217,17 +4374,17 @@ footer .social-icons li a:hover {
   background-color: var(--tsoc-card-bg-dark) !important;
 }
 .tsoc-post-card > div.mb-3.flex {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: var(--font-primary);
   font-size: 0.9rem;
   line-height: 1.2;
   letter-spacing: 0.01em;
 }
 .tsoc-post-card > h3 {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: var(--font-secondary);
   line-height: 1.08;
 }
 .tsoc-post-card > p {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: var(--font-primary);
   font-size: 1rem;
   line-height: 1.45;
 }
@@ -4251,7 +4408,7 @@ footer .social-icons li a:hover {
   }
   border-radius: 0.75rem;
   overflow: hidden;
-  background: color-mix(in srgb, #fff 96%, black);
+  background: color-mix(in srgb, #ffffff 96%, black);
   @supports (color: color-mix(in lab, red, red)) {
     background: color-mix(in srgb, var(--color-body) 96%, black);
   }
@@ -4268,7 +4425,7 @@ footer .social-icons li a:hover {
   padding: 0.8rem 1rem;
   background: transparent;
   color: var(--color-text-dark);
-  font-family: "Prompt", sans-serif;
+  font-family: var(--font-secondary);
   font-size: 0.84rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -4288,6 +4445,7 @@ footer .social-icons li a:hover {
 }
 .tsoc-post-layout .table-of-content #TableOfContents li, .tsoc-post-layout .table-of-content #TableOfContents a {
   color: var(--color-text) !important;
+  font-family: var(--font-primary);
   font-size: 0.92rem;
   line-height: 1.55;
 }
@@ -4321,38 +4479,45 @@ footer .social-icons li a:hover {
   }
 }
 .content pre:not([class]) {
-  overflow-x: auto;
+  overflow-x: hidden;
   padding: 1rem 1.15rem;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 0.75rem;
-  background: color-mix(in srgb, #1c1c1c 84%, black) !important;
-  @supports (color: color-mix(in lab, red, red)) {
-    background: color-mix(in srgb, var(--color-darkmode-body) 84%, black) !important;
-  }
-  color: var(--color-darkmode-text-dark) !important;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  border: 3px solid #8f7f67;
+  border-radius: 0.85rem;
+  background: #201b22 !important;
+  color: #cdbca8 !important;
+  box-shadow: inset 0 0 0 2px #2a232b, inset 0 0 0 4px #bfa98a, 0 0 0 1px rgba(18, 14, 20, 0.55);
 }
 .content {
-  font-family: "Roboto", sans-serif;
+  font-family: var(--font-primary);
+  font-size: 1.12rem;
+  line-height: 1.72;
 }
 .content :is(h1, h2, h3, h4, h5, h6) {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: var(--font-secondary);
+  line-height: 0.94;
+  letter-spacing: -0.015em;
 }
 .content p, .content li, .content td, .content th {
-  font-family: "Roboto", sans-serif;
+  font-family: var(--font-primary);
+  font-size: 1.12rem;
+  line-height: 1.72;
 }
 .content :is(h1, h2, h3, h4, h5, h6)[id] {
   scroll-margin-top: var(--tsoc-anchor-offset);
 }
 .content pre:not([class]) > code {
   display: block;
-  font-family: "JetBrains Mono", "Fira Code", monospace;
-  font-size: 0.95rem;
-  line-height: 1.65;
+  font-family: "VT323", "JetBrains Mono", "Fira Code", monospace !important;
+  font-size: 1.45rem;
+  line-height: 1.38;
+  letter-spacing: 0.01em;
   color: inherit !important;
   white-space: pre-wrap;
   word-break: break-word;
   overflow-wrap: anywhere;
+}
+.content pre:not([class]), .content pre:not([class]) code, .content pre:not([class]) * {
+  font-family: "VT323", "JetBrains Mono", "Fira Code", monospace !important;
 }
 .content blockquote {
   margin: 1.5rem 0;
@@ -4363,7 +4528,7 @@ footer .social-icons li a:hover {
   }
   border-left: 4px solid var(--color-primary);
   border-radius: 0.75rem;
-  background: color-mix(in srgb, #fff 96%, black) !important;
+  background: color-mix(in srgb, #ffffff 96%, black) !important;
   @supports (color: color-mix(in lab, red, red)) {
     background: color-mix(in srgb, var(--color-body) 96%, black) !important;
   }
@@ -4400,7 +4565,7 @@ footer .social-icons li a:hover {
     border: 1px solid color-mix(in srgb, var(--color-border) 70%, transparent);
   }
   border-radius: 1rem;
-  background: radial-gradient(circle at top right, color-mix(in srgb, #121212 18%, transparent), transparent 38%), linear-gradient(135deg, color-mix(in srgb, #fff 96%, black), color-mix(in srgb, #fff 88%, #121212 12%));
+  background: radial-gradient(circle at top right, color-mix(in srgb, #121212 18%, transparent), transparent 38%), linear-gradient(135deg, color-mix(in srgb, #ffffff 96%, black), color-mix(in srgb, #ffffff 88%, #121212 12%));
   @supports (color: color-mix(in lab, red, red)) {
     background: radial-gradient(circle at top right, color-mix(in srgb, var(--color-primary) 18%, transparent), transparent 38%), linear-gradient(135deg, color-mix(in srgb, var(--color-body) 96%, black), color-mix(in srgb, var(--color-body) 88%, var(--color-primary) 12%));
   }
@@ -4408,7 +4573,7 @@ footer .social-icons li a:hover {
 }
 .dark .tsoc-post-header {
   border-color: rgba(255, 255, 255, 0.1);
-  background: radial-gradient(circle at top right, color-mix(in srgb, #fff 18%, transparent), transparent 42%), linear-gradient(135deg, color-mix(in srgb, #1c1c1c 94%, white), color-mix(in srgb, #1c1c1c 84%, #fff 16%));
+  background: radial-gradient(circle at top right, color-mix(in srgb, #ffffff 18%, transparent), transparent 42%), linear-gradient(135deg, color-mix(in srgb, #1c1c1c 94%, white), color-mix(in srgb, #1c1c1c 84%, #ffffff 16%));
   @supports (color: color-mix(in lab, red, red)) {
     background: radial-gradient(circle at top right, color-mix(in srgb, var(--color-darkmode-primary) 18%, transparent), transparent 42%), linear-gradient(135deg, color-mix(in srgb, var(--color-darkmode-body) 94%, white), color-mix(in srgb, var(--color-darkmode-body) 84%, var(--color-darkmode-primary) 16%));
   }
@@ -4427,8 +4592,8 @@ footer .social-icons li a:hover {
 }
 .tsoc-post-title__styled {
   display: inline-block;
-  font-family: "Roboto Condensed", sans-serif;
-  line-height: 1.02;
+  font-family: var(--font-secondary);
+  line-height: 0.94;
 }
 .tsoc-post-title__styled small {
   display: block;
@@ -4437,7 +4602,7 @@ footer .social-icons li a:hover {
   @supports (color: color-mix(in lab, red, red)) {
     color: color-mix(in srgb, currentColor 72%, transparent);
   }
-  font-family: "Prompt", sans-serif;
+  font-family: var(--font-secondary);
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -4451,11 +4616,11 @@ footer .social-icons li a:hover {
 }
 .tsoc-post-title__plain {
   display: block;
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: var(--font-secondary);
   font-size: clamp(2.2rem, 5vw, 4rem);
   font-weight: 700;
   letter-spacing: -0.03em;
-  line-height: 1.02;
+  line-height: 0.94;
 }
 .tsoc-post-meta {
   display: flex;
@@ -4468,7 +4633,7 @@ footer .social-icons li a:hover {
   @supports (color: color-mix(in lab, red, red)) {
     color: color-mix(in srgb, currentColor 76%, transparent);
   }
-  font-family: "Prompt", sans-serif;
+  font-family: var(--font-secondary);
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -4484,6 +4649,7 @@ footer .social-icons li a:hover {
   @supports (color: color-mix(in lab, red, red)) {
     color: color-mix(in srgb, currentColor 90%, transparent);
   }
+  font-family: var(--font-primary);
   font-size: 1rem;
   line-height: 1.75;
 }
