@@ -139,13 +139,13 @@ We will start disabling some stuff that is not required for a desktop use case:
 
   Open the file *~/.config/autostart* and modify it, replacing this line:
 
-  ```python
+  ```
   X-KDE-autostart-condition=kalendaracrc:General:Autostart:true
   ```
 
   With the following line:
 
-  ```python
+  ```
   X-KDE-autostart-condition=kalendaracrc:General:Autostart:false
   ```
 

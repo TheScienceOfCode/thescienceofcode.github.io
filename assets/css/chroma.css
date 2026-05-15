@@ -55,13 +55,12 @@
 
 .tsoc-code-copy {
   position: absolute;
-  top: 0.65rem;
-  right: 0.65rem;
+  top: 0.35rem;
+  right: 0.35rem;
   z-index: 2;
-  min-width: 4.5rem;
-  padding: 0.15rem 0.55rem;
+  padding: 0.12rem 0.4rem;
   border: 1px solid rgba(216, 176, 125, 0.3);
-  border-radius: 9999px;
+  border-radius: 0.35rem;
   background: rgba(44, 38, 48, 0.92);
   color: #d8b07d;
   font-family: var(--font-secondary);
