@@ -1,7 +1,7 @@
 ---
-title: "Optimizando Fedora Linux: Arraque y Juegos"
+title: "Fedora Arranque y Juegos"
 url: "fedora-linux-optimize"
-titleHtml: "<small>Cómo optimizar</small><br><b>Fedora Linux Arraque y Juegos</b>"
+titleHtml: "<small>Cómo optimizar</small><br><b>Fedora Arranque y Juegos</b>"
 license: ccby4.0
 author: The Science of Code
 date: 2024-10-22

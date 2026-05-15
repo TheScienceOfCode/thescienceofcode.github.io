@@ -104,7 +104,8 @@ canonifyURLs = false
   [markup.goldmark.renderer]
     unsafe = true
   [markup.highlight]
-    style = "monokai"
+    style = "github"
+    noClasses = false
     lineNumbersInTable = false
   [markup.tableOfContents]
     startLevel = 2
@@ -212,6 +213,9 @@ canonifyURLs = false
 
   [[params.plugins.js]]
     link = "js/search.js"
+    lazy = false
+  [[params.plugins.js]]
+    link = "js/copy-code.js"
     lazy = false
   [[params.plugins.js]]
     link = "plugins/swiper/swiper-bundle.js"

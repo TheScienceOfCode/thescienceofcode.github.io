@@ -1,7 +1,7 @@
 ---
-title: "Optimizing Fedora Linux: Startup and Games"
+title: "Fedora Startup and Games"
 url: "fedora-linux-optimize"
-titleHtml: "<small>How to optimize</small><br><b>Fedora Linux Startup and Games</b>"
+titleHtml: "<small>How to optimize</small><br><b>Fedora Startup and Games</b>"
 license: ccby4.0
 author: The Science of Code
 date: 2024-10-22

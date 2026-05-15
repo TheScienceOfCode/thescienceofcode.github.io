@@ -1,7 +1,7 @@
 ---
-title: "AppImage for raylib projects"
+title: "raylib AppImage"
 url: "raylib-appimage"
-titleHtml: "<small>Creating a linux</small><br><b>AppImage for raylib projects</b>"
+titleHtml: "<small>Creating on Linux</small><br><b>raylib AppImage</b>"
 license: ccby4.0
 author: The Science of Code
 date: 2025-04-16
