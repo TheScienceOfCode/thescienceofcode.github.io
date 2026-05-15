@@ -779,6 +779,25 @@ footer .social-icons li a:hover {
   line-height: 1.45;
 }
 
+.tsoc-post-card__cta {
+  display: block;
+}
+
+.tsoc-post-card:hover .tsoc-post-card__cta,
+.tsoc-post-card:focus-visible .tsoc-post-card__cta {
+  background-color: var(--color-dark);
+  border-color: var(--color-dark);
+  box-shadow: 0 0 36px 0 color-mix(in srgb, var(--tsoc-btn-glow-color) 38%, transparent);
+  color: white;
+}
+
+.dark .tsoc-post-card:hover .tsoc-post-card__cta,
+.dark .tsoc-post-card:focus-visible .tsoc-post-card__cta {
+  background-color: var(--color-darkmode-primary);
+  border-color: var(--color-darkmode-primary);
+  color: var(--color-text-dark);
+}
+
 .tsoc-post-layout {
   display: flex;
   flex-direction: column;

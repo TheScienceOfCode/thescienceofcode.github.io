@@ -1,0 +1,11 @@
+[menu_home]
+other = "Home"
+
+[menu_posts]
+other = "Posts"
+
+[menu_categories]
+other = "Categories"
+
+[menu_tags]
+other = "Tags"

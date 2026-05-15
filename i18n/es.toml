@@ -1,0 +1,11 @@
+[menu_home]
+other = "Inicio"
+
+[menu_posts]
+other = "Publicaciones"
+
+[menu_categories]
+other = "Categorias"
+
+[menu_tags]
+other = "Etiquetas"

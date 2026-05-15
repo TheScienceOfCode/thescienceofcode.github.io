@@ -5,7 +5,7 @@
 <article class="h-full">
   <a
     href="{{ .RelPermalink }}"
-    class="tsoc-post-card block h-full rounded-2xl border border-transparent p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-primary">
+    class="tsoc-post-card flex h-full flex-col rounded-2xl border border-transparent p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-primary">
     {{ if and $image $cardUseImage }}
       <span class="mb-5 block overflow-hidden rounded-xl">
       <img
@@ -31,7 +31,7 @@
     </div>
     <h3 class="mb-3 h5">{{ .Title }}</h3>
     <p class="mb-5">{{ .Summary | plainify }}</p>
-    <span class="btn btn-outline-primary btn-sm">
+    <span class="tsoc-post-card__cta btn btn-outline-primary btn-sm mt-auto w-full text-center">
       {{ T "read_more" | default "Read More" }}
     </span>
   </a>

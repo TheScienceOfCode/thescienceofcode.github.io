@@ -147,31 +147,38 @@ canonifyURLs = false
 
 [[menu.main]]
   name = "Home"
+  identifier = "menu_home"
   url = "/"
   weight = 1
 [[menu.main]]
   name = "Posts"
+  identifier = "menu_posts"
   url = "/post/"
   weight = 2
 [[menu.main]]
   name = "Categories"
+  identifier = "menu_categories"
   url = "/categories/"
   weight = 3
 [[menu.main]]
   name = "Tags"
+  identifier = "menu_tags"
   url = "/tags/"
   weight = 4
 
 [[menu.footer]]
   name = "Posts"
+  identifier = "menu_posts"
   url = "/post/"
   weight = 1
 [[menu.footer]]
   name = "Categories"
+  identifier = "menu_categories"
   url = "/categories/"
   weight = 2
 [[menu.footer]]
   name = "Tags"
+  identifier = "menu_tags"
   url = "/tags/"
   weight = 3
 

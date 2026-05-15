@@ -36,6 +36,10 @@
         {{ $menuURL := .URL | absLangURL }}
         {{ $pageURL:= $currentPage.Permalink | absLangURL }}
         {{ $active := eq $menuURL $pageURL }}
+        {{ $menuLabel := .Name }}
+        {{ with .Identifier }}
+          {{ $menuLabel = T . | default $menuLabel }}
+        {{ end }}
         {{ if .HasChildren }}
           <li class="nav-item nav-dropdown group relative">
             <input
@@ -49,7 +53,7 @@
                 {{ $active := eq $childURL $pageURL }}
                 {{ if $active }}active{{ end }}
               {{ end }} inline-flex items-center">
-              {{ .Name }}
+              {{ $menuLabel }}
               <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
                 <path
                   d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
@@ -60,6 +64,10 @@
               {{ range .Children }}
                 {{ $childURL := .URL | absLangURL }}
                 {{ $active := eq $childURL $pageURL }}
+                {{ $childLabel := .Name }}
+                {{ with .Identifier }}
+                  {{ $childLabel = T . | default $childLabel }}
+                {{ end }}
                 <li class="nav-dropdown-item">
                   <a
                     class="nav-dropdown-link {{ if $active }}
@@ -76,7 +84,7 @@
                     {{- else -}}
                       {{- .URL | relLangURL -}}
                     {{- end -}}">
-                    {{ .Name }}
+                    {{ $childLabel }}
                   </a>
                 </li>
               {{ end }}
@@ -96,7 +104,7 @@
               {{- else -}}
                 {{- .URL | relLangURL -}}
               {{- end -}}"
-              >{{ .Name }}</a
+              >{{ $menuLabel }}</a
             >
           </li>
         {{ end }}
