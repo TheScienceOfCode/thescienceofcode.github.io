@@ -1,7 +1,7 @@
 ---
-title: "Dear ImGui quickstart"
+title: "Dear ImGui Quickstart"
 url: "imgui-quickstart"
-titleHtml: "<small>How to start</small><br><b>Using Dear ImGui on Linux/Windows</b>"
+titleHtml: "<small>How to start</small><br><b>Dear ImGui on Linux/Windows</b>"
 license: ccby4.0
 author: The Science of Code
 date: 2023-05-12

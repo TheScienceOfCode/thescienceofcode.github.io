@@ -1,7 +1,7 @@
 ---
-title: "raylib on VSCode with C/C++"
+title: "raylib + VSCode"
 url: "raylib-vscode-c-cpp-debug"
-titleHtml: "<small>Programming and debugging</small><br><b>raylib on VSCode with C/C++</b>"
+titleHtml: "<small>Programming and debugging</small><br><b>raylib + VSCode</b>"
 license: ccby4.0
 author: The Science of Code
 date: 2025-01-26
@@ -33,10 +33,10 @@ keywords:
 - windows
 autoThumbnail: true
 autoThumbnailText: <i class="fas fa-gamepad"></i>
-autoThumbnailStyle: background:linear-gradient(35deg,#a63333,#c7385e);color:#fff;
+autoThumbnailStyle: background:linear-gradient(35deg,#8f1f2f,#d43d4f);color:#fff;
 coverImage: /images/posts/raylib_tutorial.png
 coverSize: min
-coverStyle: background:linear-gradient(35deg,#7f00ff,#e100ff);color:#fff
+coverStyle: background:linear-gradient(35deg,#8f1f2f,#d43d4f);color:#fff
 cardUseImage: false
 coverMetaClass: post-meta-white
 thumbnailImagePosition: left

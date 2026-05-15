@@ -45,9 +45,7 @@ jobs:
       - name: Build site
         run: |
           export PATH="${{ github.workspace }}/themes/hugoplate/node_modules/.bin:$PATH"
-          cd themes/hugoplate
-          node scripts/themeGenerator.js
-          cd ../..
+          node scripts/generate-theme-css.js
           hugo --gc --minify
 
       - name: Deploy to gh-pages

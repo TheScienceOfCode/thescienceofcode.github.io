@@ -1,7 +1,7 @@
 ---
-title: "SDL on VSCode with C/C++"
+title: "SDL + VSCode"
 url: "sdl-vscode-c-cpp-debug"
-titleHtml: "<small>Programming and debugging</small><br><b>SDL on VSCode with C/C++</b>"
+titleHtml: "<small>Programming and debugging</small><br><b>SDL + VSCode</b>"
 license: ccby4.0
 author: The Science of Code
 date: 2024-01-26

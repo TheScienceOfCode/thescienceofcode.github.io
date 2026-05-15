@@ -1,7 +1,7 @@
 ---
-title: "Optimizing Fedora Linux: Startup and Games"
+title: "Fedora Startup and Games"
 url: "fedora-linux-optimize"
-titleHtml: "<small>How to optimize</small><br><b>Fedora Linux Startup and Games</b>"
+titleHtml: "<small>How to optimize</small><br><b>Fedora Startup and Games</b>"
 license: ccby4.0
 author: The Science of Code
 date: 2024-10-22
@@ -131,7 +131,7 @@ We will start disabling some stuff that is not required for a desktop use case:
 
 * **On KDE**: Disable calendar reminder:
 
-  ![Disable calendar reminder](https://redhat.discourse-cdn.com/fedoraproject/original/3X/c/c/cc24d98be4fcbb2b4c9a21a72de392c123bd71a3.png)
+  ![Disable calendar reminder](/images/posts/fedora-calendar-reminder.png)
 
   ```
   cp /etc/xdg/autostart/org.kde.kalendarac.desktop ~/.config/autostart

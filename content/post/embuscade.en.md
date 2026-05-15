@@ -1,5 +1,5 @@
 ---
-title: "Experimental Game of the Month - Embuscade"
+title: "Embuscade"
 url: "embuscade-experimental-game-of-the-month"
 license: ccby4.0
 author: The Science of Code

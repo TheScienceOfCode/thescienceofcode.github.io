@@ -1,3 +1,5 @@
+@import "./chroma.css";
+
 /* Keep the navbar consistently darker than the base dark background. */
 :root {
   --tsoc-navbar-bg: color-mix(in srgb, var(--color-darkmode-body) 80%, black);
@@ -5,8 +7,8 @@
   --tsoc-anchor-offset: 100px;
   --tsoc-card-bg: color-mix(in srgb, var(--color-body) 95%, black);
   --tsoc-card-bg-dark: color-mix(in srgb, var(--color-darkmode-body) 95%, white);
-  --font-primary: "Roboto", sans-serif;
-  --font-secondary: "Roboto Condensed", sans-serif;
+  --font-primary: "Space Grotesk", sans-serif;
+  --font-secondary: "Share Tech", sans-serif;
 }
 
 body {
@@ -26,6 +28,15 @@ h6,
 .h5,
 .h6 {
   font-family: var(--font-secondary);
+}
+
+.btn,
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  font-family: var(--font-secondary) !important;
+  text-transform: uppercase;
 }
 
 .tsoc-home-hero {
@@ -108,24 +119,27 @@ h6,
 .tsoc-home-hero__pretitle {
   display: block;
   color: rgba(224, 244, 255, 0.96);
-  font-family: "Prompt", sans-serif;
+  font-family: var(--font-secondary);
   font-size: clamp(1.05rem, 1.9vw, 1.7rem);
   font-weight: 800;
   letter-spacing: 0.08em;
   line-height: 1.05;
   text-transform: uppercase;
-  margin-bottom: 0.05rem;
+  margin-bottom: 0.45rem;
 }
 
 .tsoc-home-hero__kicker {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 0.75rem;
   max-width: 40rem;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
   padding: 0.5rem 0.9rem;
   border: 1px solid rgba(173, 226, 255, 0.26);
   border-radius: 9999px;
   background: rgba(7, 16, 29, 0.28);
+  color: #fff !important;
   backdrop-filter: blur(10px);
 }
 
@@ -142,8 +156,8 @@ h6,
 
 .tsoc-home-hero__copy {
   margin: 0;
-  color: rgba(224, 244, 255, 0.94);
-  font-family: "Roboto Condensed", sans-serif;
+  color: #fff !important;
+  font-family: var(--font-secondary);
   font-size: 0.9rem;
   font-weight: 700;
   line-height: 1.25;
@@ -211,7 +225,7 @@ h6,
   z-index: 1;
   margin: 0;
   color: #f2f2f2;
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: var(--font-secondary);
   font-size: clamp(1.65rem, 3vw, 2.6rem);
   font-weight: 800;
   letter-spacing: 0.05em;
@@ -227,7 +241,7 @@ h6,
 .tsoc-page-header__breadcrumb a,
 .tsoc-page-header__breadcrumb span {
   color: rgba(232, 232, 232, 0.82) !important;
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: var(--font-primary);
   letter-spacing: 0.04em;
 }
 
@@ -261,11 +275,11 @@ h6,
 .dark .tsoc-home-hero__kicker {
   border-color: rgba(255, 255, 255, 0.16);
   background: rgba(7, 16, 29, 0.28);
-  color: rgba(224, 244, 255, 0.84);
+  color: #fff !important;
 }
 
 .dark .tsoc-home-hero__copy {
-  color: rgba(224, 244, 255, 0.92);
+  color: #fff !important;
 }
 
 .dark .tsoc-home-hero .btn-outline-primary {
@@ -324,6 +338,10 @@ footer .social-icons a {
   color: var(--color-darkmode-text-dark) !important;
 }
 
+footer {
+  font-family: var(--font-secondary) !important;
+}
+
 footer .border-t {
   border-color: rgba(255, 255, 255, 0.08) !important;
 }
@@ -345,6 +363,7 @@ footer .social-icons li a:hover {
 .tsoc-footer__main {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 2rem;
 }
 
@@ -358,13 +377,13 @@ footer .social-icons li a:hover {
 
 .tsoc-footer__links-wrap {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .tsoc-footer__menu {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 0.9rem;
   margin: 0;
   padding: 0;
@@ -377,7 +396,6 @@ footer .social-icons li a:hover {
 
 .tsoc-footer__menu-link {
   color: var(--color-darkmode-text-dark) !important;
-  font-family: "Prompt", sans-serif !important;
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.12em;
@@ -391,31 +409,52 @@ footer .social-icons li a:hover {
 .tsoc-footer__brand-block {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 1rem;
 }
 
 .tsoc-footer__brand-link {
   display: inline-flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
+}
+
+@media (max-width: 1023px) {
+  .tsoc-footer__brand-link {
+    display: none;
+  }
 }
 
 .tsoc-footer__socials {
-  justify-content: flex-start;
+  justify-content: center;
   margin: 0;
+}
+
+@media (min-width: 1024px) {
+  .tsoc-footer__links-wrap {
+    justify-content: flex-start;
+  }
+
+  .tsoc-footer__menu {
+    align-items: flex-start;
+  }
+
+  .tsoc-footer__brand-block {
+    align-items: flex-start;
+  }
+
+  .tsoc-footer__brand-link {
+    justify-content: flex-start;
+  }
+
+  .tsoc-footer__socials {
+    justify-content: flex-start;
+  }
 }
 
 .tsoc-footer-bottom {
   margin-top: 0.5rem;
   text-align: center;
-}
-
-.tsoc-footer-bottom,
-.tsoc-footer-bottom a,
-.tsoc-footer-bottom p,
-.tsoc-footer-bottom i {
-  font-family: "Roboto Condensed", sans-serif !important;
 }
 
 .tsoc-footer__brand {
@@ -433,7 +472,6 @@ footer .social-icons li a:hover {
   margin: 0 auto;
   font-size: 1rem;
   line-height: 1.7;
-  font-family: "Prompt", sans-serif;
 }
 
 .tsoc-footer__copy p {
@@ -494,7 +532,7 @@ footer .social-icons li a:hover {
 .header .btn,
 .header button,
 .header label {
-  font-family: "Prompt", sans-serif !important;
+  font-family: var(--font-secondary) !important;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -616,7 +654,7 @@ footer .social-icons li a:hover {
   border-radius: 0.375rem;
   background-color: rgba(255, 255, 255, 0.04);
   color: var(--color-darkmode-text-dark);
-  font-family: "Prompt", sans-serif;
+  font-family: var(--font-secondary);
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -689,7 +727,7 @@ footer .social-icons li a:hover {
   justify-content: center;
   width: 100%;
   border-radius: 0;
-  font-family: "Prompt", sans-serif !important;
+  font-family: var(--font-secondary) !important;
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -724,19 +762,19 @@ footer .social-icons li a:hover {
 }
 
 .tsoc-post-card > div.mb-3.flex {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: var(--font-primary);
   font-size: 0.9rem;
   line-height: 1.2;
   letter-spacing: 0.01em;
 }
 
 .tsoc-post-card > h3 {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: var(--font-secondary);
   line-height: 1.08;
 }
 
 .tsoc-post-card > p {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: var(--font-primary);
   font-size: 1rem;
   line-height: 1.45;
 }
@@ -774,7 +812,7 @@ footer .social-icons li a:hover {
   padding: 0.8rem 1rem;
   background: transparent;
   color: var(--color-text-dark);
-  font-family: "Prompt", sans-serif;
+  font-family: var(--font-secondary);
   font-size: 0.84rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -800,6 +838,7 @@ footer .social-icons li a:hover {
 .tsoc-post-layout .table-of-content #TableOfContents li,
 .tsoc-post-layout .table-of-content #TableOfContents a {
   color: var(--color-text) !important;
+  font-family: var(--font-primary);
   font-size: 0.92rem;
   line-height: 1.55;
 }
@@ -842,28 +881,37 @@ footer .social-icons li a:hover {
 }
 
 .content pre:not([class]) {
-  overflow-x: auto;
+  overflow-x: hidden;
   padding: 1rem 1.15rem;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 0.75rem;
-  background: color-mix(in srgb, var(--color-darkmode-body) 84%, black) !important;
-  color: var(--color-darkmode-text-dark) !important;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  border: 3px solid #8f7f67;
+  border-radius: 0.85rem;
+  background: #201b22 !important;
+  color: #cdbca8 !important;
+  box-shadow:
+    inset 0 0 0 2px #2a232b,
+    inset 0 0 0 4px #bfa98a,
+    0 0 0 1px rgba(18, 14, 20, 0.55);
 }
 
 .content {
-  font-family: "Roboto", sans-serif;
+  font-family: var(--font-primary);
+  font-size: 1.12rem;
+  line-height: 1.72;
 }
 
 .content :is(h1, h2, h3, h4, h5, h6) {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: var(--font-secondary);
+  line-height: 0.94;
+  letter-spacing: -0.015em;
 }
 
 .content p,
 .content li,
 .content td,
 .content th {
-  font-family: "Roboto", sans-serif;
+  font-family: var(--font-primary);
+  font-size: 1.12rem;
+  line-height: 1.72;
 }
 
 .content :is(h1, h2, h3, h4, h5, h6)[id] {
@@ -872,13 +920,20 @@ footer .social-icons li a:hover {
 
 .content pre:not([class]) > code {
   display: block;
-  font-family: "JetBrains Mono", "Fira Code", monospace;
-  font-size: 0.95rem;
-  line-height: 1.65;
+  font-family: "VT323", "JetBrains Mono", "Fira Code", monospace !important;
+  font-size: 1.45rem;
+  line-height: 1.38;
+  letter-spacing: 0.01em;
   color: inherit !important;
   white-space: pre-wrap;
   word-break: break-word;
   overflow-wrap: anywhere;
+}
+
+.content pre:not([class]),
+.content pre:not([class]) code,
+.content pre:not([class]) * {
+  font-family: "VT323", "JetBrains Mono", "Fira Code", monospace !important;
 }
 
 .content blockquote {
@@ -953,15 +1008,15 @@ footer .social-icons li a:hover {
 
 .tsoc-post-title__styled {
   display: inline-block;
-  font-family: "Roboto Condensed", sans-serif;
-  line-height: 1.02;
+  font-family: var(--font-secondary);
+  line-height: 0.94;
 }
 
 .tsoc-post-title__styled small {
   display: block;
   margin-bottom: 0.5rem;
   color: color-mix(in srgb, currentColor 72%, transparent);
-  font-family: "Prompt", sans-serif;
+  font-family: var(--font-secondary);
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -977,11 +1032,11 @@ footer .social-icons li a:hover {
 
 .tsoc-post-title__plain {
   display: block;
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: var(--font-secondary);
   font-size: clamp(2.2rem, 5vw, 4rem);
   font-weight: 700;
   letter-spacing: -0.03em;
-  line-height: 1.02;
+  line-height: 0.94;
 }
 
 .tsoc-post-meta {
@@ -992,7 +1047,7 @@ footer .social-icons li a:hover {
   padding: 0;
   list-style: none;
   color: color-mix(in srgb, currentColor 76%, transparent);
-  font-family: "Prompt", sans-serif;
+  font-family: var(--font-secondary);
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -1007,6 +1062,7 @@ footer .social-icons li a:hover {
   max-width: 48rem;
   margin: 1.1rem 0 0;
   color: color-mix(in srgb, currentColor 90%, transparent);
+  font-family: var(--font-primary);
   font-size: 1rem;
   line-height: 1.75;
 }

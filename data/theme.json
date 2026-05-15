@@ -31,9 +31,9 @@
   },
   "fonts": {
     "font_family": {
-      "primary": "Roboto:wght@400;700",
+      "primary": "Space+Grotesk:wght@400;500;700",
       "primary_type": "sans-serif",
-      "secondary": "Roboto+Condensed:wght@400;700",
+      "secondary": "Share+Tech",
       "secondary_type": "sans-serif"
     },
     "font_size": {
