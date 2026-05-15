@@ -4,6 +4,10 @@
       <div class="tsoc-footer__links-wrap">
         <ul class="tsoc-footer__menu">
           {{ range site.Menus.footer }}
+            {{ $menuLabel := .Name }}
+            {{ with .Identifier }}
+              {{ $menuLabel = T . | default $menuLabel }}
+            {{ end }}
             <li class="tsoc-footer__menu-item">
               <a
                 class="tsoc-footer__menu-link"
@@ -17,7 +21,7 @@
                 {{ else }}
                   {{ .URL | relLangURL }}
                 {{ end }}"
-                >{{ .Name | upper }}</a
+                >{{ $menuLabel | upper }}</a
               >
             </li>
           {{ end }}
