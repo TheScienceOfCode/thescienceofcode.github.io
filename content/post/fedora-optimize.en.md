@@ -84,11 +84,11 @@ We will start disabling some stuff that is not required for a desktop use case:
 
   * For games/launchers which integrate GameMode support (like **Lutris**) simply running the game will automatically activate GameMode. [More info](https://github.com/FeralInteractive/gamemode).
 
-* **On KDE** you may experience some stuttering and/or bad reposiveness while playing fullscreen games, just **disable** the **Compositor** to boost your gaming experience:
+* **On KDE Plasma X11**, fullscreen games may feel less responsive if the compositor stays active. If you notice stutter or extra input latency, try disabling the **Compositor** while gaming:
 
    ![fedora compositor](/images/posts/fedora-compositor.png)
 
-   You can re-enable it manually or install the KWin script [Autocomposer](https://store.kde.org/p/1502826) that handles the entire process automatically.
+   You can toggle compositing back on with `Shift` + `Alt` + `F12`, or install the KWin script [Autocomposer](https://store.kde.org/p/1502826) to handle it automatically for fullscreen apps. This tweak is mainly relevant on **X11**; on **Wayland**, the compositor is part of the session and is not disabled the same way.
 
 ## Extra tips
 
