@@ -1,5 +1,5 @@
 ---
-title: "SDL + VSCode"
+title: "Configura SDL + VSCode"
 url: "sdl-vscode-c-cpp-debug"
 titleHtml: "<small>Programación y depuración</small><br><b>SDL + VSCode</b>"
 license: ccby4.0

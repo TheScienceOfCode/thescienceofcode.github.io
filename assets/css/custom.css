@@ -171,6 +171,179 @@ input[type="reset"] {
 
 .tsoc-home-hero__actions {
   margin-top: 0;
+  width: 100%;
+  max-width: 40rem;
+}
+
+.tsoc-home-hero__actions .btn {
+  width: 100%;
+}
+
+.tsoc-home-signoff .tsoc-home-hero__pretitle {
+  color: var(--color-text-dark);
+}
+
+.tsoc-home-signoff .tsoc-home-hero__kicker {
+  justify-content: center;
+  max-width: none;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  backdrop-filter: none;
+  box-shadow: none;
+  color: var(--color-text-dark) !important;
+}
+
+.tsoc-home-signoff .tsoc-home-hero__kicker::before,
+.tsoc-home-signoff .tsoc-home-hero__kicker::after {
+  content: none;
+}
+
+.tsoc-home-signoff .tsoc-home-hero__copy {
+  color: var(--color-text-dark) !important;
+}
+
+.dark .tsoc-home-signoff .tsoc-home-hero__pretitle {
+  color: var(--color-darkmode-text-dark);
+}
+
+.dark .tsoc-home-signoff .tsoc-home-hero__kicker {
+  background: transparent;
+  color: var(--color-darkmode-text-dark) !important;
+}
+
+.dark .tsoc-home-signoff .tsoc-home-hero__copy {
+  color: var(--color-darkmode-text-dark) !important;
+}
+
+.tsoc-home-stream {
+  position: relative;
+}
+
+.tsoc-home-section__eyebrow {
+  display: inline-block;
+  margin-bottom: 0.35rem;
+  color: var(--color-primary);
+  font-family: var(--font-secondary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.tsoc-home-stream__heading {
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 1rem;
+}
+
+.tsoc-news-panel {
+  position: sticky;
+  top: calc(var(--tsoc-navbar-height) + 2rem);
+  padding: 1.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.85rem;
+  background: color-mix(in srgb, var(--color-body) 97%, black);
+  box-shadow: 0 18px 44px -36px rgba(0, 0, 0, 0.24);
+}
+
+.tsoc-news-panel__header {
+  margin-bottom: 1.25rem;
+}
+
+.tsoc-news-panel__intro {
+  margin: 0.55rem 0 0;
+  color: var(--color-text);
+}
+
+.tsoc-news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.tsoc-news-card {
+  border-top: 1px solid var(--color-border);
+  padding-top: 0.9rem;
+}
+
+.tsoc-news-card:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.tsoc-news-card__link {
+  display: block;
+  padding: 0.15rem 0;
+}
+
+.tsoc-news-card__date {
+  display: inline-block;
+  margin-bottom: 0.3rem;
+  color: var(--color-text-light);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tsoc-news-card__title {
+  margin: 0 0 0.35rem;
+  color: var(--color-text-dark);
+  font-family: var(--font-secondary);
+  font-size: 1.05rem;
+  line-height: 1.2;
+}
+
+.tsoc-news-card__summary {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 0.95rem;
+}
+
+.dark .tsoc-home-stream__heading {
+  border-bottom-color: var(--color-darkmode-border);
+}
+
+.dark .tsoc-news-panel {
+  border-color: var(--color-darkmode-border);
+  background: color-mix(in srgb, var(--color-darkmode-body) 94%, black);
+  box-shadow: 0 20px 48px -36px rgba(0, 0, 0, 0.7);
+}
+
+.dark .tsoc-news-panel__intro,
+.dark .tsoc-news-card__summary {
+  color: var(--color-darkmode-text);
+}
+
+.dark .tsoc-news-card {
+  border-top-color: var(--color-darkmode-border);
+}
+
+.dark .tsoc-news-card__date {
+  color: var(--color-darkmode-text-light);
+}
+
+.dark .tsoc-news-card__title {
+  color: var(--color-darkmode-text-dark);
+}
+
+.tsoc-news-panel__footer {
+  margin-top: 1.35rem;
+}
+
+.tsoc-home-more-posts-btn {
+  border-color: #ed9140 !important;
+  background: linear-gradient(35deg, #ed4d4d, #ed9140, #ed4d4d);
+  background-size: 200% 100%;
+  background-position: 0 50%;
+  color: #fff !important;
+}
+
+.tsoc-home-more-posts-btn:hover,
+.tsoc-home-more-posts-btn:focus-visible {
+  border-color: #ed9140 !important;
+  color: #fff !important;
 }
 
 .tsoc-page-header {
@@ -417,6 +590,23 @@ footer .social-icons li a:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 1199px) {
+  .tsoc-news-panel {
+    position: static;
+  }
+}
+
+@media (max-width: 575px) {
+  .tsoc-home-stream__heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .tsoc-news-panel {
+    padding: 1.1rem;
+  }
 }
 
 @media (max-width: 1023px) {
@@ -755,28 +945,71 @@ footer .social-icons li a:hover {
 
 .tsoc-post-card {
   background-color: var(--tsoc-card-bg) !important;
+  overflow: hidden;
+  border-radius: 0.85rem !important;
 }
 
 .dark .tsoc-post-card {
   background-color: var(--tsoc-card-bg-dark) !important;
 }
 
-.tsoc-post-card > div.mb-3.flex {
-  font-family: var(--font-primary);
-  font-size: 0.9rem;
-  line-height: 1.2;
-  letter-spacing: 0.01em;
+.tsoc-post-card__media,
+.tsoc-post-card__cover {
+  margin: 0;
+  border-radius: 0.85rem 0.85rem 0 0;
 }
 
-.tsoc-post-card > h3 {
+.tsoc-post-card__media {
+  display: block;
+}
+
+.tsoc-post-card__cover {
+  display: flex;
+}
+
+.tsoc-post-card__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-position: center top;
+}
+
+.tsoc-post-card__content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 1.25rem;
+}
+
+.tsoc-post-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.tsoc-post-card__date {
+  display: inline-block;
+  color: var(--color-text-light);
+  font-family: var(--font-secondary);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tsoc-post-card__content > h3 {
   font-family: var(--font-secondary);
   line-height: 1.08;
 }
 
-.tsoc-post-card > p {
+.tsoc-post-card__content > p {
   font-family: var(--font-primary);
   font-size: 1rem;
   line-height: 1.45;
+}
+
+.dark .tsoc-post-card__date {
+  color: var(--color-darkmode-text-light);
 }
 
 .tsoc-post-card__cta {
@@ -1100,7 +1333,7 @@ footer .social-icons li a:hover {
   position: relative;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 0;
 }
 
 .tsoc-post-card__cover::after {
@@ -1124,13 +1357,13 @@ footer .social-icons li a:hover {
 }
 
 .btn {
-  border-radius: 0.375rem !important;
+  border-radius: 0.85rem !important;
   --tsoc-btn-glow-color: currentColor;
   transition: box-shadow 0.2s ease-out, transform 0.2s ease-out, color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out;
 }
 
 .btn-sm {
-  border-radius: 0.25rem !important;
+  border-radius: 0.85rem !important;
 }
 
 .btn-outline-primary {

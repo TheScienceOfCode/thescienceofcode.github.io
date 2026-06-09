@@ -5,17 +5,17 @@
 <article class="h-full">
   <a
     href="{{ .RelPermalink }}"
-    class="tsoc-post-card flex h-full flex-col rounded-2xl border border-transparent p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-primary">
+    class="tsoc-post-card flex h-full flex-col rounded-2xl border border-transparent shadow-sm transition hover:-translate-y-1 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-primary">
     {{ if and $image $cardUseImage }}
-      <span class="mb-5 block overflow-hidden rounded-xl">
-      <img
-        src="{{ $image | relURL }}"
-        alt="{{ .Title }}"
-        class="h-52 w-full object-cover"
-        loading="lazy" />
+      <span class="tsoc-post-card__media mb-5 block overflow-hidden">
+        <img
+          src="{{ $image | relURL }}"
+          alt="{{ .Title }}"
+          class="h-52 w-full object-cover"
+          loading="lazy" />
       </span>
     {{ else if $cardStyle }}
-      <span class="tsoc-post-card__cover mb-5 flex h-52 overflow-hidden rounded-xl" style="{{ $cardStyle | safeCSS }}">
+      <span class="tsoc-post-card__cover mb-5 flex h-52 overflow-hidden" style="{{ $cardStyle | safeCSS }}">
         <span class="tsoc-post-card__cover-inner">
           {{ with $cardText }}
             <span class="tsoc-post-card__cover-icon">{{ . | safeHTML }}</span>
@@ -23,16 +23,15 @@
         </span>
       </span>
     {{ end }}
-    <div class="mb-3 flex flex-wrap gap-x-4 gap-y-2 text-sm text-text-light dark:text-darkmode-text-light">
-      <span>{{ time.Format ":date_long" .PublishDate }}</span>
-      {{ with .Params.categories }}
-        <span>{{ delimit . ", " }}</span>
-      {{ end }}
+    <div class="tsoc-post-card__content">
+      <div class="tsoc-post-card__meta mb-3">
+        <span class="tsoc-post-card__date">{{ time.Format ":date_long" .PublishDate }}</span>
+        {{ with .Params.categories }}
+          <span class="tsoc-post-card__date">{{ delimit . ", " }}</span>
+        {{ end }}
+      </div>
+      <h3 class="mb-3 h5">{{ .Title }}</h3>
+      <p class="mb-0">{{ .Summary | plainify }}</p>
     </div>
-    <h3 class="mb-3 h5">{{ .Title }}</h3>
-    <p class="mb-5">{{ .Summary | plainify }}</p>
-    <span class="tsoc-post-card__cta btn btn-outline-primary btn-sm mt-auto w-full text-center">
-      {{ T "read_more" | default "Read More" }}
-    </span>
   </a>
 </article>

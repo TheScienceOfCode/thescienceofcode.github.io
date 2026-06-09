@@ -1,5 +1,5 @@
 ---
-title: "AppImage para raylib"
+title: "Genera AppImage para raylib"
 url: "raylib-appimage"
 titleHtml: "<small>Creando en Linux</small><br><b>AppImage para raylib</b>"
 license: ccby4.0

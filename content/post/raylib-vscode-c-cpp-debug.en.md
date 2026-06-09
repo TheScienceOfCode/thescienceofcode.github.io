@@ -1,5 +1,5 @@
 ---
-title: "raylib + VSCode"
+title: "Install raylib + VSCode"
 url: "raylib-vscode-c-cpp-debug"
 titleHtml: "<small>Programming and debugging</small><br><b>raylib + VSCode</b>"
 license: ccby4.0

@@ -1,5 +1,47 @@
 {{ define "main" }}
-  <section class="section pt-14 mb-16 xl:mb-20 tsoc-home-hero">
+  {{ $posts := (where site.RegularPages "Section" "post").ByPublishDate.Reverse }}
+  {{ $featuredPosts := first 4 $posts }}
+  {{ $newsPosts := first 4 (after 4 $posts) }}
+  <section class="section pt-4 mb-16 xl:mb-20 tsoc-home-hero tsoc-home-stream">
+    <div class="container">
+      <div class="row items-start g-6 xl:g-8">
+        <div class="lg:col-8">
+          <div class="row">
+            {{ range $featuredPosts }}
+              <div class="md:col-6 mb-8">
+                {{ partial "components/blog-card" . }}
+              </div>
+            {{ end }}
+          </div>
+        </div>
+
+        <div class="lg:col-4">
+          <aside class="tsoc-news-panel">
+            <div class="tsoc-news-list">
+              {{ range $newsPosts }}
+                <article class="tsoc-news-card">
+                  <a class="tsoc-news-card__link" href="{{ .RelPermalink }}">
+                    <span class="tsoc-news-card__date">{{ time.Format ":date_long" .PublishDate }}</span>
+                    <h3 class="tsoc-news-card__title">{{ .Title }}</h3>
+                    <p class="tsoc-news-card__summary">{{ .Summary | plainify }}</p>
+                  </a>
+                </article>
+              {{ end }}
+            </div>
+
+            <div class="tsoc-news-panel__footer">
+              <a class="btn btn-primary btn-sm w-full tsoc-home-more-posts-btn" href="{{ `post/` | relLangURL }}">
+                {{ if eq site.Language.Lang "es" }}Más publicaciones{{ else }}More posts{{ end }}
+              </a>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section pt-0 tsoc-home-signoff">
     <div class="container">
       <div class="row justify-center">
         <div class="lg:col-8 mx-auto text-center">
@@ -9,43 +51,7 @@
           <div class="tsoc-home-hero__kicker">
             <p class="tsoc-home-hero__copy">{{ .Content }}</p>
           </div>
-          <div class="flex flex-wrap justify-center gap-4 tsoc-home-hero__actions">
-            <a class="btn btn-primary" href="{{ `post/` | relLangURL }}">
-              {{ if eq site.Language.Lang "es" }}Ver publicaciones{{ else }}Browse posts{{ end }}
-            </a>
-            <a
-              class="btn btn-outline-primary"
-              href="https://github.com/TheScienceOfCode/thescienceofcode.github.io"
-              target="_blank"
-              rel="noopener">
-              GitHub
-            </a>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section pt-0">
-    <div class="container">
-      <div class="mb-10">
-        <h2 class="h3">
-          {{ if eq site.Language.Lang "es" }}Últimas publicaciones{{ else }}Latest posts{{ end }}
-        </h2>
-      </div>
-
-      <div class="row">
-        {{ range first 6 (where site.RegularPages "Section" "post") }}
-          <div class="md:col-6 lg:col-4 mb-14">
-            {{ partial "components/blog-card" . }}
-          </div>
-        {{ end }}
-      </div>
-
-      <div class="mt-2 flex justify-center">
-        <a class="btn btn-outline-primary btn-sm" href="{{ `post/` | relLangURL }}">
-          {{ if eq site.Language.Lang "es" }}Todas{{ else }}View all{{ end }}
-        </a>
       </div>
     </div>
   </section>
