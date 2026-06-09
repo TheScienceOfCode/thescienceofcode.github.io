@@ -2,7 +2,7 @@
   {{ $posts := (where site.RegularPages "Section" "post").ByPublishDate.Reverse }}
   {{ $featuredPosts := first 4 $posts }}
   {{ $newsPosts := first 4 (after 4 $posts) }}
-  <section class="section pt-4 mb-16 xl:mb-20 tsoc-home-hero tsoc-home-stream">
+  <section class="section pt-4 mb-16 xl:mb-20 tsoc-home-hero">
     <div class="container">
       <div class="row items-start g-6 xl:g-8">
         <div class="lg:col-8">
