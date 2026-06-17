@@ -6,7 +6,7 @@ Published at: https://thescienceofcode.com/
 
 ## Current setup
 
-The site now runs on `hugoplate` with local overrides under `layouts/` to keep the current `content/post` structure and existing article front matter.
+The site now lives under `src/` and runs on `hugoplate`, with local overrides under `src/layouts/` to keep the current `content/post` structure and existing article front matter.
 
 ### Local prerequisites
 
@@ -14,7 +14,7 @@ The site now runs on `hugoplate` with local overrides under `layouts/` to keep t
 2. Install the theme dependencies:
 
    ```bash
-   cd themes/hugoplate
+   cd src/themes/hugoplate
    npm install
    ```
 
@@ -29,23 +29,24 @@ The site now runs on `hugoplate` with local overrides under `layouts/` to keep t
 Use the helper script from the repo root:
 
 ```bash
-./run-dev.sh
+./run/dev.sh
 ```
 
 That starts Hugo in draft mode (`server -D`) with the required `PATH` and `HUGO_CACHEDIR`.
-If `assets/css/generated-theme.css` is missing, the script generates it automatically before starting.
+If `src/themes/hugoplate/assets/css/generated-theme.css` is missing, the script generates it automatically before starting.
+The helper scripts also recreate `src/node_modules -> src/themes/hugoplate/node_modules` when needed so Tailwind resolves correctly without leaving a root-level symlink.
 
 If you want to pass custom Hugo arguments, they are forwarded directly:
 
 ```bash
-./run-dev.sh --navigateToChanged
-./run-dev.sh server --disableFastRender
+./run/dev.sh --navigateToChanged
+./run/dev.sh server --disableFastRender
 ```
 
 If you need to force regeneration of the generated theme tokens:
 
 ```bash
-./run-dev.sh --force-theme-css
+./run/dev.sh --force-theme-css
 ```
 
 Open: `http://localhost:1313/`
@@ -53,9 +54,7 @@ Open: `http://localhost:1313/`
 ### Build once
 
 ```bash
-PATH="$PWD/themes/hugoplate/node_modules/.bin:$PATH" \
-HUGO_CACHEDIR="$PWD/.hugo_cache" \
-./.tools/hugo-0.158.0/hugo
+./run/build.sh
 ```
 
 ## Legacy tranquilpeak
@@ -84,7 +83,7 @@ Published at: https://thescienceofcode.com/
 2. Download the repo and install dependencies for the theme:
 
    ```
-   cd themes/tranquilpeak
+   cd src/themes/tranquilpeak
    npm install -g grunt-cli
    npm install
    ```
@@ -94,14 +93,14 @@ Published at: https://thescienceofcode.com/
 3. Run theme (if you plan to actively edit it):
 
    ```
-   cd themes/tranquilpeak
+   cd src/themes/tranquilpeak
    npm start
    ``` 
 
    Otherwise, just build it!
 
    ```
-   cd themes/tranquilpeak
+   cd src/themes/tranquilpeak
    npm run build
    ``` 
 

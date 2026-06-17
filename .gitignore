@@ -20,8 +20,8 @@ bin-release/
 public/
 .hugo_build.lock
 .hugo_cache/
-hugo_stats.json
-assets/css/generated-theme.css
+src/hugo_stats.json
+src/themes/hugoplate/assets/css/generated-theme.css
 
 # Hugo local binaries
 hugo.exe
@@ -29,6 +29,8 @@ hugo
 .tools/
 node_modules
 node_modules/
-themes/hugoplate/node_modules/
-themes/hugoplate/hugo_stats.json
-themes/hugoplate/exampleSite/hugo_stats.json
+src/node_modules
+src/node_modules/
+src/themes/hugoplate/node_modules/
+src/themes/hugoplate/hugo_stats.json
+src/themes/hugoplate/exampleSite/hugo_stats.json

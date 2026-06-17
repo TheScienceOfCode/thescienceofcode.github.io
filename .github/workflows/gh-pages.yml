@@ -28,7 +28,7 @@ jobs:
       - name: Setup Go
         uses: actions/setup-go@v5
         with:
-          go-version-file: go.mod
+          go-version-file: src/go.mod
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -36,17 +36,11 @@ jobs:
           node-version: "20"
 
       - name: Install theme dependencies
-        working-directory: themes/hugoplate
+        working-directory: src/themes/hugoplate
         run: npm install
 
-      - name: Link root node_modules
-        run: ln -s themes/hugoplate/node_modules node_modules
-
       - name: Build site
-        run: |
-          export PATH="${{ github.workspace }}/themes/hugoplate/node_modules/.bin:$PATH"
-          node scripts/generate-theme-css.js
-          hugo --gc --minify
+        run: ./run/build.sh
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4

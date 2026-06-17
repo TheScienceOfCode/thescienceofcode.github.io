@@ -2,11 +2,16 @@
 
 set -euo pipefail
 
-ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+RUN_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ROOT_DIR="$(cd "$RUN_DIR/.." && pwd)"
+SRC_DIR="$ROOT_DIR/src"
 HUGO_BIN="$ROOT_DIR/.tools/hugo-0.158.0/hugo"
-TAILWIND_BIN_DIR="$ROOT_DIR/themes/hugoplate/node_modules/.bin"
-THEME_GENERATOR="$ROOT_DIR/themes/hugoplate/scripts/themeGenerator.js"
-GENERATED_THEME_CSS="$ROOT_DIR/assets/css/generated-theme.css"
+THEME_NODE_MODULES_DIR="$SRC_DIR/themes/hugoplate/node_modules"
+PROJECT_NODE_MODULES_LINK="$SRC_DIR/node_modules"
+PROJECT_NODE_MODULES_TARGET="themes/hugoplate/node_modules"
+TAILWIND_BIN_DIR="$THEME_NODE_MODULES_DIR/.bin"
+THEME_GENERATOR="$SRC_DIR/scripts/generate-theme-css.js"
+GENERATED_THEME_CSS="$SRC_DIR/themes/hugoplate/assets/css/generated-theme.css"
 DEV_PORT="${HUGO_PORT:-1313}"
 DEV_BASE_URL="${HUGO_BASE_URL:-http://localhost:${DEV_PORT}/}"
 FORCE_THEME_CSS=0
@@ -18,9 +23,13 @@ if [[ ! -x "$HUGO_BIN" ]]; then
 fi
 
 if [[ ! -d "$TAILWIND_BIN_DIR" ]]; then
-  echo "Missing theme dependencies under themes/hugoplate/node_modules." >&2
-  echo "Run: cd themes/hugoplate && npm install" >&2
+  echo "Missing theme dependencies under src/themes/hugoplate/node_modules." >&2
+  echo "Run: cd src/themes/hugoplate && npm install" >&2
   exit 1
+fi
+
+if [[ ! -e "$PROJECT_NODE_MODULES_LINK" ]]; then
+  ln -s "$PROJECT_NODE_MODULES_TARGET" "$PROJECT_NODE_MODULES_LINK"
 fi
 
 while [[ $# -gt 0 ]]; do
@@ -52,4 +61,9 @@ elif [[ "${1}" == "server" || "${1}" == "serve" ]]; then
   set -- server -D --baseURL "$DEV_BASE_URL" --port "$DEV_PORT" "$@"
 fi
 
-exec "$HUGO_BIN" "$@"
+cd "$SRC_DIR"
+
+exec "$HUGO_BIN" \
+  --source "$SRC_DIR" \
+  --destination "$ROOT_DIR/public" \
+  "$@"
