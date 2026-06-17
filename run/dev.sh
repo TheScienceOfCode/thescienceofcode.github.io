@@ -17,9 +17,13 @@ DEV_BASE_URL="${HUGO_BASE_URL:-http://localhost:${DEV_PORT}/}"
 FORCE_THEME_CSS=0
 
 if [[ ! -x "$HUGO_BIN" ]]; then
-  echo "Missing Hugo binary: $HUGO_BIN" >&2
-  echo "Download Hugo 0.158.0 into .tools/hugo-0.158.0/ before running this script." >&2
-  exit 1
+  if command -v hugo >/dev/null 2>&1; then
+    HUGO_BIN="$(command -v hugo)"
+  else
+    echo "Missing Hugo binary: $HUGO_BIN" >&2
+    echo "Download Hugo 0.158.0 into .tools/hugo-0.158.0/ or install 'hugo' in PATH before running this script." >&2
+    exit 1
+  fi
 fi
 
 if [[ ! -d "$TAILWIND_BIN_DIR" ]]; then

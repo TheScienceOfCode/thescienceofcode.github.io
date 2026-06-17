@@ -24,6 +24,8 @@ The site now lives under `src/` and runs on `hugoplate`, with local overrides un
    .tools/hugo-0.158.0/hugo
    ```
 
+   The helper scripts will also use `hugo` from your `PATH` if the local binary is not present.
+
 ### Run locally
 
 Use the helper script from the repo root:
