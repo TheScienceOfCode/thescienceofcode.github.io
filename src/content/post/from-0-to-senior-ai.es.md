@@ -11,6 +11,8 @@ tags:
 - ai
 - codex
 - claude
+- gemini
+- antigravity
 - vscode
 - learning
 - dotnet
@@ -18,6 +20,8 @@ tags:
 keywords:
 - codex
 - claude code
+- google gemini
+- google antigravity
 - vscode
 - inteligencia artificial
 - aprender programación
@@ -37,7 +41,7 @@ thumbnailImagePosition: left
 Instala un agente de programación en **VS Code** y úsalo como mentor para aprender mientras construyes un proyecto real, incluso si estás empezando desde cero. Este es el capítulo **Instalación y Backend**.
 <!--more-->
 
-Un agente como **Codex** o **Claude Code** puede leer los archivos de tu proyecto, explicarte código, proponer cambios y ejecutar comandos. Eso no lo convierte en infalible ni te convierte automáticamente en *senior*: el objetivo de esta guía es que la IA acelere tu aprendizaje **sin reemplazar tu criterio**.
+Un agente como **Codex**, **Claude Code** o **Gemini mediante Google Antigravity** puede leer los archivos de tu proyecto, explicarte código, proponer cambios y ejecutar comandos. Eso no lo convierte en infalible ni te convierte automáticamente en *senior*: el objetivo de esta guía es que la IA acelere tu aprendizaje **sin reemplazar tu criterio**.
 
 {{< toc center >}}
 
@@ -67,7 +71,7 @@ La [guía oficial de inicio de VS Code](https://code.visualstudio.com/docs/getst
 
 ## 2. Elegir e instalar un agente
 
-Para comenzar solo necesitas **uno**. Codex y Claude Code cumplen un papel parecido dentro del editor; elige según la cuenta o suscripción que ya tengas. Siempre verifica el nombre del publicador antes de instalar una extensión.
+Para comenzar solo necesitas **uno**. Codex, Claude Code y Google Antigravity cumplen un papel parecido dentro del editor; elige según la cuenta o suscripción que ya tengas. Siempre verifica el nombre del publicador antes de instalar una extensión.
 
 ### Opción A: Codex
 
@@ -89,6 +93,19 @@ La documentación oficial mantiene una [guía actualizada de Codex para IDE](htt
 
 La extensión incluye lo necesario para usar el panel de chat. Instalar la herramienta de línea de comandos es opcional y solo hace falta si también quieres ejecutar `claude` desde la terminal. Consulta la [guía oficial de Claude Code en VS Code](https://code.claude.com/docs/en/vs-code) para conocer los requisitos y planes compatibles vigentes.
 
+### Opción C: Gemini con Google Antigravity
+
+Para una cuenta individual, usa la extensión actual de Google:
+
+1. Abre **Extensions** y busca **Google Antigravity**.
+2. Confirma que el publicador sea **Google** e instala la [extensión oficial para VS Code](https://marketplace.visualstudio.com/items?itemName=Google.google-antigravity).
+3. Abre Antigravity desde la barra lateral e inicia sesión con tu cuenta de Google.
+4. En el selector de modelos, elige como mínimo **Gemini 3.1 Pro** con esfuerzo `high` para seguir este taller.
+
+Google trasladó sus herramientas de programación para cuentas individuales a Antigravity. Desde el 18 de junio de 2026, la antigua extensión Gemini Code Assist dejó de atender solicitudes de los planes individuales, Google AI Pro y Google AI Ultra. Si tu organización ya dispone de Gemini Code Assist Standard o Enterprise, todavía puedes instalar [Gemini Code Assist](https://marketplace.visualstudio.com/items?itemName=Google.geminicodeassist) y seguir el mismo taller.
+
+El repositorio incluye `GEMINI.md`. Tanto Antigravity como el modo agente de Gemini Code Assist lo reconocen como contexto persistente y desde allí cargan el mismo contrato pedagógico que usan Codex y Claude.
+
 ## 3. Abrir y preparar un proyecto con la IA
 
 Un agente trabaja mejor cuando puede ver la carpeta completa y no solamente un archivo aislado:
@@ -96,7 +113,7 @@ Un agente trabaja mejor cuando puede ver la carpeta completa y no solamente un a
 1. Crea una carpeta vacía para tu proyecto.
 2. En VS Code selecciona **File → Open Folder** y abre esa carpeta.
 3. Si VS Code muestra **Workspace Trust**, marca la carpeta como confiable únicamente si conoces su contenido.
-4. Abre el panel de Codex o Claude Code.
+4. Abre el panel de Codex, Claude Code o Google Antigravity.
 
 Una vez dentro de la carpeta, deja que el agente prepare el control de versiones. Pídele:
 
@@ -166,9 +183,9 @@ entender → intentar → revisar → ejecutar → corregir → explicar con tus
 
 Un buen prompt establece el proyecto, tu nivel, las tecnologías, los límites y la forma de trabajo. El siguiente está listo para estudiar y reconstruir una API de práctica con **C#, ASP.NET Core, PostgreSQL y Docker**. La aplicación terminada está en [From 0 to Senior AI](https://github.com/TheScienceOfCodeEDU/from-0-to-senior-ai) y [`docs/PROMPT.md`](https://github.com/TheScienceOfCodeEDU/from-0-to-senior-ai/blob/main/docs/PROMPT.md) es su contrato canónico y resumido.
 
-El primer commit del repositorio contiene ese prompt y los archivos `AGENTS.md` y `CLAUDE.md` lo referencian. Así, ambos agentes vuelven a cargar la misión al abrir o retomar el proyecto. El bloque incluido abajo sirve para conocerlo antes de clonar; una vez dentro del repositorio, pide al agente que lea `docs/PROMPT.md` en vez de mantener dos copias manualmente.
+El primer commit del repositorio contiene ese prompt. `AGENTS.md`, `CLAUDE.md` y `GEMINI.md` hacen que Codex, Claude y Google Antigravity carguen la misma misión al abrir o retomar el proyecto. El bloque incluido abajo sirve para conocerlo antes de clonar; una vez dentro del repositorio, pide al agente que lea `docs/PROMPT.md` en vez de mantener dos copias manualmente.
 
-Para este taller recomendamos como mínimo **GPT-5.6 Sol con esfuerzo medium** en Codex o **Claude Opus 5.5 con esfuerzo medium** en Claude Code. Un modelo posterior también funciona; no es necesario aumentar el esfuerzo para cada paso pequeño.
+Para este taller recomendamos como mínimo **GPT-5.6 Sol con esfuerzo medium** en Codex, **Claude Opus 5.5 con esfuerzo medium** en Claude Code o **Gemini 3.1 Pro con esfuerzo high** en Google Antigravity. Un modelo posterior también funciona; no es necesario aumentar el esfuerzo para cada paso pequeño.
 
 > Este prompt está diseñado para aprender. El agente debe avanzar contigo, no terminar todo el repositorio por su cuenta.
 

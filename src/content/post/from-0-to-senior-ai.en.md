@@ -11,6 +11,8 @@ tags:
 - ai
 - codex
 - claude
+- gemini
+- antigravity
 - vscode
 - learning
 - dotnet
@@ -18,6 +20,8 @@ tags:
 keywords:
 - codex
 - claude code
+- google gemini
+- google antigravity
 - vscode
 - artificial intelligence
 - learn programming
@@ -37,7 +41,7 @@ thumbnailImagePosition: left
 Install a coding agent in **VS Code** and use it as a mentor while you build a real project, even if you are starting from zero. This is the **Installation and Backend** chapter.
 <!--more-->
 
-A coding agent such as **Codex** or **Claude Code** can read your project,
+A coding agent such as **Codex**, **Claude Code**, or **Gemini through Google Antigravity** can read your project,
 explain code, propose edits, and run commands. It is not infallible, and using
 one does not automatically make you a senior developer. The goal is to speed up
 your learning **without replacing your judgment**.
@@ -99,12 +103,34 @@ The extension contains what the editor panel needs. Installing the CLI is only
 necessary if you also want to run `claude` in a terminal. See Anthropic's
 [official VS Code guide](https://code.claude.com/docs/en/vs-code).
 
+### Option C: Gemini with Google Antigravity
+
+For an individual account, use Google's current extension:
+
+1. Open **Extensions** and search for **Google Antigravity**.
+2. Verify that the publisher is **Google**, then install the
+   [official VS Code extension](https://marketplace.visualstudio.com/items?itemName=Google.google-antigravity).
+3. Open Antigravity from the sidebar and sign in with your Google Account.
+4. In the model selector, choose at least **Gemini 3.1 Pro** with `high` effort
+   for this workshop.
+
+Google moved its individual coding tools to Antigravity. Since June 18, 2026,
+the former Gemini Code Assist extension no longer serves requests from
+individual, Google AI Pro, or Google AI Ultra tiers. If your organization
+already has Gemini Code Assist Standard or Enterprise, you can still install
+[Gemini Code Assist](https://marketplace.visualstudio.com/items?itemName=Google.geminicodeassist)
+and follow the same workshop.
+
+The repository includes `GEMINI.md`. Both Antigravity and Gemini Code Assist
+agent mode recognize it as persistent context and use it to load the same
+learning contract as Codex and Claude.
+
 ## 3. Open the project and let the AI prepare it
 
 1. Create an empty project folder.
 2. In VS Code, choose **File → Open Folder**.
 3. Grant **Workspace Trust** only if you know the folder's contents.
-4. Open the Codex or Claude Code panel.
+4. Open the Codex, Claude Code, or Google Antigravity panel.
 
 Once the correct folder is open, ask the agent to prepare Git instead of copying
 commands blindly:
@@ -174,9 +200,9 @@ application is in [From 0 to Senior AI](https://github.com/TheScienceOfCodeEDU/f
 
 Use the documented English contract at
 [`docs/PROMPT.en.md`](https://github.com/TheScienceOfCodeEDU/from-0-to-senior-ai/blob/main/docs/PROMPT.en.md).
-The repository's `AGENTS.md` and `CLAUDE.md` point Codex and Claude to the
-correct language, so the agent reloads its teaching mission when a session
-starts or resumes.
+The repository's `AGENTS.md`, `CLAUDE.md`, and `GEMINI.md` point Codex, Claude,
+and Google Antigravity to the correct language, so the agent reloads its
+teaching mission when a session starts or resumes.
 
 To begin from an empty folder, paste this short bootstrap message:
 
@@ -191,8 +217,9 @@ allows it and I have given any required permission.
 ```
 
 Recommended minimum models for this workshop are **GPT-5.6 Sol with medium
-effort** in Codex or **Claude Opus 5.5 with medium effort** in Claude Code. A
-newer model is also suitable.
+effort** in Codex, **Claude Opus 5.5 with medium effort** in Claude Code, or
+**Gemini 3.1 Pro with high effort** in Google Antigravity. A newer model is also
+suitable.
 
 The prompt tells the agent to:
 
