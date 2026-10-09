@@ -31,15 +31,18 @@ keywords:
 autoThumbnail: true
 autoThumbnailText: <i class="fas fa-robot"></i>
 autoThumbnailStyle: background:linear-gradient(35deg,#172554,#7c3aed);color:#fff;
+coverImage: /images/posts/senior-ai.webp
 coverSize: min
 coverStyle: background:linear-gradient(35deg,#172554,#7c3aed);color:#fff
-cardUseImage: false
+cardUseImage: true
 coverMetaClass: post-meta-white
 thumbnailImagePosition: left
 ---
 
 Instala un agente de programación en **VS Code** y úsalo como mentor para aprender mientras construyes un proyecto real, incluso si estás empezando desde cero. Este es el capítulo **Instalación y Backend**.
 <!--more-->
+
+![From 0 to Senior AI: instalación, backend, frontend, pruebas automatizadas y harness](/images/posts/senior-ai.webp)
 
 Un agente como **Codex**, **Claude Code** o **Gemini mediante Google Antigravity** puede leer los archivos de tu proyecto, explicarte código, proponer cambios y ejecutar comandos. Eso no lo convierte en infalible ni te convierte automáticamente en *senior*: el objetivo de esta guía es que la IA acelere tu aprendizaje **sin reemplazar tu criterio**.
 

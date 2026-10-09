@@ -31,15 +31,18 @@ keywords:
 autoThumbnail: true
 autoThumbnailText: <i class="fas fa-robot"></i>
 autoThumbnailStyle: background:linear-gradient(35deg,#172554,#7c3aed);color:#fff;
+coverImage: /images/posts/senior-ai.webp
 coverSize: min
 coverStyle: background:linear-gradient(35deg,#172554,#7c3aed);color:#fff
-cardUseImage: false
+cardUseImage: true
 coverMetaClass: post-meta-white
 thumbnailImagePosition: left
 ---
 
 Install a coding agent in **VS Code** and use it as a mentor while you build a real project, even if you are starting from zero. This is the **Installation and Backend** chapter.
 <!--more-->
+
+![From 0 to Senior AI: installation, backend, frontend, automated testing, and harness](/images/posts/senior-ai.webp)
 
 A coding agent such as **Codex**, **Claude Code**, or **Gemini through Google Antigravity** can read your project,
 explain code, propose edits, and run commands. It is not infallible, and using
