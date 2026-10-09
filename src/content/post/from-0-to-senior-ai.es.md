@@ -1,5 +1,5 @@
 ---
-title: "From 0 to Senior AI: Codex o Claude en VS Code"
+title: "From 0 to Senior AI — Backend: Codex o Claude en VS Code"
 url: "from-0-to-senior-ai"
 titleHtml: "<small>Aprende con un agente de programación</small><br><b>From 0 to Senior AI</b>"
 license: ccby4.0
@@ -34,7 +34,7 @@ coverMetaClass: post-meta-white
 thumbnailImagePosition: left
 ---
 
-Instala un agente de programación en **VS Code** y úsalo como mentor para aprender mientras construyes un proyecto real, incluso si estás empezando desde cero.
+Instala un agente de programación en **VS Code** y úsalo como mentor para aprender mientras construyes un proyecto real, incluso si estás empezando desde cero. Este es el episodio **Backend**; Frontend y Pruebas continuarán la serie.
 <!--more-->
 
 Un agente como **Codex** o **Claude Code** puede leer los archivos de tu proyecto, explicarte código, proponer cambios y ejecutar comandos. Eso no lo convierte en infalible ni te convierte automáticamente en *senior*: el objetivo de esta guía es que la IA acelere tu aprendizaje **sin reemplazar tu criterio**.
@@ -154,7 +154,9 @@ entender → intentar → revisar → ejecutar → corregir → explicar con tus
 
 ## 5. El prompt: convierte al agente en mentor
 
-Un buen prompt establece el proyecto, tu nivel, las tecnologías, los límites y la forma de trabajo. El siguiente está listo para estudiar y reconstruir una API de práctica con **C#, ASP.NET Core, PostgreSQL y Docker**. La aplicación terminada y la [versión canónica del prompt están disponibles en GitHub](https://github.com/TheScienceOfCodeEDU/from-0-to-senior-ai). Pégalo como primer mensaje en una conversación nueva de Codex o Claude Code.
+Un buen prompt establece el proyecto, tu nivel, las tecnologías, los límites y la forma de trabajo. El siguiente está listo para estudiar y reconstruir una API de práctica con **C#, ASP.NET Core, PostgreSQL y Docker**. La aplicación terminada está en [From 0 to Senior AI](https://github.com/TheScienceOfCodeEDU/from-0-to-senior-ai) y [`docs/PROMPT.md`](https://github.com/TheScienceOfCodeEDU/from-0-to-senior-ai/blob/main/docs/PROMPT.md) es su contrato canónico y resumido.
+
+El primer commit del repositorio contiene ese prompt y los archivos `AGENTS.md` y `CLAUDE.md` lo referencian. Así, ambos agentes vuelven a cargar la misión al abrir o retomar el proyecto. El bloque incluido abajo sirve para conocerlo antes de clonar; una vez dentro del repositorio, pide al agente que lea `docs/PROMPT.md` en vez de mantener dos copias manualmente.
 
 Para este taller recomendamos como mínimo **GPT-5.6 Sol con esfuerzo medium** en Codex o **Claude Opus 5.5 con esfuerzo medium** en Claude Code. Un modelo posterior también funciona; no es necesario aumentar el esfuerzo para cada paso pequeño.
 
