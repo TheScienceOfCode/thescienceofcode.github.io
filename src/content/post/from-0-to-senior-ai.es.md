@@ -79,7 +79,7 @@ La documentación oficial mantiene una [guía actualizada de Codex para IDE](htt
 
 La extensión incluye lo necesario para usar el panel de chat. Instalar la herramienta de línea de comandos es opcional y solo hace falta si también quieres ejecutar `claude` desde la terminal. Consulta la [guía oficial de Claude Code en VS Code](https://code.claude.com/docs/en/vs-code) para conocer los requisitos y planes compatibles vigentes.
 
-## 3. Abrir un proyecto correctamente
+## 3. Abrir y preparar un proyecto con la IA
 
 Un agente trabaja mejor cuando puede ver la carpeta completa y no solamente un archivo aislado:
 
@@ -88,21 +88,39 @@ Un agente trabaja mejor cuando puede ver la carpeta completa y no solamente un a
 3. Si VS Code muestra **Workspace Trust**, marca la carpeta como confiable únicamente si conoces su contenido.
 4. Abre el panel de Codex o Claude Code.
 
-También puedes hacerlo desde una terminal ubicada dentro de la carpeta:
+Una vez dentro de la carpeta, deja que el agente prepare el control de versiones. Pídele:
 
-```bash
-code .
+```text
+Ya estamos en la carpeta correcta. Comprueba si Git y GitHub CLI están
+instalados y si existe un repositorio local. Explícame lo que encuentres.
+
+Si falta alguna herramienta, guíame para instalarla desde su fuente oficial y
+pide mi autorización antes de cambiar el sistema.
+
+Después crea un .gitignore apropiado, inicializa Git si hace falta, revisa que
+no haya secretos ni archivos generados y crea conmigo el primer commit. Ejecuta
+tú los pasos mecánicos, pero explícame para qué sirve cada uno.
 ```
 
-Antes de permitir cambios grandes, conviene instalar [Git](https://git-scm.com/downloads) y crear un primer punto de control:
+El agente comprobará el estado antes de usar `git init`, `git add` y `git commit`. Esto evita que tengas que copiar comandos sin saber si la carpeta ya era un repositorio o si contiene archivos que no deberían publicarse.
+
+### Crear tu repositorio en GitHub
+
+Pídele también que instale [GitHub CLI](https://github.com/cli/cli#installation). Si todavía no tienes cuenta, la IA debe dirigirte al [registro oficial de GitHub](https://github.com/signup) y esperar a que termines. La cuenta, contraseña y verificaciones siempre las gestionas tú.
+
+Para iniciar sesión, el agente puede ejecutar:
 
 ```bash
-git init
-git add .
-git commit -m "Inicio del proyecto"
+gh auth login --web --git-protocol https
 ```
 
-Así podrás revisar exactamente qué cambió y regresar a una versión anterior. No apruebes un comando que no entiendas y nunca pegues contraseñas, tokens, llaves privadas ni archivos con secretos en el chat.
+Tú completas la autorización en el navegador. El agente nunca debe pedirte contraseñas o tokens en el chat ni ejecutar un comando que los muestre.
+
+Antes de crear el repositorio remoto, la IA debe preguntarte el nombre, propietario, descripción y visibilidad. Un repositorio **público** puede verlo cualquier persona; uno **privado** queda limitado a ti y a quienes invites. Después de tu confirmación, el agente puede crear y publicar un proyecto local con `gh repo create … --source=. --remote=origin --push`.
+
+Si estás usando el repositorio de esta guía, no debes publicar directamente sobre el original. El agente debe crear un **fork personal** con `gh repo fork`, conservar el proyecto educativo como `upstream` y usar tu fork como `origin`.
+
+Así podrás revisar exactamente qué cambió, regresar a una versión anterior y guardar tu progreso en GitHub. No apruebes un comando que no entiendas y nunca pegues contraseñas, tokens, llaves privadas ni archivos con secretos en el chat.
 
 ## 4. Tu primera conversación con la IA
 
@@ -203,6 +221,42 @@ Después verifica la instalación con `docker --version`,
 
 La versión de .NET está fijada por `global.json` y el `Dockerfile`. No la cambies
 sin una razón concreta y mi aprobación.
+
+## Git, cuenta de GitHub y GitHub CLI
+
+Una vez abierta la carpeta correcta, prepara conmigo el control de versiones.
+Ejecuta tú los pasos mecánicos dentro de la carpeta, pero explícame cada uno.
+
+1. Comprueba `git --version`, `git status --short --branch`, `gh --version` y
+   `gh auth status`.
+2. Si falta Git o GitHub CLI, propón instalarlo desde la fuente oficial de mi
+   sistema y pide autorización antes de hacer cambios administrativos.
+3. Si no tengo cuenta, envíame a https://github.com/signup y espera a que yo
+   termine. No intentes crear la cuenta ni conocer mi contraseña.
+4. Si no hay una sesión válida, ejecuta `gh auth login --web --git-protocol
+   https` y espera a que yo complete la autorización en el navegador. Nunca me
+   pidas tokens o credenciales ni ejecutes comandos que los muestren.
+5. Si falta la identidad de Git, pregúntame el nombre y correo que quiero usar y
+   configúralos solo para este repositorio, salvo que yo pida otro alcance.
+6. Crea un `.gitignore` apropiado antes de preparar archivos. Inicializa Git solo
+   si la carpeta todavía no es un repositorio y usa `main` como rama principal.
+7. Revisa que no se incluyan secretos, binarios o resultados de compilación.
+   Explícame qué incluirás y crea el primer commit.
+
+Crear un repositorio en GitHub modifica estado externo. Antes de hacerlo,
+pregúntame el nombre, propietario, descripción, visibilidad pública o privada y
+si deseo publicarlo ahora.
+
+- Para un proyecto local nuevo sin `origin`, usa `gh repo create` con
+  `--source=.`, `--remote=origin`, la visibilidad confirmada y `--push`.
+- Si clonamos `TheScienceOfCodeEDU/from-0-to-senior-ai`, crea un fork personal
+  con `gh repo fork --clone=false --remote`; conserva la referencia como
+  `upstream` y mi fork como `origin`.
+- Si ya existe un remoto, no lo cambies ni hagas push sin explicarlo y pedirme
+  confirmación.
+
+Al terminar, muéstrame el estado, los remotos y la URL sin imprimir
+credenciales. Explica commit, push, origin y upstream.
 
 ## Mantén una arquitectura sencilla
 
@@ -332,12 +386,15 @@ que entendí y espera mi respuesta antes de seguir.
 
 - Inspeccionar mi entorno sin modificarlo.
 - Confirmar Docker y Compose o guiar su instalación segura.
+- Confirmar Git y GitHub CLI o guiar su instalación segura.
+- Pedirme completar el login web de GitHub si hace falta.
 - Explicar `Dockerfile`, `docker-compose.yml` y `global.json`.
 - Explicar qué es ASP.NET Core.
 - Construir y ejecutar la aplicación con Docker Compose.
 - Explicar Program.cs y el archivo del proyecto.
 - Explicar cómo inicia la aplicación.
 - Usar Swagger para llamar un primer endpoint.
+- Crear el primer commit y, con mi autorización, publicar un fork personal.
 
 Al final debo entender cómo una petición HTTP llega a un controller.
 
@@ -405,12 +462,16 @@ Después:
 
 1. Resume lo que encontraste.
 2. Indica si Docker y Compose están disponibles.
-3. Si falta Docker, propón el procedimiento oficial para mi sistema y espera mi
-   autorización antes de instalarlo.
-4. Explica qué versión de .NET usará el contenedor y por qué.
-5. Propón solo el primer paso pequeño.
-6. Hazme dos preguntas breves para comprobar que entendí.
-7. Espera mi respuesta y autorización antes de continuar.
+3. Indica si Git y GitHub CLI están disponibles y si `gh` tiene una sesión
+   válida, sin mostrar tokens.
+4. Si falta una herramienta, propón el procedimiento oficial para mi sistema y
+   espera mi autorización antes de instalarla.
+5. Si falta la sesión de GitHub, pregúntame si tengo cuenta y guíame por el login
+   web; espera a que yo lo complete.
+6. Explica qué versión de .NET usará el contenedor y por qué.
+7. Propón solo el primer paso pequeño.
+8. Hazme dos preguntas breves para comprobar que entendí.
+9. Espera mi respuesta y autorización antes de continuar.
 ```
 
 ## 6. Adaptar el prompt a tu propio proyecto
