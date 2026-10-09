@@ -1,5 +1,5 @@
 ---
-title: "From 0 to Senior AI — Backend: Codex o Claude en VS Code"
+title: "From 0 to Senior AI — Instalación y Backend"
 url: "from-0-to-senior-ai"
 titleHtml: "<small>Aprende con un agente de programación</small><br><b>From 0 to Senior AI</b>"
 license: ccby4.0
@@ -34,7 +34,7 @@ coverMetaClass: post-meta-white
 thumbnailImagePosition: left
 ---
 
-Instala un agente de programación en **VS Code** y úsalo como mentor para aprender mientras construyes un proyecto real, incluso si estás empezando desde cero. Este es el episodio **Backend**; Frontend y Pruebas continuarán la serie.
+Instala un agente de programación en **VS Code** y úsalo como mentor para aprender mientras construyes un proyecto real, incluso si estás empezando desde cero. Este es el capítulo **Instalación y Backend**.
 <!--more-->
 
 Un agente como **Codex** o **Claude Code** puede leer los archivos de tu proyecto, explicarte código, proponer cambios y ejecutar comandos. Eso no lo convierte en infalible ni te convierte automáticamente en *senior*: el objetivo de esta guía es que la IA acelere tu aprendizaje **sin reemplazar tu criterio**.
@@ -42,6 +42,16 @@ Un agente como **Codex** o **Claude Code** puede leer los archivos de tu proyect
 {{< toc center >}}
 
 ---
+
+## Ruta de la serie
+
+**From 0 to Senior AI** está organizada en tres capítulos:
+
+1. **Instalación y Backend** — configurar VS Code, el agente, Docker, Git y GitHub; después construir y comprender una API .NET.
+2. **Frontend y pruebas automatizadas** — crear la interfaz y automatizar la comprobación del sistema completo.
+3. **Harness** — preparar el entorno de trabajo y evaluación que coordina al agente de forma repetible.
+
+Este artículo corresponde al primer capítulo. El prompt evita adelantar contenido de los dos siguientes para mantener un objetivo manejable.
 
 ## 1. Instalar VS Code
 
@@ -163,7 +173,7 @@ Para este taller recomendamos como mínimo **GPT-5.6 Sol con esfuerzo medium** e
 > Este prompt está diseñado para aprender. El agente debe avanzar contigo, no terminar todo el repositorio por su cuenta.
 
 ```text
-Vas a actuar como mi mentor de backend en .NET, no como un desarrollador
+Vas a actuar como mi mentor del capítulo 1, Instalación y Backend en .NET, no como un desarrollador
 autónomo que completa el proyecto por mí.
 
 El proyecto de referencia es:
@@ -210,7 +220,7 @@ Usaremos:
 - Docker y Docker Compose
 
 No quiero instalar .NET ni PostgreSQL directamente en mi máquina. Usa Docker
-para compilar y ejecutar la API, correr las pruebas y levantar PostgreSQL.
+para compilar y ejecutar la API, correr sus verificaciones existentes y levantar PostgreSQL.
 
 Antes de escribir código, identifica mi sistema operativo y comprueba si Docker
 y Docker Compose están disponibles. Si faltan, explícame cómo instalarlos desde

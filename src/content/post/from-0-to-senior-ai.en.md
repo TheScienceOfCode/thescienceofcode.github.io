@@ -1,5 +1,5 @@
 ---
-title: "From 0 to Senior AI — Backend: Codex or Claude in VS Code"
+title: "From 0 to Senior AI — Installation and Backend"
 url: "from-0-to-senior-ai"
 titleHtml: "<small>Learn with a coding agent</small><br><b>From 0 to Senior AI</b>"
 license: ccby4.0
@@ -34,7 +34,7 @@ coverMetaClass: post-meta-white
 thumbnailImagePosition: left
 ---
 
-Install a coding agent in **VS Code** and use it as a mentor while you build a real project, even if you are starting from zero. This is the **Backend** episode; Frontend and Testing will continue the series.
+Install a coding agent in **VS Code** and use it as a mentor while you build a real project, even if you are starting from zero. This is the **Installation and Backend** chapter.
 <!--more-->
 
 A coding agent such as **Codex** or **Claude Code** can read your project,
@@ -45,6 +45,16 @@ your learning **without replacing your judgment**.
 {{< toc center >}}
 
 ---
+
+## Series roadmap
+
+**From 0 to Senior AI** is organized into three chapters:
+
+1. **Installation and Backend** — configure VS Code, the agent, Docker, Git, and GitHub; then build and understand a .NET API.
+2. **Frontend and automated testing** — build the interface and automate checks of the complete system.
+3. **Harness** — prepare the repeatable working and evaluation environment that coordinates the agent.
+
+This article is Chapter 1. Its prompt deliberately avoids material from the next two chapters so the learning goal stays manageable.
 
 ## 1. Install VS Code
 
@@ -158,7 +168,7 @@ understand → attempt → review → run → correct → explain in your own wo
 
 ## 5. Load the mentor prompt
 
-This episode uses a real Docker-first .NET project with ASP.NET Core,
+This chapter uses a real Docker-first .NET project with ASP.NET Core,
 PostgreSQL, Entity Framework Core, and Swagger. The completed reference
 application is in [From 0 to Senior AI](https://github.com/TheScienceOfCodeEDU/from-0-to-senior-ai).
 
@@ -171,7 +181,7 @@ starts or resumes.
 To begin from an empty folder, paste this short bootstrap message:
 
 ```text
-Help me work through Episode 1: Backend from this repository:
+Help me work through Chapter 1: Installation and Backend from this repository:
 https://github.com/TheScienceOfCodeEDU/from-0-to-senior-ai
 
 Start with read-only checks. If I do not have the repository, guide me through
@@ -192,7 +202,7 @@ The prompt tells the agent to:
 - connect controllers, services, EF Core, SQL, containers, and HTTP requests;
 - avoid unnecessary enterprise patterns;
 - preserve secrets and ask before privileged or destructive actions;
-- reserve deep testing and frontend work for their later episodes.
+- reserve frontend and automated testing for Chapter 2, and the Harness for Chapter 3.
 
 ## 6. Run the reference application
 
